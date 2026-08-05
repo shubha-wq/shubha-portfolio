@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #15130f;
+  color: #eae3d3;
+}
+
+.rule {
+  border-color: #2a2620;
+}
+
+.rule-brass {
+  border-color: #8a6e3c;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #b08d4f;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

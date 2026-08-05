@@ -1,0 +1,74 @@
+[
+  {
+    "slug": "mohmani",
+    "title": "Mohmani",
+    "tagline": "Creative strategy for an up-and-coming homegrown jewellery brand.",
+    "role": "Creative Strategist",
+    "industry": "Jewellery & Lifestyle",
+    "duration": "3 months",
+    "image": {
+      "src": "https://framerusercontent.com/images/FbV0SuRXoPsRJmARPqeXnIAUzMI.png",
+      "alt": "Mohmani jewellery brand creative direction",
+      "width": 1640,
+      "height": 2360
+    },
+    "context": "Mohmani is a small, homegrown jewellery label that specialises in one-of-one pieces and custom orders. Over time, it's grown into a content- and culture-heavy brand, shaped as much by the founder's personal voice as by the jewellery itself. Through viral content, events and word-of-mouth discovery, the brand has built a niche following of around 3.3k people who connect with its whimsical world.",
+    "problem": "As Mohmani became more visible, the challenge wasn't reach, it was coherence. With the brand evolving across content, pop-ups and personal brand, there was a real risk of it feeling scattered or performative. The need was for clearer creative direction that could hold all of this together, without forcing the brand into a conventional lifestyle or commercial mould.",
+    "process": "The focus was on putting some structure in place so creative decisions didn't feel random. Early on, the brand's core cues, whimsy, quirk and subcultural references, were clearly defined and used to guide everything. Basic direction was set for visuals, tone and a content calendar so posting stayed consistent and intentional. Each collection started with a clear inspiration, shared with the audience through creative concepts and content instead of long explanations. Content pillars were built around the jewellery itself, the making process, everyday moments and the founder's personal voice, so the brand felt natural and expressive rather than over-produced.",
+    "outcome": "Mohmani now feels more settled in its identity, less like a brand chasing growth, and more like one that has found its place. The creative strategy helped bring clarity and continuity across content, community moments and product storytelling, while keeping the brand's quirks intact."
+  },
+  {
+    "slug": "voucher-management-system",
+    "title": "Voucher Management System",
+    "tagline": "Conceptualising and leading end-to-end development of a voucher management system.",
+    "role": "Product Intern",
+    "industry": "HR & Talent Tech",
+    "duration": "6 months",
+    "image": {
+      "src": "",
+      "alt": "Voucher management system product work",
+      "width": 1640,
+      "height": 2360
+    },
+    "context": "[DRAFT — replace with your real case study text.] At Talview, a client-facing voucher system needed a clear owner to take it from concept to shipped feature.",
+    "problem": "[DRAFT] Vouchers were being handled ad hoc, with no consistent framework for issuing, tracking or documenting them for clients or internal teams.",
+    "process": "[DRAFT] Led end-to-end development of the voucher management system, from concept through to release. Wrote detailed release documentation and user-facing guides, and ran a competitive analysis of industry tools to build a framework for positioning and storytelling, supporting the product marketing team.",
+    "outcome": "[DRAFT] The system contributed to a 5% improvement in retention, and demonstrated end-to-end ownership from concept to release documentation."
+  },
+  {
+    "slug": "encasa-bistro",
+    "title": "The Encasa Bistro",
+    "tagline": "0 to 1 journey of a family-owned cafe.",
+    "role": "Marketing & Operations Associate",
+    "industry": "F&B / Hospitality",
+    "duration": "11 months",
+    "image": {
+      "src": "",
+      "alt": "The Encasa Bistro branding and marketing",
+      "width": 1640,
+      "height": 2360
+    },
+    "context": "[DRAFT — replace with your real case study text.] The Encasa Bistro, a family-owned café in Lucknow, needed a marketing and brand presence built essentially from zero.",
+    "problem": "[DRAFT] No consistent brand positioning, social presence, or event/community strategy existed to bring in and retain local footfall.",
+    "process": "[DRAFT] Designed and executed social media campaigns and local promotions, developed brand positioning and marketing collateral including menu design and digital creatives, and supported event management for community gatherings and pop-ups, handling logistics, vendor coordination and branding end to end.",
+    "outcome": "[DRAFT] Footfall increased by 25% in under three months, alongside consistent growth in community engagement."
+  },
+  {
+    "slug": "hamper-seeding-for-traya",
+    "title": "Hamper Seeding for Traya",
+    "tagline": "Sending out PR packages to select media, repositioning the brand into lifestyle media.",
+    "role": "PR Management Trainee",
+    "industry": "D2C Wellness / Haircare",
+    "duration": "2 months",
+    "image": {
+      "src": "",
+      "alt": "Hamper seeding PR campaign for Traya",
+      "width": 1640,
+      "height": 2360
+    },
+    "context": "[DRAFT — replace with your real case study text.] At Madison PR, Traya needed placement beyond category press, into lifestyle and culture media.",
+    "problem": "[DRAFT] The brand's coverage was concentrated in category-specific press, limiting its reach into broader lifestyle conversation.",
+    "process": "[DRAFT] Led end-to-end hamper seeding: coordinating with vendors and designers, aligning with client expectations, and curating influencer and media lists to reposition the brand into lifestyle media.",
+    "outcome": "[DRAFT] The campaign resulted in Instagram features and lifestyle column placements outside the brand's usual category coverage."
+  }
+]

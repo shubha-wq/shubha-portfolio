@@ -1,0 +1,43 @@
+{
+  "name": "Shubha Singh",
+  "role": "Brand Strategist",
+  "focus": "Fashion, luxury & lifestyle brands",
+  "nav": {
+    "journey": "About",
+    "projects": "Case studies"
+  },
+  "hero": {
+    "eyebrow": "Brand Marketing Strategist",
+    "headline": "I build brand systems for fashion, luxury & lifestyle labels.",
+    "subhead": "Four years across PR, product and brand strategy, applied to the world I actually care about: fashion, luxury and lifestyle. LVMH-certified, building toward Creative Director.",
+    "resumeLabel": "View resume",
+    "resumeUrl": "/Shubha-Singh-Resume.pdf",
+    "image": {
+      "src": "https://framerusercontent.com/images/2pe61Jj0c7q1VQ9WUlRdLHVvrI.jpg",
+      "alt": "Shubha Singh",
+      "width": 3182,
+      "height": 2810
+    }
+  },
+  "journey": {
+    "kicker": "About",
+    "title": "More than a marketer, I'm a learner at heart.",
+    "paragraphs": [
+      "Curiosity is my default. I like figuring out how things work, how people read between the lines, and why some ideas feel instantly right while others don't land at all.",
+      "I started out in PR, content and marketing, where I built a strong instinct for messaging and perception. That naturally pulled me toward strategy: thinking not just about what a brand says, but what it delivers and how all the pieces come together. Product became part of that journey because I wanted to understand the core itself, which gave structure to my creativity.",
+      "Lately that instinct has narrowed toward a specific world — fashion, luxury and lifestyle brands, where taste and strategy have to hold together at once. It's the thread running through Mohmani, the LVMH certification, and where I'm building next."
+    ],
+    "image": {
+      "src": "https://framerusercontent.com/images/vZExr6CgxDF84cyEpX3tpCW5qEA.jpg",
+      "alt": "Shubha Singh wearing a baseball cap",
+      "width": 2316,
+      "height": 1870
+    }
+  },
+  "contact": {
+    "title": "Let's talk.",
+    "subtitle": "Projects, collaborations, or anything brand & fashion.",
+    "email": "shubhasingh1907@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/shubha1907/"
+  }
+}
