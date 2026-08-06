@@ -1,5 +1,23 @@
 [
   {
+    "slug": "sisters-in-sweat",
+    "title": "Sisters in Sweat",
+    "tagline": "Building the brand strategy, voice and visual identity for a fitness community from the ground up.",
+    "role": "Marketing Executive",
+    "industry": "Fitness & Wellness",
+    "duration": "Mar 2026 \u2014 Present",
+    "image": {
+      "src": "",
+      "alt": "Sisters in Sweat brand strategy and campaigns",
+      "width": 1640,
+      "height": 2360
+    },
+    "context": "[DRAFT \u2014 replace with your real case study text.] Sisters in Sweat needed a cohesive brand identity across digital channels, plus the marketing systems to support a growing content team.",
+    "problem": "[DRAFT] There was no shared brand voice or visual identity, and no scalable systems for a 4-person content team to plan and produce work consistently.",
+    "process": "[DRAFT] Led brand strategy, voice and visual identity in collaboration with the founder. Built scalable systems \u2014 task trackers, content calendars, copywriting playbooks and reusable templates \u2014 to streamline execution. Owned content strategy and production end to end, running 10+ organic and co-branded campaigns with Zerodha, WeWork, Dame Health and Mille, and led the content team through Sweat Fest 2026 from strategy to execution.",
+    "outcome": "[DRAFT] A cohesive brand identity now runs across every channel, with systems in place that let a 4-person team execute consistently instead of reactively. Add real numbers here \u2014 follower/engagement growth, campaign reach, Sweat Fest attendance \u2014 once you have them."
+  },
+  {
     "slug": "mohmani",
     "title": "Mohmani",
     "tagline": "Creative strategy for an up-and-coming homegrown jewellery brand.",
@@ -7,7 +25,7 @@
     "industry": "Jewellery & Lifestyle",
     "duration": "3 months",
     "image": {
-      "src": "https://framerusercontent.com/images/FbV0SuRXoPsRJmARPqeXnIAUzMI.png",
+      "src": "",
       "alt": "Mohmani jewellery brand creative direction",
       "width": 1640,
       "height": 2360
@@ -30,7 +48,7 @@
       "width": 1640,
       "height": 2360
     },
-    "context": "[DRAFT — replace with your real case study text.] At Talview, a client-facing voucher system needed a clear owner to take it from concept to shipped feature.",
+    "context": "[DRAFT \u2014 replace with your real case study text.] At Talview, a client-facing voucher system needed a clear owner to take it from concept to shipped feature.",
     "problem": "[DRAFT] Vouchers were being handled ad hoc, with no consistent framework for issuing, tracking or documenting them for clients or internal teams.",
     "process": "[DRAFT] Led end-to-end development of the voucher management system, from concept through to release. Wrote detailed release documentation and user-facing guides, and ran a competitive analysis of industry tools to build a framework for positioning and storytelling, supporting the product marketing team.",
     "outcome": "[DRAFT] The system contributed to a 5% improvement in retention, and demonstrated end-to-end ownership from concept to release documentation."
@@ -48,7 +66,7 @@
       "width": 1640,
       "height": 2360
     },
-    "context": "[DRAFT — replace with your real case study text.] The Encasa Bistro, a family-owned café in Lucknow, needed a marketing and brand presence built essentially from zero.",
+    "context": "[DRAFT \u2014 replace with your real case study text.] The Encasa Bistro, a family-owned caf\u00e9 in Lucknow, needed a marketing and brand presence built essentially from zero.",
     "problem": "[DRAFT] No consistent brand positioning, social presence, or event/community strategy existed to bring in and retain local footfall.",
     "process": "[DRAFT] Designed and executed social media campaigns and local promotions, developed brand positioning and marketing collateral including menu design and digital creatives, and supported event management for community gatherings and pop-ups, handling logistics, vendor coordination and branding end to end.",
     "outcome": "[DRAFT] Footfall increased by 25% in under three months, alongside consistent growth in community engagement."
@@ -66,7 +84,7 @@
       "width": 1640,
       "height": 2360
     },
-    "context": "[DRAFT — replace with your real case study text.] At Madison PR, Traya needed placement beyond category press, into lifestyle and culture media.",
+    "context": "[DRAFT \u2014 replace with your real case study text.] At Madison PR, Traya needed placement beyond category press, into lifestyle and culture media.",
     "problem": "[DRAFT] The brand's coverage was concentrated in category-specific press, limiting its reach into broader lifestyle conversation.",
     "process": "[DRAFT] Led end-to-end hamper seeding: coordinating with vendors and designers, aligning with client expectations, and curating influencer and media lists to reposition the brand into lifestyle media.",
     "outcome": "[DRAFT] The campaign resulted in Instagram features and lifestyle column placements outside the brand's usual category coverage."

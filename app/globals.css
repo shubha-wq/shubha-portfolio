@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 html {
@@ -11,28 +11,28 @@ html {
 }
 
 body {
-  background-color: #15130f;
-  color: #eae3d3;
-}
-
-.rule {
-  border-color: #2a2620;
-}
-
-.rule-brass {
-  border-color: #8a6e3c;
+  background-color: #ffffff;
+  color: #17140f;
 }
 
 a:focus-visible,
 button:focus-visible {
-  outline: 2px solid #b08d4f;
+  outline: 2px solid #17140f;
   outline-offset: 3px;
 }
 
+.placeholder-box {
+  background-image: repeating-linear-gradient(
+    45deg,
+    #ECE9E1,
+    #ECE9E1 10px,
+    #F5F3ED 10px,
+    #F5F3ED 20px
+  );
+}
+
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
+  *, *::before, *::after {
     animation-duration: 0.001ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;

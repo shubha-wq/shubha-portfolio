@@ -1,94 +1,77 @@
-import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ProjectIndex from "@/components/ProjectIndex";
+import SocialRow from "@/components/SocialRow";
+import Placeholder from "@/components/Placeholder";
 import site from "@/content/site.json";
 import projects from "@/content/projects.json";
 import type { Project } from "@/lib/types";
 
 export default function Home() {
-  const { hero, journey } = site;
+  const { hero, journey, socials } = site;
+
+  const featuredSlugs = ["sisters-in-sweat", "voucher-management-system", "mohmani"];
+  const featuredProjects = featuredSlugs
+    .map((slug) => (projects as Project[]).find((p) => p.slug === slug))
+    .filter((p): p is Project => Boolean(p));
 
   return (
     <main>
       <Header />
 
       {/* Hero */}
-      <section className="px-6 pb-20 pt-10 md:px-10 md:pb-32 md:pt-16">
-        <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 md:grid-cols-5 md:gap-8">
-          <div className="md:col-span-3">
-            <p className="font-mono text-xs uppercase tracking-widest2 text-brass">
-              {hero.eyebrow}
-            </p>
-            <h1 className="mt-6 font-display text-4xl italic leading-[1.1] text-parchment md:text-6xl">
-              {hero.headline}
-            </h1>
-            <p className="mt-6 max-w-md text-base text-parchmentdim md:text-lg">
-              {hero.subhead}
-            </p>
-            <a
-              href={hero.resumeUrl}
-              className="mt-10 inline-flex items-center gap-3 border border-brassdim px-6 py-3 font-mono text-xs uppercase tracking-widest2 text-parchment transition hover:border-brass hover:text-brass"
-            >
-              {hero.resumeLabel}
-            </a>
+      <section className="px-6 pb-14 pt-6 md:px-10">
+        <div className="mx-auto max-w-6xl">
+          <div className="mb-10 h-24 w-24 overflow-hidden rounded-full">
+            <Placeholder label="Photo" aspect="aspect-square" rounded={false} />
           </div>
-          <div className="relative md:col-span-2">
-            <div className="relative aspect-[4/5] w-full overflow-hidden border border-inkline">
-              <Image
-                src={hero.image.src}
-                alt={hero.image.alt}
-                fill
-                sizes="(min-width: 768px) 40vw, 90vw"
-                className="object-cover"
-                priority
-              />
-            </div>
+          <h1 className="max-w-3xl text-4xl font-extrabold leading-tight text-ink md:text-6xl">
+            {hero.headline}
+          </h1>
+          <p className="mt-6 max-w-xl text-lg text-inkdim">{hero.subhead}</p>
+          <div className="mt-8">
+            <SocialRow links={socials} />
           </div>
         </div>
       </section>
 
+      {/* Image strip */}
+      <div className="grid grid-cols-2 gap-0 sm:grid-cols-4">
+        <Placeholder label="Work" aspect="aspect-[4/3]" rounded={false} />
+        <Placeholder label="Work" aspect="aspect-[4/3]" rounded={false} />
+        <Placeholder label="Work" aspect="aspect-[4/3]" rounded={false} />
+        <Placeholder label="Work" aspect="aspect-[4/3]" rounded={false} />
+      </div>
+
+      {/* Featured case studies */}
+      <div className="bg-band">
+        <div id="case-studies" className="mx-auto max-w-6xl px-6 py-20 md:px-10">
+          <h2 className="text-3xl font-extrabold text-ink md:text-4xl">
+            Selected work
+          </h2>
+          <p className="mt-3 max-w-md text-inkdim">
+            A few case studies across brand strategy, fitness and product.
+          </p>
+        </div>
+        <ProjectIndex projects={featuredProjects} />
+        <div className="h-20" />
+      </div>
+
       {/* Journey */}
-      <section id="journey" className="border-t border-inkline px-6 py-20 md:px-10 md:py-28">
-        <div className="mx-auto grid max-w-6xl grid-cols-1 gap-12 md:grid-cols-5 md:gap-16">
-          <div className="md:col-span-2">
-            <div className="relative aspect-[4/5] w-full overflow-hidden border border-inkline">
-              <Image
-                src={journey.image.src}
-                alt={journey.image.alt}
-                fill
-                sizes="(min-width: 768px) 35vw, 90vw"
-                className="object-cover"
-              />
-            </div>
-          </div>
-          <div className="md:col-span-3">
-            <p className="font-mono text-xs uppercase tracking-widest2 text-brass">
-              {journey.kicker}
-            </p>
-            <h2 className="mt-4 font-display text-3xl italic text-parchment md:text-4xl">
+      <section id="journey" className="px-6 py-20 md:px-10">
+        <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-14 md:grid-cols-2">
+          <Placeholder label="Photo" />
+          <div>
+            <h2 className="text-2xl font-bold text-ink md:text-3xl">
               {journey.title}
             </h2>
-            <div className="mt-6 space-y-5 text-parchmentdim">
+            <div className="mt-5 space-y-4 text-inkdim">
               {journey.paragraphs.map((p, i) => (
                 <p key={i}>{p}</p>
               ))}
             </div>
           </div>
         </div>
-      </section>
-
-      {/* Case studies */}
-      <section id="projects" className="py-4">
-        <div className="mx-auto max-w-6xl px-6 pb-10 md:px-10">
-          <p className="font-mono text-xs uppercase tracking-widest2 text-brass">
-            Case studies
-          </p>
-          <h2 className="mt-4 font-display text-3xl italic text-parchment md:text-4xl">
-            Selected work
-          </h2>
-        </div>
-        <ProjectIndex projects={projects as Project[]} />
       </section>
 
       <Footer />

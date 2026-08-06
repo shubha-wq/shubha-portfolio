@@ -1,0 +1,50 @@
+[
+  {
+    "id": "nextleap",
+    "title": "NextLeap Portfolio",
+    "description": "Product Management Fellowship portfolio — recognised as a Top Fellow.",
+    "url": "https://nextleap.app/portfolio/shubha-singh",
+    "image": "",
+    "tag": "Product"
+  },
+  {
+    "id": "video-paradyes",
+    "title": "Video — Paradyes",
+    "description": "[PLACEHOLDER — add the real video link/embed once ready.]",
+    "url": "#",
+    "image": "",
+    "tag": "Video Editing"
+  },
+  {
+    "id": "video-dame-health",
+    "title": "Video — Dame Health",
+    "description": "[PLACEHOLDER — add the real video link/embed once ready.]",
+    "url": "#",
+    "image": "",
+    "tag": "Video Editing"
+  },
+  {
+    "id": "video-mille",
+    "title": "Video — Mille",
+    "description": "[PLACEHOLDER — add the real video link/embed once ready.]",
+    "url": "#",
+    "image": "",
+    "tag": "Video Editing"
+  },
+  {
+    "id": "video-nykaa",
+    "title": "Video — Nykaa",
+    "description": "[PLACEHOLDER — add the real video link/embed once ready.]",
+    "url": "#",
+    "image": "",
+    "tag": "Video Editing"
+  },
+  {
+    "id": "graphic-design",
+    "title": "Graphic Design",
+    "description": "[PLACEHOLDER — link to a portfolio, Behance, or Instagram highlight once ready.]",
+    "url": "#",
+    "image": "",
+    "tag": "Graphic Design"
+  }
+]

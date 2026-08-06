@@ -1,37 +1,42 @@
+import Link from "next/link";
+import SocialRow from "./SocialRow";
 import site from "@/content/site.json";
 
 export default function Footer() {
-  const { contact } = site;
+  const { contact, socials, name } = site;
   return (
-    <footer className="border-t border-inkline px-6 py-20 md:px-10">
-      <div className="mx-auto max-w-6xl">
-        <p className="font-mono text-xs uppercase tracking-widest2 text-brass">
-          {contact.title === "Let's talk." ? "Get in touch" : ""}
-        </p>
-        <h2 className="mt-4 font-display text-4xl italic text-parchment md:text-6xl">
+    <div className="bg-dark text-paper">
+      <div className="mx-auto max-w-6xl px-6 py-20 md:px-10">
+        <h2 className="text-4xl font-extrabold md:text-5xl">
           {contact.title}
         </h2>
-        <p className="mt-3 max-w-md text-parchmentdim">{contact.subtitle}</p>
-        <div className="mt-8 flex flex-col gap-2 font-mono text-sm text-parchment md:flex-row md:gap-8">
-          <a
-            href={`mailto:${contact.email}`}
-            className="underline decoration-brassdim underline-offset-4 transition hover:text-brass"
-          >
-            {contact.email}
-          </a>
-          <a
-            href={contact.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="underline decoration-brassdim underline-offset-4 transition hover:text-brass"
-          >
-            LinkedIn ↗
-          </a>
+        <p className="mt-3 max-w-md text-darkdim">{contact.subtitle}</p>
+        <a
+          href={`mailto:${contact.email}`}
+          className="mt-8 inline-flex items-center rounded-pill bg-paper px-7 py-3 text-sm font-medium text-ink transition hover:bg-darkdim"
+        >
+          Get in touch
+        </a>
+
+        <div className="mt-16 flex flex-col gap-6 border-t border-darkline pt-8 sm:flex-row sm:items-center sm:justify-between">
+          <span className="text-lg font-bold">{name}</span>
+          <nav className="flex gap-6 text-sm text-darkdim">
+            <Link href="/projects" className="transition hover:text-paper">
+              Projects
+            </Link>
+            <Link href="/services" className="transition hover:text-paper">
+              Services
+            </Link>
+            <Link href="/#journey" className="transition hover:text-paper">
+              About me
+            </Link>
+          </nav>
+          <SocialRow links={socials} dark />
         </div>
-        <p className="mt-16 font-mono text-[10px] uppercase tracking-widest2 text-parchmentdim/60">
-          © {new Date().getFullYear()} {site.name}
+        <p className="mt-10 text-center text-xs text-darkdim/70">
+          © {new Date().getFullYear()} {name}
         </p>
       </div>
-    </footer>
+    </div>
   );
 }

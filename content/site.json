@@ -13,12 +13,17 @@
     "resumeLabel": "View resume",
     "resumeUrl": "/Shubha-Singh-Resume.pdf",
     "image": {
-      "src": "https://framerusercontent.com/images/2pe61Jj0c7q1VQ9WUlRdLHVvrI.jpg",
+      "src": "",
       "alt": "Shubha Singh",
       "width": 3182,
       "height": 2810
     }
   },
+  "socials": [
+    { "label": "LinkedIn", "url": "https://www.linkedin.com/in/shubha1907/" },
+    { "label": "Instagram", "url": "#" },
+    { "label": "Behance", "url": "#" }
+  ],
   "journey": {
     "kicker": "About",
     "title": "More than a marketer, I'm a learner at heart.",
@@ -28,7 +33,7 @@
       "Lately that instinct has narrowed toward a specific world — fashion, luxury and lifestyle brands, where taste and strategy have to hold together at once. It's the thread running through Mohmani, the LVMH certification, and where I'm building next."
     ],
     "image": {
-      "src": "https://framerusercontent.com/images/vZExr6CgxDF84cyEpX3tpCW5qEA.jpg",
+      "src": "",
       "alt": "Shubha Singh wearing a baseball cap",
       "width": 2316,
       "height": 1870

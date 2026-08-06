@@ -5,22 +5,21 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        ink: "#15130F",
-        inkline: "#2A2620",
-        parchment: "#EAE3D3",
-        parchmentdim: "#C9BFA8",
-        brass: "#B08D4F",
-        brassdim: "#8A6E3C",
-        oxblood: "#6E2A2A",
-        oxbloodbright: "#9C3B3B",
+        paper: "#FFFFFF",
+        band: "#F1EFEA",
+        ink: "#17140F",
+        inkdim: "#5B564A",
+        line: "#DAD5C8",
+        dark: "#262421",
+        darkdim: "#C9C4B6",
+        darkline: "#4A463C",
       },
       fontFamily: {
-        display: ["var(--font-fraunces)"],
-        body: ["var(--font-inter)"],
-        mono: ["var(--font-space-mono)"],
+        sans: ["var(--font-inter)"],
       },
-      letterSpacing: {
-        widest2: "0.28em",
+      borderRadius: {
+        card: "10px",
+        pill: "999px",
       },
     },
   },

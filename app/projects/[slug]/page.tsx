@@ -1,8 +1,8 @@
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Placeholder from "@/components/Placeholder";
 import projects from "@/content/projects.json";
 import type { Project } from "@/lib/types";
 
@@ -37,61 +37,59 @@ export default function ProjectPage({
     <main>
       <Header />
 
-      <section className="px-6 pt-10 md:px-10 md:pt-16">
+      <section className="px-6 pb-8 pt-6 md:px-10">
         <div className="mx-auto max-w-6xl">
           <Link
-            href="/#projects"
-            className="font-mono text-xs uppercase tracking-widest2 text-parchmentdim transition hover:text-brass"
+            href="/#case-studies"
+            className="text-sm font-medium text-inkdim transition hover:text-ink"
           >
-            ← All case studies
+            ← Back to case studies
           </Link>
 
-          <h1 className="mt-8 font-display text-4xl italic text-parchment md:text-6xl">
+          <h1 className="mt-6 max-w-2xl text-4xl font-extrabold text-ink md:text-5xl">
             {project.title}
           </h1>
-          <p className="mt-4 max-w-xl text-lg text-parchmentdim">
+          <p className="mt-4 max-w-xl text-lg text-inkdim">
             {project.tagline}
           </p>
 
-          <div className="mt-10 grid grid-cols-1 gap-6 border-y border-inkline py-6 font-mono text-xs uppercase tracking-widest2 text-parchmentdim sm:grid-cols-3">
+          <div className="mt-10 grid max-w-xl grid-cols-1 gap-6 border-y border-line py-6 sm:grid-cols-3">
             <div>
-              <p className="text-brassdim">Role</p>
-              <p className="mt-1 text-parchment">{project.role}</p>
+              <p className="text-xs font-semibold uppercase tracking-wide text-inkdim">
+                Role
+              </p>
+              <p className="mt-1 text-sm text-ink">{project.role}</p>
             </div>
             <div>
-              <p className="text-brassdim">Industry</p>
-              <p className="mt-1 text-parchment">{project.industry}</p>
+              <p className="text-xs font-semibold uppercase tracking-wide text-inkdim">
+                Industry
+              </p>
+              <p className="mt-1 text-sm text-ink">{project.industry}</p>
             </div>
             <div>
-              <p className="text-brassdim">Duration</p>
-              <p className="mt-1 text-parchment">{project.duration}</p>
+              <p className="text-xs font-semibold uppercase tracking-wide text-inkdim">
+                Duration
+              </p>
+              <p className="mt-1 text-sm text-ink">{project.duration}</p>
             </div>
           </div>
         </div>
       </section>
 
-      {project.image.src && (
-        <section className="px-6 py-12 md:px-10">
-          <div className="relative mx-auto aspect-[16/10] max-w-6xl overflow-hidden border border-inkline">
-            <Image
-              src={project.image.src}
-              alt={project.image.alt}
-              fill
-              sizes="90vw"
-              className="object-cover"
-            />
-          </div>
-        </section>
-      )}
+      <section className="px-6 py-8 md:px-10">
+        <div className="mx-auto max-w-4xl">
+          <Placeholder label="Case study image" aspect="aspect-[16/10]" />
+        </div>
+      </section>
 
-      <section className="px-6 py-12 md:px-10">
-        <div className="mx-auto max-w-3xl space-y-12">
+      <section className="px-6 py-8 md:px-10">
+        <div className="mx-auto max-w-2xl space-y-10">
           {sections.map(({ key, label }) => (
             <div key={key}>
-              <p className="font-mono text-xs uppercase tracking-widest2 text-brass">
+              <p className="text-xs font-semibold uppercase tracking-wide text-inkdim">
                 {label}
               </p>
-              <p className="mt-4 text-lg leading-relaxed text-parchmentdim">
+              <p className="mt-3 text-lg leading-relaxed text-ink">
                 {project[key] as string}
               </p>
             </div>
@@ -100,29 +98,25 @@ export default function ProjectPage({
       </section>
 
       {others.length > 0 && (
-        <section className="border-t border-inkline px-6 py-16 md:px-10">
-          <div className="mx-auto max-w-6xl">
-            <p className="font-mono text-xs uppercase tracking-widest2 text-brass">
+        <div className="bg-band">
+          <section className="mx-auto max-w-6xl px-6 py-20 md:px-10">
+            <p className="text-center text-sm font-semibold text-inkdim">
               Other projects
             </p>
-            <div className="mt-6 grid grid-cols-1 gap-8 sm:grid-cols-3">
+            <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-3">
               {others.map((o) => (
                 <Link
                   key={o.slug}
                   href={`/projects/${o.slug}`}
-                  className="group border border-inkline p-6 transition hover:border-brassdim"
+                  className="rounded-card border border-line bg-paper p-6 transition hover:border-ink"
                 >
-                  <h3 className="font-display text-xl italic text-parchment">
-                    {o.title}
-                  </h3>
-                  <p className="mt-2 text-sm text-parchmentdim">
-                    {o.tagline}
-                  </p>
+                  <h3 className="text-lg font-bold text-ink">{o.title}</h3>
+                  <p className="mt-2 text-sm text-inkdim">{o.tagline}</p>
                 </Link>
               ))}
             </div>
-          </div>
-        </section>
+          </section>
+        </div>
       )}
 
       <Footer />
