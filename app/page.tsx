@@ -1,6 +1,6 @@
+import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import ProjectIndex from "@/components/ProjectIndex";
 import SocialRow from "@/components/SocialRow";
 import Placeholder from "@/components/Placeholder";
 import site from "@/content/site.json";
@@ -35,26 +35,21 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Image strip */}
-      <div className="grid grid-cols-2 gap-0 sm:grid-cols-4">
-        <Placeholder label="Work" aspect="aspect-[4/3]" rounded={false} />
-        <Placeholder label="Work" aspect="aspect-[4/3]" rounded={false} />
-        <Placeholder label="Work" aspect="aspect-[4/3]" rounded={false} />
-        <Placeholder label="Work" aspect="aspect-[4/3]" rounded={false} />
-      </div>
-
-      {/* Featured case studies */}
-      <div className="bg-band">
-        <div id="case-studies" className="mx-auto max-w-6xl px-6 py-20 md:px-10">
-          <h2 className="text-3xl font-extrabold text-ink md:text-4xl">
-            Selected work
-          </h2>
-          <p className="mt-3 max-w-md text-inkdim">
-            A few case studies across brand strategy, fitness and product.
-          </p>
-        </div>
-        <ProjectIndex projects={featuredProjects} />
-        <div className="h-20" />
+      {/* Case studies carousel — this is the only "selected work" on the home page */}
+      <div id="work" className="grid grid-cols-1 gap-0 sm:grid-cols-3">
+        {featuredProjects.map((project) => (
+          <Link
+            key={project.slug}
+            href={`/projects/${project.slug}`}
+            className="group block"
+          >
+            <Placeholder
+              label={project.title}
+              aspect="aspect-[4/3]"
+              rounded={false}
+            />
+          </Link>
+        ))}
       </div>
 
       {/* Journey */}

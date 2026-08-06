@@ -40,7 +40,7 @@ export default function ProjectPage({
       <section className="px-6 pb-8 pt-6 md:px-10">
         <div className="mx-auto max-w-6xl">
           <Link
-            href="/#case-studies"
+            href="/#work"
             className="text-sm font-medium text-inkdim transition hover:text-ink"
           >
             ← Back to case studies
