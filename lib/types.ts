@@ -18,4 +18,6 @@ export type Project = {
   process: string;
   outcome: string;
   enabled: boolean;
+  carouselHeading?: string;
+  carouselBody?: string;
 };

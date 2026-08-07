@@ -1,8 +1,8 @@
-import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SocialRow from "@/components/SocialRow";
 import Placeholder from "@/components/Placeholder";
+import CaseStudyCarousel from "@/components/CaseStudyCarousel";
 import site from "@/content/site.json";
 import projects from "@/content/projects.json";
 import type { Project } from "@/lib/types";
@@ -23,7 +23,15 @@ export default function Home() {
       <section className="px-6 pb-14 pt-6 md:px-10">
         <div className="mx-auto max-w-6xl">
           <div className="mb-10 h-24 w-24 overflow-hidden rounded-full">
-            <Placeholder label="Photo" aspect="aspect-square" rounded={false} />
+            {hero.image.src ? (
+              <img
+                src={hero.image.src}
+                alt={hero.image.alt}
+                className="h-full w-full object-cover"
+              />
+            ) : (
+              <Placeholder label="Photo" aspect="aspect-square" rounded={false} />
+            )}
           </div>
           <h1 className="max-w-3xl text-4xl font-extrabold leading-tight text-ink md:text-6xl">
             {hero.headline}
@@ -36,20 +44,11 @@ export default function Home() {
       </section>
 
       {/* Case studies carousel — this is the only "selected work" on the home page */}
-      <div id="work" className="grid grid-cols-1 gap-0 sm:grid-cols-3">
-        {featuredProjects.map((project) => (
-          <Link
-            key={project.slug}
-            href={`/projects/${project.slug}`}
-            className="group block"
-          >
-            <Placeholder
-              label={project.title}
-              aspect="aspect-[4/3]"
-              rounded={false}
-            />
-          </Link>
-        ))}
+      <div id="work" className="pb-6 pt-4">
+        <div className="mx-auto max-w-6xl px-6 pb-6 md:px-10">
+          <h2 className="text-2xl font-bold text-ink">Selected case studies</h2>
+        </div>
+        <CaseStudyCarousel projects={featuredProjects} />
       </div>
 
       {/* Journey */}

@@ -13,7 +13,7 @@
     "resumeLabel": "View resume",
     "resumeUrl": "/Shubha-Singh-Resume.pdf",
     "image": {
-      "src": "",
+      "src": "/hero-photo.jpg",
       "alt": "Shubha Singh",
       "width": 3182,
       "height": 2810
@@ -21,8 +21,7 @@
   },
   "socials": [
     { "label": "LinkedIn", "url": "https://www.linkedin.com/in/shubha1907/" },
-    { "label": "Instagram", "url": "#" },
-    { "label": "Behance", "url": "#" }
+    { "label": "Instagram", "url": "#" }
   ],
   "journey": {
     "kicker": "About",

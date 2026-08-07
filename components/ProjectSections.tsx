@@ -1,5 +1,6 @@
 import Placeholder from "./Placeholder";
 import VideoCard from "./VideoCard";
+import GraphicCarousel from "./GraphicCarousel";
 
 export type LinkItem = {
   id: string;
@@ -28,7 +29,8 @@ export type ImageItem = {
 export type Section =
   | { id: string; title: string; layout: "featured" | "grid"; kind: "link"; items: LinkItem[] }
   | { id: string; title: string; layout: "featured" | "grid"; kind: "video"; items: VideoItem[] }
-  | { id: string; title: string; layout: "featured" | "grid"; kind: "image"; items: ImageItem[] };
+  | { id: string; title: string; layout: "featured" | "grid"; kind: "image"; items: ImageItem[] }
+  | { id: string; title: string; layout: "featured" | "grid"; kind: "carousel"; items: ImageItem[] };
 
 function LinkCard({ item, compact }: { item: LinkItem; compact?: boolean }) {
   const isPlaceholder = item.url === "#";
@@ -74,9 +76,16 @@ export default function ProjectSections({ sections }: { sections: Section[] }) {
 
         return (
           <div key={section.id}>
-            <h2 className="mb-6 text-2xl font-bold text-ink">{section.title}</h2>
+            {section.kind !== "carousel" && (
+              <h2 className="mb-6 text-2xl font-bold text-ink">{section.title}</h2>
+            )}
 
-            {section.layout === "featured" ? (
+            {section.kind === "carousel" ? (
+              <GraphicCarousel
+                title={section.title}
+                items={visibleItems as ImageItem[]}
+              />
+            ) : section.layout === "featured" ? (
               <div className="max-w-2xl">
                 {section.kind === "link" &&
                   (visibleItems as LinkItem[]).map((item) => (
