@@ -1,0 +1,28 @@
+{
+  "kicker": "Certifications",
+  "title": "Certifications & recognitions",
+  "intro": "A few credentials that back the fashion, luxury & lifestyle focus.",
+  "items": [
+    {
+      "id": "nextleap",
+      "title": "Top Fellow — Product Management Fellowship",
+      "issuer": "NextLeap",
+      "description": "Recognised as a Top Fellow at NextLeap's Product Management Fellowship.",
+      "url": "https://nextleap.app/portfolio/shubha-singh"
+    },
+    {
+      "id": "aaft",
+      "title": "Fashion Design Diploma",
+      "issuer": "AAFT",
+      "description": "[DRAFT — add specifics: exact program name, duration, and what it covered.]",
+      "url": "#"
+    },
+    {
+      "id": "lvmh",
+      "title": "Inside LVMH",
+      "issuer": "LVMH",
+      "description": "Luxury industry, marketing, branding & supply chain.",
+      "url": "#"
+    }
+  ]
+}

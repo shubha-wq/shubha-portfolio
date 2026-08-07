@@ -1,0 +1,87 @@
+{
+  "kicker": "Resume",
+  "title": "Resume",
+  "pdfUrl": "",
+  "contact": {
+    "email": "shubhasingh1907@gmail.com",
+    "phone": "+91 7007588317",
+    "linkedin": "https://www.linkedin.com/in/shubha1907/"
+  },
+  "experience": [
+    {
+      "company": "Sisters in Sweat Pvt. Ltd., Bangalore",
+      "role": "Marketing Executive",
+      "duration": "March 2026 — Present",
+      "bullets": [
+        "Led the brand strategy, brand voice, and visual identity in collaboration with the Founder, driving a cohesive brand identity across digital channels.",
+        "Established scalable marketing systems, including task trackers, content calendars, copywriting playbooks and reusable social media templates, streamlining execution for a 4-member content team.",
+        "Owned end-to-end content strategy and production, executing 10+ organic and co-branded campaigns with Zerodha, WeWork, Dame Health, and Mille.",
+        "Spearheaded integrated marketing campaigns for flagship events, including Sweat Fest 2026, while leading the content team from strategy through execution."
+      ]
+    },
+    {
+      "company": "The Encasa Bistro, Lucknow",
+      "role": "Marketing and Operations Associate (Part-time)",
+      "duration": "February 2025 — December 2025",
+      "bullets": [
+        "Designed and executed social media campaigns and local promotions, increasing footfall by 25% in under 3 months.",
+        "Supported event management for community gatherings and pop-up events, handling logistics, vendor coordination, and branding.",
+        "Developed brand positioning and marketing collateral (menu design, digital creatives) to align with the café's theme and customer experience.",
+        "Led all marketing initiatives including brand strategy, digital campaigns, and community events, driving consistent growth in customer engagement and footfall."
+      ]
+    },
+    {
+      "company": "Talview, Bangalore",
+      "role": "Product Intern",
+      "duration": "August 2024 — February 2025",
+      "bullets": [
+        "Led the development of a client-focused voucher management system, improving retention by 5% and showcasing end-to-end ownership.",
+        "Wrote detailed release documentation and user-facing guides, honing brand-consistent messaging.",
+        "Conducted competitive analysis of industry tools, building a framework for positioning and storytelling, assisting the product marketing team."
+      ]
+    },
+    {
+      "company": "Madison PR, Mumbai",
+      "role": "PR Management Trainee",
+      "duration": "June 2023 — August 2023",
+      "bullets": [
+        "Orchestrated brand collaborations for clients like Jubilant, Traya and NephroPlus by aligning stakeholders, ensuring timely delivery of all media assets.",
+        "Led end-to-end hamper seeding activity by coordinating with vendors/designers, aligning with client expectations, and curating influencer and media lists, resulting in Instagram features and lifestyle column placements.",
+        "Streamlined database and reporting systems, improving turnaround time for internal reports and coverage summaries by 20%."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "B.A. Mass Communication",
+      "duration": "2020 — 2023",
+      "institution": "Symbiosis Centre For Media And Communication, Pune",
+      "detail": "Specialized in Business Communication. Curriculum includes: Marketing Research, CRM, Entrepreneurship, Luxury Brand Marketing."
+    }
+  ],
+  "certifications": [
+    "Recognised as a 'Top Fellow' at the Product Management Fellowship by NextLeap",
+    "Inbound Marketing by HubSpot",
+    "Inside LVMH by LVMH (Luxury Industry, Marketing, Branding & Supply Chain)"
+  ],
+  "skills": [
+    "Go-to-market strategy",
+    "Brand Strategy & Systems",
+    "Digital Marketing",
+    "Content Strategy",
+    "PR & Media relations",
+    "Data & analytics",
+    "Graphic Design",
+    "Meta Ads"
+  ],
+  "tools": [
+    "Figma",
+    "Google Analytics",
+    "Canva",
+    "Mixpanel",
+    "Notion",
+    "Clevertap",
+    "Hubspot",
+    "Meta Business Suite"
+  ]
+}

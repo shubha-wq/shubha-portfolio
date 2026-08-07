@@ -24,11 +24,14 @@ export default function Footer() {
             <Link href="/projects" className="transition hover:text-paper">
               Projects
             </Link>
+            <Link href="/certifications" className="transition hover:text-paper">
+              Certifications
+            </Link>
             <Link href="/services" className="transition hover:text-paper">
               Services
             </Link>
-            <Link href="/#journey" className="transition hover:text-paper">
-              About me
+            <Link href="/resume" className="transition hover:text-paper">
+              Resume
             </Link>
           </nav>
           <SocialRow links={socials} dark />
