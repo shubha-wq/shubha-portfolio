@@ -7,7 +7,9 @@ import projects from "@/content/projects.json";
 import type { Project } from "@/lib/types";
 
 export function generateStaticParams() {
-  return (projects as Project[]).map((p) => ({ slug: p.slug }));
+  return (projects as Project[])
+    .filter((p) => p.enabled)
+    .map((p) => ({ slug: p.slug }));
 }
 
 export function generateMetadata({ params }: { params: { slug: string } }) {
@@ -29,9 +31,9 @@ export default function ProjectPage({
 }) {
   const all = projects as Project[];
   const project = all.find((p) => p.slug === params.slug);
-  if (!project) notFound();
+  if (!project || !project.enabled) notFound();
 
-  const others = all.filter((p) => p.slug !== project.slug);
+  const others = all.filter((p) => p.slug !== project.slug && p.enabled);
 
   return (
     <main>

@@ -3,12 +3,14 @@
     "id": "nextleap",
     "title": "NextLeap Final Project + Portfolio",
     "layout": "featured",
+    "kind": "link",
     "items": [
       {
         "id": "nextleap-portfolio",
         "title": "NextLeap Portfolio",
         "description": "Product Management Fellowship — recognised as a Top Fellow.",
-        "url": "https://nextleap.app/portfolio/shubha-singh"
+        "url": "https://nextleap.app/portfolio/shubha-singh",
+        "enabled": true
       }
     ]
   },
@@ -16,12 +18,14 @@
     "id": "brand-guidelines-sis",
     "title": "Brand Guidelines Deck — Sisters in Sweat",
     "layout": "featured",
+    "kind": "link",
     "items": [
       {
         "id": "sis-brand-deck",
         "title": "Brand Guidelines Deck",
-        "description": "[PLACEHOLDER — add the real deck link or embed once ready.]",
-        "url": "#"
+        "description": "[PLACEHOLDER — add the real deck link once ready.]",
+        "url": "#",
+        "enabled": true
       }
     ]
   },
@@ -29,30 +33,42 @@
     "id": "video-editing",
     "title": "Video Editing",
     "layout": "grid",
+    "kind": "video",
     "items": [
       {
         "id": "video-paradyes",
-        "title": "Collaboration with Paradyes",
-        "description": "[PLACEHOLDER — add the real video link once ready.]",
-        "url": "#"
+        "title": "Collab With Paradyes",
+        "description": "",
+        "video": { "type": "youtube", "src": "FnCDs8kQ644", "vertical": true },
+        "enabled": true
       },
       {
         "id": "video-dame-health",
-        "title": "Dame Health x Sisters in Sweat",
-        "description": "[PLACEHOLDER — add the real video link once ready.]",
-        "url": "#"
+        "title": "Sisters in Sweat x Dame Health",
+        "description": "",
+        "video": { "type": "youtube", "src": "YabxEyLkXYw", "vertical": true },
+        "enabled": true
       },
       {
         "id": "video-mille",
-        "title": "Mille x Sisters in Sweat",
-        "description": "[PLACEHOLDER — add the real video link once ready.]",
-        "url": "#"
+        "title": "Sisters in Sweat x Mille",
+        "description": "",
+        "video": { "type": "youtube", "src": "OVSfZnnnmyE", "vertical": true },
+        "enabled": true
       },
       {
         "id": "video-nykaa",
-        "title": "Nykaa x Sisters in Sweat",
-        "description": "[PLACEHOLDER — add the real video link once ready.]",
-        "url": "#"
+        "title": "Sisters in Sweat x Nykaa Wellness",
+        "description": "",
+        "video": { "type": "youtube", "src": "pNR5YOFEmKM", "vertical": true },
+        "enabled": true
+      },
+      {
+        "id": "video-wellness-co",
+        "title": "Sisters in Sweat x Wellness Co.",
+        "description": "",
+        "video": { "type": "youtube", "src": "YBvU5vp9Agc", "vertical": true },
+        "enabled": true
       }
     ]
   },
@@ -60,17 +76,18 @@
     "id": "graphic-design",
     "title": "Graphic Design",
     "layout": "grid",
+    "kind": "image",
     "items": [
-      { "id": "graphic-1", "title": "", "description": "", "url": "#" },
-      { "id": "graphic-2", "title": "", "description": "", "url": "#" },
-      { "id": "graphic-3", "title": "", "description": "", "url": "#" },
-      { "id": "graphic-4", "title": "", "description": "", "url": "#" },
-      { "id": "graphic-5", "title": "", "description": "", "url": "#" },
-      { "id": "graphic-6", "title": "", "description": "", "url": "#" },
-      { "id": "graphic-7", "title": "", "description": "", "url": "#" },
-      { "id": "graphic-8", "title": "", "description": "", "url": "#" },
-      { "id": "graphic-9", "title": "", "description": "", "url": "#" },
-      { "id": "graphic-10", "title": "", "description": "", "url": "#" }
+      { "id": "graphic-1", "title": "", "description": "", "image": "", "enabled": true },
+      { "id": "graphic-2", "title": "", "description": "", "image": "", "enabled": true },
+      { "id": "graphic-3", "title": "", "description": "", "image": "", "enabled": true },
+      { "id": "graphic-4", "title": "", "description": "", "image": "", "enabled": true },
+      { "id": "graphic-5", "title": "", "description": "", "image": "", "enabled": true },
+      { "id": "graphic-6", "title": "", "description": "", "image": "", "enabled": true },
+      { "id": "graphic-7", "title": "", "description": "", "image": "", "enabled": true },
+      { "id": "graphic-8", "title": "", "description": "", "image": "", "enabled": true },
+      { "id": "graphic-9", "title": "", "description": "", "image": "", "enabled": true },
+      { "id": "graphic-10", "title": "", "description": "", "image": "", "enabled": true }
     ]
   }
 ]

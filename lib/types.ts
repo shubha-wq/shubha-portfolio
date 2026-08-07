@@ -17,4 +17,5 @@ export type Project = {
   problem: string;
   process: string;
   outcome: string;
+  enabled: boolean;
 };

@@ -13,7 +13,7 @@ export default function Home() {
   const featuredSlugs = ["sisters-in-sweat", "voucher-management-system", "mohmani"];
   const featuredProjects = featuredSlugs
     .map((slug) => (projects as Project[]).find((p) => p.slug === slug))
-    .filter((p): p is Project => Boolean(p));
+    .filter((p): p is Project => Boolean(p) && p!.enabled);
 
   return (
     <main>
