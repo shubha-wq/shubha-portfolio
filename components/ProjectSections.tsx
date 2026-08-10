@@ -23,6 +23,7 @@ export type ImageItem = {
   title: string;
   description: string;
   image: string;
+  aspect?: string;
   enabled: boolean;
 };
 

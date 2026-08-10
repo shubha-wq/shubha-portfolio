@@ -22,29 +22,32 @@ export default function CertificationsPage() {
 
       <div className="bg-band">
         <section className="mx-auto max-w-6xl px-6 py-16 md:px-10">
-          <div className="space-y-6">
-            {certifications.items.map((item) => {
-              const isPlaceholder = item.url === "#";
-              const Wrapper = isPlaceholder ? "div" : "a";
-              const wrapperProps = isPlaceholder
-                ? {}
-                : { href: item.url, target: "_blank", rel: "noopener noreferrer" };
-              return (
-                <Wrapper
-                  key={item.id}
-                  {...(wrapperProps as any)}
-                  className="block rounded-card border border-line bg-paper p-8 transition hover:border-ink"
-                >
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {certifications.items.map((item) => (
+              <div
+                key={item.id}
+                className="overflow-hidden rounded-card border border-line bg-paper"
+              >
+                <div className="aspect-[4/3] w-full overflow-hidden bg-band">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="h-full w-full object-cover"
+                  />
+                </div>
+                <div className="p-6">
                   <p className="text-xs font-semibold uppercase tracking-wide text-inkdim">
                     {item.issuer}
                   </p>
-                  <h2 className="mt-2 text-xl font-bold text-ink md:text-2xl">
+                  <h2 className="mt-2 text-lg font-bold text-ink">
                     {item.title}
                   </h2>
-                  <p className="mt-3 text-inkdim">{item.description}</p>
-                </Wrapper>
-              );
-            })}
+                  <p className="mt-2 text-sm text-inkdim">
+                    {item.description}
+                  </p>
+                </div>
+              </div>
+            ))}
           </div>
         </section>
       </div>

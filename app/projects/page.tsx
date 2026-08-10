@@ -13,12 +13,8 @@ export default function ProjectsPage() {
       <section className="px-6 pb-14 pt-6 md:px-10">
         <div className="mx-auto max-w-6xl">
           <h1 className="max-w-2xl text-4xl font-extrabold text-ink md:text-5xl">
-            Projects
+            Selected Projects
           </h1>
-          <p className="mt-5 max-w-lg text-lg text-inkdim">
-            A few things I&apos;ve made that live outside this site — click
-            through to see them where they&apos;re actually hosted.
-          </p>
         </div>
       </section>
 

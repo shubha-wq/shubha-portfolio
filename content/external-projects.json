@@ -1,14 +1,14 @@
 [
   {
     "id": "nextleap",
-    "title": "NextLeap Final Project + Portfolio",
+    "title": "Product Management Fellowship at NextLeap",
     "layout": "featured",
     "kind": "link",
     "items": [
       {
         "id": "nextleap-portfolio",
-        "title": "NextLeap Portfolio",
-        "description": "Product Management Fellowship — recognised as a Top Fellow.",
+        "title": "Product Management Fellowship at NextLeap",
+        "description": "Hypothetical project solving for the paradox of choice at Amazon Prime Video + final portfolio.",
         "url": "https://nextleap.app/portfolio/shubha-singh",
         "enabled": true
       }
@@ -16,14 +16,14 @@
   },
   {
     "id": "brand-guidelines-sis",
-    "title": "Brand Guidelines Deck — Sisters in Sweat",
+    "title": "Brand Strategy for Sisters in Sweat",
     "layout": "featured",
     "kind": "link",
     "items": [
       {
         "id": "sis-brand-deck",
-        "title": "Brand Guidelines Deck",
-        "description": "[PLACEHOLDER — add the real deck link once ready.]",
+        "title": "Brand Strategy for Sisters in Sweat",
+        "description": "Leading the brand strategy and guidelines for India's largest women's wellness and fitness community.",
         "url": "#",
         "enabled": true
       }
@@ -78,15 +78,15 @@
     "layout": "grid",
     "kind": "carousel",
     "items": [
-      { "id": "jiujitsu", "title": "Jiu Jitsu Workshop", "description": "", "image": "/graphic-design/jiujitsu-workshop.png", "enabled": true },
-      { "id": "yoga-multicity", "title": "World Yoga Day x WeWork — Multi-City", "description": "", "image": "/graphic-design/world-yoga-day-wework-multicity.png", "enabled": true },
-      { "id": "padel", "title": "Padel Coaching", "description": "", "image": "/graphic-design/padel-coaching.png", "enabled": true },
-      { "id": "frisbee", "title": "Ultimate Frisbee Workshop x The Quad", "description": "", "image": "/graphic-design/ultimate-frisbee-workshop.png", "enabled": true },
-      { "id": "cold-brew", "title": "Cold Brew Workshop & Tasting x The Kind", "description": "", "image": "/graphic-design/cold-brew-workshop.png", "enabled": true },
-      { "id": "yoga-mumbai", "title": "World Yoga Day x WeWork — Mumbai", "description": "", "image": "/graphic-design/world-yoga-day-wework-mumbai.png", "enabled": true },
-      { "id": "pickleball", "title": "Pickleball Workshop for Beginners", "description": "", "image": "/graphic-design/pickleball-workshop.png", "enabled": true },
-      { "id": "sound-healing", "title": "Sound Healing Workshop", "description": "", "image": "/graphic-design/sound-healing-workshop.png", "enabled": true },
-      { "id": "glow-glossary", "title": "Glow Glossary x Sisters in Sweat — Matcha Collab", "description": "", "image": "/graphic-design/glow-glossary-matcha-collab.png", "enabled": true }
+      { "id": "jiujitsu", "title": "Jiu Jitsu Workshop", "description": "", "image": "/graphic-design/jiujitsu-workshop.png", "aspect": "4/5", "enabled": true },
+      { "id": "yoga-multicity", "title": "World Yoga Day x WeWork — Multi-City", "description": "", "image": "/graphic-design/world-yoga-day-wework-multicity.png", "aspect": "4/5", "enabled": true },
+      { "id": "padel", "title": "Padel Coaching", "description": "", "image": "/graphic-design/padel-coaching.png", "aspect": "4/5", "enabled": true },
+      { "id": "frisbee", "title": "Ultimate Frisbee Workshop x The Quad", "description": "", "image": "/graphic-design/ultimate-frisbee-workshop.png", "aspect": "4/5", "enabled": true },
+      { "id": "cold-brew", "title": "Cold Brew Workshop & Tasting x The Kind", "description": "", "image": "/graphic-design/cold-brew-workshop.png", "aspect": "4/5", "enabled": true },
+      { "id": "yoga-mumbai", "title": "World Yoga Day x WeWork — Mumbai", "description": "", "image": "/graphic-design/world-yoga-day-wework-mumbai.png", "aspect": "16/9", "enabled": true },
+      { "id": "pickleball", "title": "Pickleball Workshop for Beginners", "description": "", "image": "/graphic-design/pickleball-workshop.png", "aspect": "4/5", "enabled": true },
+      { "id": "sound-healing", "title": "Sound Healing Workshop", "description": "", "image": "/graphic-design/sound-healing-workshop.png", "aspect": "4/5", "enabled": true },
+      { "id": "glow-glossary", "title": "Glow Glossary x Sisters in Sweat — Matcha Collab", "description": "", "image": "/graphic-design/glow-glossary-matcha-collab.png", "aspect": "4/5", "enabled": true }
     ]
   }
 ]
