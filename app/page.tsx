@@ -10,7 +10,7 @@ import type { Project } from "@/lib/types";
 export default function Home() {
   const { hero, journey, socials } = site;
 
-  const featuredSlugs = ["sisters-in-sweat", "voucher-management-system", "mohmani"];
+  const featuredSlugs = ["sisters-in-sweat", "voucher-management-system", "mohmani", "hamper-seeding-for-traya"];
   const featuredProjects = featuredSlugs
     .map((slug) => (projects as Project[]).find((p) => p.slug === slug))
     .filter((p): p is Project => Boolean(p) && p!.enabled);

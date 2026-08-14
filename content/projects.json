@@ -12,10 +12,10 @@
       "width": 1640,
       "height": 2360
     },
-    "context": "[DRAFT \u2014 replace with your real case study text.] Sisters in Sweat needed a cohesive brand identity across digital channels, plus the marketing systems to support a growing content team.",
-    "problem": "[DRAFT] There was no shared brand voice or visual identity, and no scalable systems for a 4-person content team to plan and produce work consistently.",
-    "process": "[DRAFT] Led brand strategy, voice and visual identity in collaboration with the founder. Built scalable systems \u2014 task trackers, content calendars, copywriting playbooks and reusable templates \u2014 to streamline execution. Owned content strategy and production end to end, running 10+ organic and co-branded campaigns with Zerodha, WeWork, Dame Health and Mille, and led the content team through Sweat Fest 2026 from strategy to execution.",
-    "outcome": "[DRAFT] A cohesive brand identity now runs across every channel, with systems in place that let a 4-person team execute consistently instead of reactively. Add real numbers here \u2014 follower/engagement growth, campaign reach, Sweat Fest attendance \u2014 once you have them.",
+    "context": "Sisters in Sweat had grown fast \u2014 a fitness and wellness community running large-scale events and partnering with brands like Cava, Nike, Mille, Nykaa Wellness and Zerodha \u2014 without a formal brand system behind any of it. Every collaboration, campaign and event was being built without a shared visual language or a documented way of working.",
+    "problem": "Growing this quickly without structure carried real risk: brand collaborations could look inconsistent from one partner to the next, there was no shared reference for how the brand should look or sound, and day-to-day operations \u2014 meeting cadence, documentation, admin \u2014 were eating time that should have gone into the work itself. Building the brand system in-house also meant avoiding the cost of hiring an external branding agency.",
+    "process": "Owned the rebranding project end-to-end, single-handedly delivering a full brand guideline deck covering strategy, visual identity and design mock-ups. Built the brand-led marketing charter that now guides every collaboration, from Cava and Nike to Mille, Nykaa Wellness and In Her Interest by Zerodha. Set up systems and clearer lines of communication while managing a 4-person team alongside the co-founder, along with trackers and documentation that cut down time spent on meetings and repetitive admin work. Led creative direction for brand collaboration shoots (Cava, Akshayakalpa, Liquid IV), owned content strategy including a full Instagram revamp and Meta ads, and personally shot and edited ad videos. Ran social media campaigns end-to-end for flagship community IPs \u2014 Sweat Fest, The Sistra Run, and the Nike x SIS Cricket Tournament \u2014 and helped shape the personal brand of co-founder Swetha Subbiah.",
+    "outcome": "Sisters in Sweat now runs on a brand system built entirely in-house, at zero agency cost \u2014 one consistent visual identity across every partner collaboration, clearer systems that free up the team's time, and flagship events carrying a unified brand voice from first announcement to final post.",
     "carouselHeading": "Sisters in Sweat",
     "carouselBody": "Brand building and marketing communication",
     "enabled": true
@@ -40,7 +40,7 @@
     "carouselHeading": "Mohmani",
     "carouselBody": "Co-curating content and strategy alongside the founder",
     "enabled": true,
-    "pullQuote": "It also gave the founder a flexible framework to keep experimenting, growing, and showing up authentically without losing what makes the brand resonate."
+    "pullQuote": ""
   },
   {
     "slug": "voucher-management-system",
@@ -80,7 +80,7 @@
     "problem": "[DRAFT] No consistent brand positioning, social presence, or event/community strategy existed to bring in and retain local footfall.",
     "process": "[DRAFT] Designed and executed social media campaigns and local promotions, developed brand positioning and marketing collateral including menu design and digital creatives, and supported event management for community gatherings and pop-ups, handling logistics, vendor coordination and branding end to end.",
     "outcome": "[DRAFT] Footfall increased by 25% in under three months, alongside consistent growth in community engagement.",
-    "enabled": true
+    "enabled": false
   },
   {
     "slug": "hamper-seeding-for-traya",

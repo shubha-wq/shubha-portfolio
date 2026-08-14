@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Placeholder from "@/components/Placeholder";
+import SisCaseStudy from "@/components/SisCaseStudy";
 import projects from "@/content/projects.json";
 import type { Project } from "@/lib/types";
 
@@ -55,7 +56,11 @@ export default function ProjectPage({
             {project.tagline}
           </p>
 
-          <div className="mt-10 grid max-w-xl grid-cols-1 gap-6 border-y border-line py-6 sm:grid-cols-3">
+          <div
+            className={`mt-10 grid max-w-xl grid-cols-1 gap-6 border-y border-line py-6 ${
+              project.slug === "mohmani" ? "sm:grid-cols-2" : "sm:grid-cols-3"
+            }`}
+          >
             <div>
               <p className="text-xs font-semibold uppercase tracking-wide text-inkdim">
                 Role
@@ -68,56 +73,74 @@ export default function ProjectPage({
               </p>
               <p className="mt-1 text-sm text-ink">{project.industry}</p>
             </div>
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-wide text-inkdim">
-                Duration
-              </p>
-              <p className="mt-1 text-sm text-ink">{project.duration}</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="px-6 py-8 md:px-10">
-        <div className="mx-auto max-w-4xl">
-          <Placeholder label="Case study image" aspect="aspect-[16/10]" />
-        </div>
-      </section>
-
-      {sections.map(({ key, label }, i) => {
-        const isPullQuoteSlot = key === "process" && project.pullQuote;
-        return (
-          <div key={key}>
-            <div className={i % 2 === 0 ? "bg-paper" : "bg-band"}>
-              <div className="mx-auto max-w-4xl px-6 py-14 md:px-10">
-                <div className="grid grid-cols-1 gap-4 md:grid-cols-[140px_1fr] md:gap-10">
-                  <div>
-                    <span className="text-4xl font-extrabold text-line md:text-5xl">
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
-                    <p className="mt-2 text-xs font-semibold uppercase tracking-wide text-inkdim">
-                      {label}
-                    </p>
-                  </div>
-                  <p className="text-lg leading-relaxed text-ink">
-                    {project[key] as string}
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {isPullQuoteSlot && (
-              <div className="bg-dark">
-                <div className="mx-auto max-w-3xl px-6 py-16 text-center md:px-10">
-                  <p className="text-2xl font-bold leading-snug text-paper md:text-3xl">
-                    &ldquo;{project.pullQuote}&rdquo;
-                  </p>
-                </div>
+            {project.slug !== "mohmani" && (
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-wide text-inkdim">
+                  Duration
+                </p>
+                <p className="mt-1 text-sm text-ink">{project.duration}</p>
               </div>
             )}
           </div>
-        );
-      })}
+        </div>
+      </section>
+
+      {project.slug === "sisters-in-sweat" ? (
+        <SisCaseStudy project={project} />
+      ) : (
+        <>
+          <section className="px-6 py-8 md:px-10">
+            <div className="mx-auto max-w-4xl">
+              {project.image.src ? (
+                <div className="relative aspect-[16/10] w-full overflow-hidden rounded-card border border-line">
+                  <img
+                    src={project.image.src}
+                    alt={project.image.alt}
+                    className="h-full w-full object-cover"
+                  />
+                </div>
+              ) : (
+                <Placeholder label="Case study image" aspect="aspect-[16/10]" />
+              )}
+            </div>
+          </section>
+
+          {sections.map(({ key, label }, i) => {
+            const isPullQuoteSlot = key === "process" && project.pullQuote;
+            return (
+              <div key={key}>
+                <div className={i % 2 === 0 ? "bg-paper" : "bg-band"}>
+                  <div className="mx-auto max-w-4xl px-6 py-14 md:px-10">
+                    <div className="grid grid-cols-1 gap-4 md:grid-cols-[140px_1fr] md:gap-10">
+                      <div>
+                        <span className="text-4xl font-extrabold text-line md:text-5xl">
+                          {String(i + 1).padStart(2, "0")}
+                        </span>
+                        <p className="mt-2 text-xs font-semibold uppercase tracking-wide text-inkdim">
+                          {label}
+                        </p>
+                      </div>
+                      <p className="text-lg leading-relaxed text-ink">
+                        {project[key] as string}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {isPullQuoteSlot && (
+                  <div className="bg-dark">
+                    <div className="mx-auto max-w-3xl px-6 py-16 text-center md:px-10">
+                      <p className="text-2xl font-bold leading-snug text-paper md:text-3xl">
+                        &ldquo;{project.pullQuote}&rdquo;
+                      </p>
+                    </div>
+                  </div>
+                )}
+              </div>
+            );
+          })}
+        </>
+      )}
 
       {others.length > 0 && (
         <div className="border-t border-line bg-band">
