@@ -84,23 +84,43 @@ export default function ProjectPage({
         </div>
       </section>
 
-      <section className="px-6 py-8 md:px-10">
-        <div className="mx-auto max-w-2xl space-y-10">
-          {sections.map(({ key, label }) => (
-            <div key={key}>
-              <p className="text-xs font-semibold uppercase tracking-wide text-inkdim">
-                {label}
-              </p>
-              <p className="mt-3 text-lg leading-relaxed text-ink">
-                {project[key] as string}
-              </p>
+      {sections.map(({ key, label }, i) => {
+        const isPullQuoteSlot = key === "process" && project.pullQuote;
+        return (
+          <div key={key}>
+            <div className={i % 2 === 0 ? "bg-paper" : "bg-band"}>
+              <div className="mx-auto max-w-4xl px-6 py-14 md:px-10">
+                <div className="grid grid-cols-1 gap-4 md:grid-cols-[140px_1fr] md:gap-10">
+                  <div>
+                    <span className="text-4xl font-extrabold text-line md:text-5xl">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <p className="mt-2 text-xs font-semibold uppercase tracking-wide text-inkdim">
+                      {label}
+                    </p>
+                  </div>
+                  <p className="text-lg leading-relaxed text-ink">
+                    {project[key] as string}
+                  </p>
+                </div>
+              </div>
             </div>
-          ))}
-        </div>
-      </section>
+
+            {isPullQuoteSlot && (
+              <div className="bg-dark">
+                <div className="mx-auto max-w-3xl px-6 py-16 text-center md:px-10">
+                  <p className="text-2xl font-bold leading-snug text-paper md:text-3xl">
+                    &ldquo;{project.pullQuote}&rdquo;
+                  </p>
+                </div>
+              </div>
+            )}
+          </div>
+        );
+      })}
 
       {others.length > 0 && (
-        <div className="bg-band">
+        <div className="border-t border-line bg-band">
           <section className="mx-auto max-w-6xl px-6 py-20 md:px-10">
             <p className="text-center text-sm font-semibold text-inkdim">
               Other projects

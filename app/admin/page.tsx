@@ -10,6 +10,7 @@ type VideoItem = {
   title: string;
   description: string;
   video: { type: "youtube" | "vimeo" | "file" | null; src: string; vertical?: boolean };
+  thumbnail?: string;
   enabled: boolean;
 };
 
@@ -23,6 +24,7 @@ export default function AdminPage() {
   );
   const [items, setItems] = useState<VideoItem[]>(videoSection?.items ?? []);
   const [downloaded, setDownloaded] = useState(false);
+  const [localPreviews, setLocalPreviews] = useState<Record<string, string>>({});
 
   const update = (id: string, patch: Partial<VideoItem>) => {
     setItems((prev) =>
@@ -48,6 +50,7 @@ export default function AdminPage() {
         title: "",
         description: "",
         video: { type: "youtube", src: "", vertical: true },
+        thumbnail: "",
         enabled: true,
       },
     ]);
@@ -57,6 +60,12 @@ export default function AdminPage() {
   const removeItem = (id: string) => {
     setItems((prev) => prev.filter((item) => item.id !== id));
     setDownloaded(false);
+  };
+
+  const handleFilePreview = (id: string, file: File | undefined) => {
+    if (!file) return;
+    const url = URL.createObjectURL(file);
+    setLocalPreviews((prev) => ({ ...prev, [id]: url }));
   };
 
   const downloadFile = () => {
@@ -85,16 +94,34 @@ export default function AdminPage() {
             Video Editor
           </h1>
           <p className="mt-4 text-inkdim">
-            Edit titles, YouTube video IDs, and enable/disable any video below
-            — you&apos;ll see the real thumbnail update as you type. This page
-            doesn&apos;t save automatically (the site has no database, which
-            is what keeps hosting free) — when you&apos;re done, click{" "}
-            <strong>Download updated file</strong> below, then replace{" "}
+            Edit titles, YouTube video IDs, thumbnails, and enable/disable any
+            video below. This page doesn&apos;t save automatically (the site
+            has no database, which is what keeps hosting free) — when
+            you&apos;re done, click <strong>Download updated file</strong>{" "}
+            below, then replace{" "}
             <code className="rounded bg-band px-1.5 py-0.5 text-[13px]">
               content/external-projects.json
             </code>{" "}
             in your project folder with the downloaded file before your next
             GitHub upload.
+          </p>
+          <p className="mt-3 text-inkdim">
+            <strong>To change a thumbnail:</strong> by default, each video
+            shows a frame YouTube generates automatically. To use your own
+            image instead — (1) click &ldquo;Preview a file from your
+            computer&rdquo; to see how it&apos;ll look here (this preview is
+            local only, it isn&apos;t saved), (2) upload that same image file
+            to your GitHub repo inside{" "}
+            <code className="rounded bg-band px-1.5 py-0.5 text-[13px]">
+              public/video-thumbnails/
+            </code>
+            , and (3) type its path into the &ldquo;Custom thumbnail&rdquo;
+            field (e.g.{" "}
+            <code className="rounded bg-band px-1.5 py-0.5 text-[13px]">
+              /video-thumbnails/nykaa.jpg
+            </code>
+            ) — that&apos;s what actually shows on the live site once
+            deployed.
           </p>
         </div>
       </section>
@@ -102,10 +129,13 @@ export default function AdminPage() {
       <section className="px-6 pb-16 md:px-10">
         <div className="mx-auto max-w-3xl space-y-6">
           {items.map((item) => {
-            const thumb =
+            const autoThumb =
               item.video.type === "youtube" && item.video.src
                 ? `https://img.youtube.com/vi/${item.video.src}/hqdefault.jpg`
                 : null;
+            const thumb =
+              localPreviews[item.id] ||
+              (item.thumbnail && item.thumbnail.trim() ? item.thumbnail : autoThumb);
             return (
               <div
                 key={item.id}
@@ -151,6 +181,36 @@ export default function AdminPage() {
                         className="mt-1 w-full rounded border border-line px-3 py-2 text-sm"
                         placeholder="e.g. FnCDs8kQ644"
                       />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="text-xs font-semibold uppercase tracking-wide text-inkdim">
+                      Custom thumbnail (optional — overrides the YouTube one)
+                    </label>
+                    <input
+                      value={item.thumbnail ?? ""}
+                      onChange={(e) =>
+                        update(item.id, { thumbnail: e.target.value })
+                      }
+                      className="mt-1 w-full rounded border border-line px-3 py-2 text-sm"
+                      placeholder="/video-thumbnails/your-image.jpg"
+                    />
+                    <div className="mt-2 flex items-center gap-3">
+                      <label className="cursor-pointer text-xs font-medium text-ink underline">
+                        Preview a file from your computer
+                        <input
+                          type="file"
+                          accept="image/*"
+                          className="hidden"
+                          onChange={(e) =>
+                            handleFilePreview(item.id, e.target.files?.[0])
+                          }
+                        />
+                      </label>
+                      <span className="text-xs text-inkdim">
+                        (preview only — see below to make it real)
+                      </span>
                     </div>
                   </div>
 

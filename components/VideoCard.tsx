@@ -34,15 +34,17 @@ export default function VideoCard({
   title,
   description,
   video,
+  thumbnail,
 }: {
   title: string;
   description: string;
   video: VideoData;
+  thumbnail?: string;
 }) {
   const [open, setOpen] = useState(false);
   const hasVideo = Boolean(video?.type && video?.src);
   const iframeSrc = video ? embedUrl(video) : null;
-  const thumbSrc = video ? thumbnailUrl(video) : null;
+  const thumbSrc = thumbnail && thumbnail.trim() ? thumbnail : video ? thumbnailUrl(video) : null;
 
   useEffect(() => {
     if (!open) return;

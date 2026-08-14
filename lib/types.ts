@@ -20,4 +20,5 @@ export type Project = {
   enabled: boolean;
   carouselHeading?: string;
   carouselBody?: string;
+  pullQuote?: string;
 };

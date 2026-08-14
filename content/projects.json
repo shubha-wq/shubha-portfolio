@@ -28,18 +28,19 @@
     "industry": "Jewellery & Lifestyle",
     "duration": "3 months",
     "image": {
-      "src": "",
-      "alt": "Mohmani jewellery brand creative direction",
+      "src": "/case-studies/mohmani.jpg",
+      "alt": "Mohmani Instagram grid and brand world",
       "width": 1640,
       "height": 2360
     },
-    "context": "Mohmani is a small, homegrown jewellery label that specialises in one-of-one pieces and custom orders. Over time, it's grown into a content- and culture-heavy brand, shaped as much by the founder's personal voice as by the jewellery itself. Through viral content, events and word-of-mouth discovery, the brand has built a niche following of around 3.3k people who connect with its whimsical world.",
-    "problem": "As Mohmani became more visible, the challenge wasn't reach, it was coherence. With the brand evolving across content, pop-ups and personal brand, there was a real risk of it feeling scattered or performative. The need was for clearer creative direction that could hold all of this together, without forcing the brand into a conventional lifestyle or commercial mould.",
-    "process": "The focus was on putting some structure in place so creative decisions didn't feel random. Early on, the brand's core cues, whimsy, quirk and subcultural references, were clearly defined and used to guide everything. Basic direction was set for visuals, tone and a content calendar so posting stayed consistent and intentional. Each collection started with a clear inspiration, shared with the audience through creative concepts and content instead of long explanations. Content pillars were built around the jewellery itself, the making process, everyday moments and the founder's personal voice, so the brand felt natural and expressive rather than over-produced.",
-    "outcome": "Mohmani now feels more settled in its identity, less like a brand chasing growth, and more like one that has found its place. The creative strategy helped bring clarity and continuity across content, community moments and product storytelling, while keeping the brand's quirks intact.",
+    "context": "Mohmani is a small, homegrown jewellery label that specialises in one-of-one pieces and custom orders. Over time, it has grown into a content and culture-heavy brand, shaped as much by the founder's personal voice as by the jewellery itself. Through viral content, events and word-of-mouth discovery, the brand has built a niche following of around 3.3k people who connect with its whimsical world.",
+    "problem": "As Mohmani became more visible, the challenge wasn't reach \u2014 it was coherence. With the brand evolving across content, pop-ups and personal brand, there was a real risk of it feeling scattered or performative. The need was for clearer creative direction that could hold all of this together, without forcing the brand into a conventional lifestyle or commercial mould.",
+    "process": "The focus was on putting some structure in place so creative decisions didn't feel random. Early on, the brand's core cues \u2014 whimsy, quirk, and subcultural references \u2014 were clearly defined and used to guide everything. Basic direction was set for visuals, tone, and a content calendar so posting stayed consistent and intentional. Each collection started with a clear inspiration, which was shared with the audience through creative concepts and content instead of long explanations. Content pillars were built around the jewellery itself, the making process, everyday moments, and the founder's personal voice, so the brand felt natural and expressive rather than over-produced. Over time, engagement, pop-ups, and viral moments were looked at to understand what resonated and refine the direction while staying true to the brand's niche.",
+    "outcome": "Mohmani now feels more settled in its identity \u2014 less like a brand chasing growth, and more like one that has found its place. The creative strategy helped bring clarity and continuity across content, community moments, and product storytelling, while keeping the brand's quirks intact. It also gave the founder a flexible framework to keep experimenting, growing, and showing up authentically without losing what makes the brand resonate.",
     "carouselHeading": "Mohmani",
     "carouselBody": "Co-curating content and strategy alongside the founder",
-    "enabled": true
+    "enabled": true,
+    "pullQuote": "It also gave the founder a flexible framework to keep experimenting, growing, and showing up authentically without losing what makes the brand resonate."
   },
   {
     "slug": "voucher-management-system",

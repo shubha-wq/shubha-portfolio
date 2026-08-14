@@ -39,36 +39,61 @@
         "id": "video-paradyes",
         "title": "Collab With Paradyes",
         "description": "",
-        "video": { "type": "youtube", "src": "FnCDs8kQ644", "vertical": true },
-        "enabled": true
+        "video": {
+          "type": "youtube",
+          "src": "FnCDs8kQ644",
+          "vertical": true
+        },
+        "enabled": true,
+        "thumbnail": ""
       },
       {
         "id": "video-dame-health",
         "title": "Sisters in Sweat x Dame Health",
         "description": "",
-        "video": { "type": "youtube", "src": "YabxEyLkXYw", "vertical": true },
-        "enabled": true
+        "video": {
+          "type": "youtube",
+          "src": "YabxEyLkXYw",
+          "vertical": true
+        },
+        "enabled": true,
+        "thumbnail": ""
       },
       {
         "id": "video-mille",
         "title": "Sisters in Sweat x Mille",
         "description": "",
-        "video": { "type": "youtube", "src": "OVSfZnnnmyE", "vertical": true },
-        "enabled": true
+        "video": {
+          "type": "youtube",
+          "src": "OVSfZnnnmyE",
+          "vertical": true
+        },
+        "enabled": true,
+        "thumbnail": ""
       },
       {
         "id": "video-nykaa",
         "title": "Sisters in Sweat x Nykaa Wellness",
         "description": "",
-        "video": { "type": "youtube", "src": "pNR5YOFEmKM", "vertical": true },
-        "enabled": true
+        "video": {
+          "type": "youtube",
+          "src": "pNR5YOFEmKM",
+          "vertical": true
+        },
+        "enabled": true,
+        "thumbnail": ""
       },
       {
         "id": "video-wellness-co",
         "title": "Sisters in Sweat x Wellness Co.",
         "description": "",
-        "video": { "type": "youtube", "src": "YBvU5vp9Agc", "vertical": true },
-        "enabled": true
+        "video": {
+          "type": "youtube",
+          "src": "YBvU5vp9Agc",
+          "vertical": true
+        },
+        "enabled": true,
+        "thumbnail": ""
       }
     ]
   },
@@ -78,15 +103,78 @@
     "layout": "grid",
     "kind": "carousel",
     "items": [
-      { "id": "jiujitsu", "title": "Jiu Jitsu Workshop", "description": "", "image": "/graphic-design/jiujitsu-workshop.png", "aspect": "4/5", "enabled": true },
-      { "id": "yoga-multicity", "title": "World Yoga Day x WeWork — Multi-City", "description": "", "image": "/graphic-design/world-yoga-day-wework-multicity.png", "aspect": "4/5", "enabled": true },
-      { "id": "padel", "title": "Padel Coaching", "description": "", "image": "/graphic-design/padel-coaching.png", "aspect": "4/5", "enabled": true },
-      { "id": "frisbee", "title": "Ultimate Frisbee Workshop x The Quad", "description": "", "image": "/graphic-design/ultimate-frisbee-workshop.png", "aspect": "4/5", "enabled": true },
-      { "id": "cold-brew", "title": "Cold Brew Workshop & Tasting x The Kind", "description": "", "image": "/graphic-design/cold-brew-workshop.png", "aspect": "4/5", "enabled": true },
-      { "id": "yoga-mumbai", "title": "World Yoga Day x WeWork — Mumbai", "description": "", "image": "/graphic-design/world-yoga-day-wework-mumbai.png", "aspect": "16/9", "enabled": true },
-      { "id": "pickleball", "title": "Pickleball Workshop for Beginners", "description": "", "image": "/graphic-design/pickleball-workshop.png", "aspect": "4/5", "enabled": true },
-      { "id": "sound-healing", "title": "Sound Healing Workshop", "description": "", "image": "/graphic-design/sound-healing-workshop.png", "aspect": "4/5", "enabled": true },
-      { "id": "glow-glossary", "title": "Glow Glossary x Sisters in Sweat — Matcha Collab", "description": "", "image": "/graphic-design/glow-glossary-matcha-collab.png", "aspect": "4/5", "enabled": true }
+      {
+        "id": "jiujitsu",
+        "title": "Jiu Jitsu Workshop",
+        "description": "",
+        "image": "/graphic-design/jiujitsu-workshop.png",
+        "aspect": "4/5",
+        "enabled": true
+      },
+      {
+        "id": "yoga-multicity",
+        "title": "World Yoga Day x WeWork \u2014 Multi-City",
+        "description": "",
+        "image": "/graphic-design/world-yoga-day-wework-multicity.png",
+        "aspect": "4/5",
+        "enabled": true
+      },
+      {
+        "id": "padel",
+        "title": "Padel Coaching",
+        "description": "",
+        "image": "/graphic-design/padel-coaching.png",
+        "aspect": "4/5",
+        "enabled": true
+      },
+      {
+        "id": "frisbee",
+        "title": "Ultimate Frisbee Workshop x The Quad",
+        "description": "",
+        "image": "/graphic-design/ultimate-frisbee-workshop.png",
+        "aspect": "4/5",
+        "enabled": true
+      },
+      {
+        "id": "cold-brew",
+        "title": "Cold Brew Workshop & Tasting x The Kind",
+        "description": "",
+        "image": "/graphic-design/cold-brew-workshop.png",
+        "aspect": "4/5",
+        "enabled": true
+      },
+      {
+        "id": "yoga-mumbai",
+        "title": "World Yoga Day x WeWork \u2014 Mumbai",
+        "description": "",
+        "image": "/graphic-design/world-yoga-day-wework-mumbai.png",
+        "aspect": "16/9",
+        "enabled": true
+      },
+      {
+        "id": "pickleball",
+        "title": "Pickleball Workshop for Beginners",
+        "description": "",
+        "image": "/graphic-design/pickleball-workshop.png",
+        "aspect": "4/5",
+        "enabled": true
+      },
+      {
+        "id": "sound-healing",
+        "title": "Sound Healing Workshop",
+        "description": "",
+        "image": "/graphic-design/sound-healing-workshop.png",
+        "aspect": "4/5",
+        "enabled": true
+      },
+      {
+        "id": "glow-glossary",
+        "title": "Glow Glossary x Sisters in Sweat \u2014 Matcha Collab",
+        "description": "",
+        "image": "/graphic-design/glow-glossary-matcha-collab.png",
+        "aspect": "4/5",
+        "enabled": true
+      }
     ]
   }
 ]

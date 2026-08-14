@@ -15,6 +15,7 @@ export type VideoItem = {
   title: string;
   description: string;
   video: { type: "youtube" | "vimeo" | "file" | null; src: string; vertical?: boolean };
+  thumbnail?: string;
   enabled: boolean;
 };
 
@@ -102,6 +103,7 @@ export default function ProjectSections({ sections }: { sections: Section[] }) {
                       title={item.title}
                       description={item.description}
                       video={item.video}
+                      thumbnail={item.thumbnail}
                     />
                   ))}
                 {section.kind === "image" &&
