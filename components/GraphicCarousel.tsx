@@ -60,8 +60,8 @@ export default function GraphicCarousel({
   }, [index, items]);
 
   return (
-    <div className="relative mx-auto max-w-4xl">
-      <div className="mb-4 flex items-center justify-between px-6 md:px-10">
+    <div className="relative w-full">
+      <div className="mb-4 flex items-center justify-between">
         <span className="text-lg font-bold text-ink">{title}</span>
         <span className="text-sm text-inkdim">
           {String(index + 1).padStart(2, "0")} / {String(count).padStart(2, "0")}

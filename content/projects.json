@@ -7,18 +7,24 @@
     "industry": "Fitness & Wellness",
     "duration": "Mar 2026 \u2014 Present",
     "image": {
-      "src": "",
-      "alt": "Sisters in Sweat brand strategy and campaigns",
+      "src": "/graphic-design/jiujitsu-workshop.png",
+      "alt": "Sisters in Sweat campaign creative",
       "width": 1640,
       "height": 2360
     },
-    "context": "Sisters in Sweat had grown fast \u2014 a fitness and wellness community running large-scale events and partnering with brands like Cava, Nike, Mille, Nykaa Wellness and Zerodha \u2014 without a formal brand system behind any of it. Every collaboration, campaign and event was being built without a shared visual language or a documented way of working.",
-    "problem": "Growing this quickly without structure carried real risk: brand collaborations could look inconsistent from one partner to the next, there was no shared reference for how the brand should look or sound, and day-to-day operations \u2014 meeting cadence, documentation, admin \u2014 were eating time that should have gone into the work itself. Building the brand system in-house also meant avoiding the cost of hiring an external branding agency.",
-    "process": "Owned the rebranding project end-to-end, single-handedly delivering a full brand guideline deck covering strategy, visual identity and design mock-ups. Built the brand-led marketing charter that now guides every collaboration, from Cava and Nike to Mille, Nykaa Wellness and In Her Interest by Zerodha. Set up systems and clearer lines of communication while managing a 4-person team alongside the co-founder, along with trackers and documentation that cut down time spent on meetings and repetitive admin work. Led creative direction for brand collaboration shoots (Cava, Akshayakalpa, Liquid IV), owned content strategy including a full Instagram revamp and Meta ads, and personally shot and edited ad videos. Ran social media campaigns end-to-end for flagship community IPs \u2014 Sweat Fest, The Sistra Run, and the Nike x SIS Cricket Tournament \u2014 and helped shape the personal brand of co-founder Swetha Subbiah.",
-    "outcome": "Sisters in Sweat now runs on a brand system built entirely in-house, at zero agency cost \u2014 one consistent visual identity across every partner collaboration, clearer systems that free up the team's time, and flagship events carrying a unified brand voice from first announcement to final post.",
+    "context": "I joined Sisters in Sweat as a Marketing Executive. Soon after starting, it was clear there was a lot more ground to cover than the title suggested \u2014 there was no dedicated marketing team in place, and most of it was falling to me alone.",
+    "problem": "Without a brand strategy in place, our visual language across social media and every other touchpoint had become incoherent \u2014 and beyond strategy, there was no visual identity or brand guideline deck to work from either.",
+    "process": "I built trackers and systems that improved day-to-day efficiency and cut down the time spent in meetings. When I raised the gap in brand strategy and visual identity, we decided to build it in-house rather than bring in an agency \u2014 I owned and executed that project end-to-end, delivering a full brand guideline deck. I also led the brand marketing charter, handling collaborated brand campaigns across partners including Cava, Nike, Mille, Nykaa Wellness and In Her Interest by Zerodha.",
+    "outcome": "Sisters in Sweat now runs on a brand system built entirely in-house \u2014 one consistent visual identity across every partner collaboration, and systems in place that keep the team's time focused on the work itself rather than admin. The content strategy work also helped solidify the Nykaa Wellness partnership and brought another protein brand on board.",
     "carouselHeading": "Sisters in Sweat",
     "carouselBody": "Brand building and marketing communication",
-    "enabled": true
+    "enabled": true,
+    "thumbnail": {
+      "src": "/case-studies/sisters-in-sweat-logo.jpg",
+      "alt": "Sisters in Sweat logo",
+      "width": 900,
+      "height": 1125
+    }
   },
   {
     "slug": "mohmani",
@@ -43,24 +49,24 @@
     "pullQuote": ""
   },
   {
-    "slug": "voucher-management-system",
-    "title": "Voucher Management System",
-    "tagline": "Conceptualising and leading end-to-end development of a voucher management system.",
-    "role": "Product Intern",
-    "industry": "HR & Talent Tech",
-    "duration": "6 months",
+    "slug": "nextleap-pm-fellowship",
+    "title": "Next Leap Product Management Fellowship",
+    "tagline": "Stepping outside brand and marketing to build product thinking \u2014 from a live voucher system to a hypothetical Prime Video redesign.",
+    "role": "Product Management Fellow & Product Intern",
+    "industry": "Product & Technology",
+    "duration": "2024",
     "image": {
-      "src": "",
-      "alt": "Voucher management system product work",
-      "width": 1640,
-      "height": 2360
+      "src": "/case-studies/nextleap-pm-fellowship.jpg",
+      "alt": "Prime Video wireframes from the NextLeap capstone project",
+      "width": 2267,
+      "height": 1280
     },
-    "context": "[DRAFT \u2014 replace with your real case study text.] At Talview, a client-facing voucher system needed a clear owner to take it from concept to shipped feature.",
-    "problem": "[DRAFT] Vouchers were being handled ad hoc, with no consistent framework for issuing, tracking or documenting them for clients or internal teams.",
-    "process": "[DRAFT] Led end-to-end development of the voucher management system, from concept through to release. Wrote detailed release documentation and user-facing guides, and ran a competitive analysis of industry tools to build a framework for positioning and storytelling, supporting the product marketing team.",
-    "outcome": "[DRAFT] The system contributed to a 5% improvement in retention, and demonstrated end-to-end ownership from concept to release documentation.",
-    "carouselHeading": "Talview - Voucher Management System",
-    "carouselBody": "Managing end-to-end development of a B2B solution",
+    "context": "Product management wasn't the natural next step from PR and brand marketing \u2014 which is exactly why I took it on. NextLeap's Product Manager Fellowship pushed me to think in a completely different register, and Talview gave me a live product to apply that thinking to right after.",
+    "problem": "The fellowship's capstone project tackled the paradox of choice on Amazon Prime Video \u2014 too many options, not enough clarity, leaving people scrolling instead of deciding. At Talview, the challenge was more operational: a voucher system for clients existed only informally, with no consistent process for issuing, tracking or documenting it.",
+    "process": "For the NextLeap capstone, I worked through user research, prioritization and wireframes before landing on a guided, question-based flow \u2014 \u201cDo you want to watch a movie or a show?\u201d, \u201cHow are we feeling today?\u201d \u2014 that narrows recommendations conversationally instead of dumping every title on screen. At Talview, I led the voucher management system from concept to release: writing the release documentation and user-facing guides myself, and running a competitive analysis of industry tools to build a framework for positioning and storytelling that fed directly into the product marketing team's work.",
+    "outcome": "The fellowship earned a Top Fellow recognition from NextLeap. At Talview, the voucher system shipped and contributed to a 5% improvement in retention \u2014 proof that the product thinking translated from a hypothetical exercise into something real.",
+    "carouselHeading": "Next Leap Product Management Fellowship",
+    "carouselBody": "From a hypothetical Prime Video redesign to a live product at Talview.",
     "enabled": true
   },
   {
@@ -99,6 +105,6 @@
     "problem": "[DRAFT] The brand's coverage was concentrated in category-specific press, limiting its reach into broader lifestyle conversation.",
     "process": "[DRAFT] Led end-to-end hamper seeding: coordinating with vendors and designers, aligning with client expectations, and curating influencer and media lists to reposition the brand into lifestyle media.",
     "outcome": "[DRAFT] The campaign resulted in Instagram features and lifestyle column placements outside the brand's usual category coverage.",
-    "enabled": true
+    "enabled": false
   }
 ]

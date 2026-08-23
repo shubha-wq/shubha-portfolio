@@ -25,32 +25,38 @@ export default function CaseStudyCarousel({ projects }: { projects: Project[] })
           const isNear = Math.abs(rel) === 1;
           if (!isCenter && !isNear) return null;
 
+          const thumbSrc = project.thumbnail?.src || project.image.src;
+          const thumbAlt = project.thumbnail?.alt || project.image.alt;
+
           const card = (
             <div className="relative h-full w-full overflow-hidden rounded-card border border-line bg-band">
-              {project.image.src ? (
+              {thumbSrc ? (
                 <img
-                  src={project.image.src}
-                  alt={project.image.alt}
+                  src={thumbSrc}
+                  alt={thumbAlt}
                   className="h-full w-full object-cover"
                 />
               ) : (
                 <Placeholder label={project.title} aspect="aspect-square" rounded={false} />
               )}
               {isCenter && (
-                <div className="absolute inset-0 flex flex-col items-start justify-end p-5">
-                  <h3
-                    className="text-xl font-extrabold text-white md:text-2xl"
-                    style={{ textShadow: "0 2px 6px rgba(0,0,0,0.35)" }}
-                  >
-                    {project.carouselHeading ?? project.title}
-                  </h3>
-                  <p
-                    className="mt-1 max-w-xs text-sm text-white"
-                    style={{ textShadow: "0 1px 4px rgba(0,0,0,0.35)" }}
-                  >
-                    {project.carouselBody ?? project.tagline}
-                  </p>
-                </div>
+                <>
+                  <div className="pointer-events-none absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/70 via-black/25 to-transparent" />
+                  <div className="absolute inset-0 flex flex-col items-start justify-end p-5">
+                    <h3
+                      className="text-xl font-extrabold text-white md:text-2xl"
+                      style={{ textShadow: "0 2px 6px rgba(0,0,0,0.35)" }}
+                    >
+                      {project.carouselHeading ?? project.title}
+                    </h3>
+                    <p
+                      className="mt-1 max-w-xs text-sm text-white"
+                      style={{ textShadow: "0 1px 4px rgba(0,0,0,0.35)" }}
+                    >
+                      {project.carouselBody ?? project.tagline}
+                    </p>
+                  </div>
+                </>
               )}
             </div>
           );

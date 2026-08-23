@@ -21,4 +21,5 @@ export type Project = {
   carouselHeading?: string;
   carouselBody?: string;
   pullQuote?: string;
+  thumbnail?: ProjectImage;
 };

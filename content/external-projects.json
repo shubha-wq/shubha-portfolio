@@ -1,20 +1,5 @@
 [
   {
-    "id": "nextleap",
-    "title": "Product Management Fellowship at NextLeap",
-    "layout": "featured",
-    "kind": "link",
-    "items": [
-      {
-        "id": "nextleap-portfolio",
-        "title": "Product Management Fellowship at NextLeap",
-        "description": "Hypothetical project solving for the paradox of choice at Amazon Prime Video + final portfolio.",
-        "url": "https://nextleap.app/portfolio/shubha-singh",
-        "enabled": true
-      }
-    ]
-  },
-  {
     "id": "brand-guidelines-sis",
     "title": "Brand Strategy for Sisters in Sweat",
     "layout": "featured",

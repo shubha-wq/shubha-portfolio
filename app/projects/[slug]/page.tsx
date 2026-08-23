@@ -85,26 +85,26 @@ export default function ProjectPage({
         </div>
       </section>
 
+      <section className="px-6 py-8 md:px-10">
+        <div className="mx-auto max-w-4xl">
+          {project.image.src ? (
+            <div className="relative aspect-[16/10] w-full overflow-hidden rounded-card border border-line">
+              <img
+                src={project.image.src}
+                alt={project.image.alt}
+                className="h-full w-full object-cover"
+              />
+            </div>
+          ) : (
+            <Placeholder label="Case study image" aspect="aspect-[16/10]" />
+          )}
+        </div>
+      </section>
+
       {project.slug === "sisters-in-sweat" ? (
         <SisCaseStudy project={project} />
       ) : (
         <>
-          <section className="px-6 py-8 md:px-10">
-            <div className="mx-auto max-w-4xl">
-              {project.image.src ? (
-                <div className="relative aspect-[16/10] w-full overflow-hidden rounded-card border border-line">
-                  <img
-                    src={project.image.src}
-                    alt={project.image.alt}
-                    className="h-full w-full object-cover"
-                  />
-                </div>
-              ) : (
-                <Placeholder label="Case study image" aspect="aspect-[16/10]" />
-              )}
-            </div>
-          </section>
-
           {sections.map(({ key, label }, i) => {
             const isPullQuoteSlot = key === "process" && project.pullQuote;
             return (

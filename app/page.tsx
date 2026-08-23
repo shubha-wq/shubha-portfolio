@@ -10,7 +10,7 @@ import type { Project } from "@/lib/types";
 export default function Home() {
   const { hero, journey, socials } = site;
 
-  const featuredSlugs = ["sisters-in-sweat", "voucher-management-system", "mohmani", "hamper-seeding-for-traya"];
+  const featuredSlugs = ["sisters-in-sweat", "nextleap-pm-fellowship", "mohmani"];
   const featuredProjects = featuredSlugs
     .map((slug) => (projects as Project[]).find((p) => p.slug === slug))
     .filter((p): p is Project => Boolean(p) && p!.enabled);
@@ -45,7 +45,7 @@ export default function Home() {
 
       {/* Case studies carousel — this is the only "selected work" on the home page */}
       <div id="work" className="pb-6 pt-4">
-        <div className="mx-auto max-w-6xl px-6 pb-6 md:px-10">
+        <div className="mx-auto max-w-4xl px-6 pb-6 md:px-10">
           <h2 className="text-2xl font-bold text-ink">Selected case studies</h2>
         </div>
         <CaseStudyCarousel projects={featuredProjects} />
