@@ -17,14 +17,19 @@
     "process": "I built trackers and systems that improved day-to-day efficiency and cut down the time spent in meetings. When I raised the gap in brand strategy and visual identity, we decided to build it in-house rather than bring in an agency \u2014 I owned and executed that project end-to-end, delivering a full brand guideline deck. I also led the brand marketing charter, handling collaborated brand campaigns across partners including Cava, Nike, Mille, Nykaa Wellness and In Her Interest by Zerodha.",
     "outcome": "Sisters in Sweat now runs on a brand system built entirely in-house \u2014 one consistent visual identity across every partner collaboration, and systems in place that keep the team's time focused on the work itself rather than admin. The content strategy work also helped solidify the Nykaa Wellness partnership and brought another protein brand on board.",
     "carouselHeading": "Sisters in Sweat",
-    "carouselBody": "Brand building and marketing communication",
+    "carouselBody": "Built the brand strategy, visual identity and marketing systems for a fast-growing wellness community \u2014 entirely in-house.",
     "enabled": true,
     "thumbnail": {
       "src": "/case-studies/sisters-in-sweat-logo.jpg",
       "alt": "Sisters in Sweat logo",
       "width": 900,
       "height": 1125
-    }
+    },
+    "skillTags": [
+      "Brand Strategy",
+      "Visual Identity Design",
+      "Marketing Systems"
+    ]
   },
   {
     "slug": "mohmani",
@@ -44,30 +49,40 @@
     "process": "The focus was on putting some structure in place so creative decisions didn't feel random. Early on, the brand's core cues \u2014 whimsy, quirk, and subcultural references \u2014 were clearly defined and used to guide everything. Basic direction was set for visuals, tone, and a content calendar so posting stayed consistent and intentional. Each collection started with a clear inspiration, which was shared with the audience through creative concepts and content instead of long explanations. Content pillars were built around the jewellery itself, the making process, everyday moments, and the founder's personal voice, so the brand felt natural and expressive rather than over-produced. Over time, engagement, pop-ups, and viral moments were looked at to understand what resonated and refine the direction while staying true to the brand's niche.",
     "outcome": "Mohmani now feels more settled in its identity \u2014 less like a brand chasing growth, and more like one that has found its place. The creative strategy helped bring clarity and continuity across content, community moments, and product storytelling, while keeping the brand's quirks intact. It also gave the founder a flexible framework to keep experimenting, growing, and showing up authentically without losing what makes the brand resonate.",
     "carouselHeading": "Mohmani",
-    "carouselBody": "Co-curating content and strategy alongside the founder",
+    "carouselBody": "Creative direction and content strategy for a homegrown jewellery label balancing whimsy with commercial growth.",
     "enabled": true,
-    "pullQuote": ""
+    "pullQuote": "",
+    "skillTags": [
+      "Creative Direction",
+      "Content Strategy",
+      "Brand Storytelling"
+    ]
   },
   {
-    "slug": "nextleap-pm-fellowship",
-    "title": "Next Leap Product Management Fellowship",
-    "tagline": "Stepping outside brand and marketing to build product thinking \u2014 from a live voucher system to a hypothetical Prime Video redesign.",
-    "role": "Product Management Fellow & Product Intern",
-    "industry": "Product & Technology",
-    "duration": "2024",
+    "slug": "voucher-management-system",
+    "title": "Voucher Management System",
+    "tagline": "Conceptualising and leading end-to-end development of a voucher management system.",
+    "role": "Product Intern",
+    "industry": "HR & Talent Tech",
+    "duration": "6 months",
     "image": {
-      "src": "/case-studies/nextleap-pm-fellowship.jpg",
-      "alt": "Prime Video wireframes from the NextLeap capstone project",
-      "width": 2267,
-      "height": 1280
+      "src": "",
+      "alt": "Voucher management system product work",
+      "width": 1640,
+      "height": 2360
     },
-    "context": "Product management wasn't the natural next step from PR and brand marketing \u2014 which is exactly why I took it on. NextLeap's Product Manager Fellowship pushed me to think in a completely different register, and Talview gave me a live product to apply that thinking to right after.",
-    "problem": "The fellowship's capstone project tackled the paradox of choice on Amazon Prime Video \u2014 too many options, not enough clarity, leaving people scrolling instead of deciding. At Talview, the challenge was more operational: a voucher system for clients existed only informally, with no consistent process for issuing, tracking or documenting it.",
-    "process": "For the NextLeap capstone, I worked through user research, prioritization and wireframes before landing on a guided, question-based flow \u2014 \u201cDo you want to watch a movie or a show?\u201d, \u201cHow are we feeling today?\u201d \u2014 that narrows recommendations conversationally instead of dumping every title on screen. At Talview, I led the voucher management system from concept to release: writing the release documentation and user-facing guides myself, and running a competitive analysis of industry tools to build a framework for positioning and storytelling that fed directly into the product marketing team's work.",
-    "outcome": "The fellowship earned a Top Fellow recognition from NextLeap. At Talview, the voucher system shipped and contributed to a 5% improvement in retention \u2014 proof that the product thinking translated from a hypothetical exercise into something real.",
-    "carouselHeading": "Next Leap Product Management Fellowship",
-    "carouselBody": "From a hypothetical Prime Video redesign to a live product at Talview.",
-    "enabled": true
+    "context": "At Talview, a client-facing voucher system needed a clear owner to take it from concept to shipped feature.",
+    "problem": "Vouchers were being handled ad hoc, with no consistent framework for issuing, tracking or documenting them for clients or internal teams.",
+    "process": "Led end-to-end development of the voucher management system, from concept through to release. Wrote detailed release documentation and user-facing guides, and ran a competitive analysis of industry tools to build a framework for positioning and storytelling, supporting the product marketing team.",
+    "outcome": "The system contributed to a 5% improvement in retention, and demonstrated end-to-end ownership from concept to release documentation.",
+    "carouselHeading": "Voucher Management System",
+    "carouselBody": "Owned end-to-end development of a client-facing voucher management system, from concept to release.",
+    "enabled": true,
+    "skillTags": [
+      "Product Strategy",
+      "Competitive Analysis",
+      "Technical Documentation"
+    ]
   },
   {
     "slug": "encasa-bistro",

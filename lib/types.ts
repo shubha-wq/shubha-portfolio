@@ -22,4 +22,5 @@ export type Project = {
   carouselBody?: string;
   pullQuote?: string;
   thumbnail?: ProjectImage;
+  skillTags?: string[];
 };

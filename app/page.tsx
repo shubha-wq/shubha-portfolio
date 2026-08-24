@@ -2,7 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SocialRow from "@/components/SocialRow";
 import Placeholder from "@/components/Placeholder";
-import CaseStudyCarousel from "@/components/CaseStudyCarousel";
+import CaseStudyStack from "@/components/CaseStudyStack";
 import site from "@/content/site.json";
 import projects from "@/content/projects.json";
 import type { Project } from "@/lib/types";
@@ -10,7 +10,7 @@ import type { Project } from "@/lib/types";
 export default function Home() {
   const { hero, journey, socials } = site;
 
-  const featuredSlugs = ["sisters-in-sweat", "nextleap-pm-fellowship", "mohmani"];
+  const featuredSlugs = ["sisters-in-sweat", "voucher-management-system", "mohmani"];
   const featuredProjects = featuredSlugs
     .map((slug) => (projects as Project[]).find((p) => p.slug === slug))
     .filter((p): p is Project => Boolean(p) && p!.enabled);
@@ -43,30 +43,27 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Case studies carousel — this is the only "selected work" on the home page */}
-      <div id="work" className="pb-6 pt-4">
-        <div className="mx-auto max-w-4xl px-6 pb-6 md:px-10">
-          <h2 className="text-2xl font-bold text-ink">Selected case studies</h2>
-        </div>
-        <CaseStudyCarousel projects={featuredProjects} />
-      </div>
-
-      {/* Journey */}
-      <section id="journey" className="px-6 py-20 md:px-10">
-        <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-14 md:grid-cols-2">
-          <Placeholder label="Photo" />
-          <div>
-            <h2 className="text-2xl font-bold text-ink md:text-3xl">
-              {journey.title}
-            </h2>
-            <div className="mt-5 space-y-4 text-inkdim">
-              {journey.paragraphs.map((p, i) => (
-                <p key={i}>{p}</p>
-              ))}
-            </div>
+      {/* About — moved above case studies, text only */}
+      <section id="journey" className="px-6 py-16 md:px-10">
+        <div className="mx-auto max-w-3xl">
+          <h2 className="text-2xl font-bold text-ink md:text-3xl">
+            {journey.title}
+          </h2>
+          <div className="mt-5 space-y-4 text-lg leading-relaxed text-inkdim">
+            {journey.paragraphs.map((p, i) => (
+              <p key={i}>{p}</p>
+            ))}
           </div>
         </div>
       </section>
+
+      {/* Case studies — stacked, alternating, storytelling layout */}
+      <div id="work">
+        <div className="mx-auto max-w-6xl px-6 pb-8 pt-4 md:px-10">
+          <h2 className="text-2xl font-bold text-ink">Selected case studies</h2>
+        </div>
+        <CaseStudyStack projects={featuredProjects} />
+      </div>
 
       <Footer />
     </main>
