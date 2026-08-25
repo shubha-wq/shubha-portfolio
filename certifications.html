@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: #ffffff; color: #17140f; -webkit-font-smoothing: antialiased; }
+  * { box-sizing: border-box; }
+  a { color: #17140f; text-decoration: none; }
+  a:hover { color: #5b564a; }
+  ::selection { background: #17140f; color: #ffffff; }
+  @media (max-width: 1000px) {
+    header { padding: 14px 22px !important; }
+    header nav { gap: 16px !important; }
+    #intro > div { padding: 56px 22px 40px !important; }
+    #list > div { padding: 64px 22px !important; }
+    #list article { grid-template-columns: 200px 1fr !important; gap: 28px !important; }
+    #cta > div { padding: 76px 22px !important; }
+    footer > div { padding: 22px !important; }
+  }
+  @media (max-width: 620px) {
+    header { flex-wrap: wrap !important; gap: 12px !important; }
+    header nav { width: 100% !important; justify-content: space-between !important; gap: 8px !important; }
+    header nav a { font-size: 11px !important; }
+    #list article { grid-template-columns: 1fr !important; }
+  }
+</style>
+</helmet>
+
+<div style="font-family: Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif; background: #ffffff; color: #17140f;">
+
+  <header style="position: sticky; top: 0; z-index: 60; display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 15px 48px; background: rgba(255,255,255,0.93); backdrop-filter: blur(12px); border-bottom: 1px solid #dad5c8;">
+    <a href="index.html" style="font-size: 16px; font-weight: 700; letter-spacing: -0.01em;">Shubha Singh</a>
+    <nav style="display: flex; align-items: center; gap: 26px;">
+      <a href="projects.html" style="font-size: 14px; color: #5b564a;" style-hover="color: #17140f;">Projects</a>
+      <a href="certifications.html" style="font-size: 14px; font-weight: 500; color: #17140f; border-bottom: 1px solid #17140f; padding-bottom: 2px;">Certifications</a>
+      <a href="services.html" style="font-size: 14px; color: #5b564a;" style-hover="color: #17140f;">Services</a>
+      <a href="resume.html" style="font-size: 14px; color: #5b564a;" style-hover="color: #17140f;">Resume</a>
+      <a href="mailto:shubhasingh1907@gmail.com" style="font-size: 14px; padding: 10px 20px; border: 1px solid #17140f; border-radius: 999px;" style-hover="background: #17140f; color: #ffffff;">Get in touch</a>
+    </nav>
+  </header>
+
+  <section id="intro">
+    <div style="max-width: 1152px; margin: 0 auto; padding: 76px 48px 48px; display: flex; flex-direction: column; gap: 20px;">
+      <a href="index.html" style="font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: #5b564a;" style-hover="color: #17140f;">← Back home</a>
+      <h1 style="margin: 0; font-size: clamp(38px, 5.6vw, 72px); font-weight: 800; line-height: 1.02; letter-spacing: -0.035em;">Certifications</h1>
+      <p style="margin: 0; max-width: 54ch; font-size: 19px; line-height: 1.6; color: #5b564a; text-wrap: pretty;">
+        Where the fashion, luxury and product thinking behind my work was formalised.
+      </p>
+    </div>
+  </section>
+
+  <section id="list" style="background: #f1efea; border-top: 1px solid #dad5c8; border-bottom: 1px solid #dad5c8;">
+    <div style="max-width: 1152px; margin: 0 auto; padding: 72px 48px;">
+
+      <article style="display: grid; grid-template-columns: 264px 1fr; gap: 44px; align-items: center; padding: 32px 0; border-bottom: 1px solid #dad5c8;">
+        <img src="assets/certifications/lvmh-certificate.jpg" alt="LVMH Luxury Branding certificate" style="width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; border-radius: 10px; border: 1px solid #dad5c8; background: #ffffff;" />
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+          <div style="font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #5b564a;">LVMH</div>
+          <h2 style="margin: 0; font-size: 26px; font-weight: 700; line-height: 1.15; letter-spacing: -0.025em;">Luxury Branding</h2>
+          <p style="margin: 0; max-width: 56ch; font-size: 16px; line-height: 1.6; color: #5b564a; text-wrap: pretty;">
+            How the world's largest luxury group builds and protects desire — the closest thing to a formal grounding in the category I want to work in.
+          </p>
+        </div>
+      </article>
+
+      <article style="display: grid; grid-template-columns: 264px 1fr; gap: 44px; align-items: center; padding: 32px 0; border-bottom: 1px solid #dad5c8;">
+        <img src="assets/certifications/aaft-certificate.jpg" alt="AAFT Fashion Design certificate" style="width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; border-radius: 10px; border: 1px solid #dad5c8; background: #ffffff;" />
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+          <div style="font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #5b564a;">AAFT</div>
+          <h2 style="margin: 0; font-size: 26px; font-weight: 700; line-height: 1.15; letter-spacing: -0.025em;">Fashion Design</h2>
+          <p style="margin: 0; max-width: 56ch; font-size: 16px; line-height: 1.6; color: #5b564a; text-wrap: pretty;">
+            The craft side of fashion — construction, silhouette and taste. It's why I can brief a designer in their own language.
+          </p>
+        </div>
+      </article>
+
+      <article style="display: grid; grid-template-columns: 264px 1fr; gap: 44px; align-items: center; padding: 32px 0;">
+        <img src="assets/certifications/nextleap-top-fellow-badge.png" alt="NextLeap Top Fellow badge" style="width: 100%; aspect-ratio: 4 / 3; object-fit: contain; display: block; border-radius: 10px; border: 1px solid #dad5c8; background: #ffffff;" />
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+          <div style="font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #5b564a;">NextLeap · Top Fellow</div>
+          <h2 style="margin: 0; font-size: 26px; font-weight: 700; line-height: 1.15; letter-spacing: -0.025em;">Product Management Fellowship</h2>
+          <p style="margin: 0; max-width: 56ch; font-size: 16px; line-height: 1.6; color: #5b564a; text-wrap: pretty;">
+            Finished as a Top Fellow. This is where the systems thinking I bring to marketing narratives came from.
+          </p>
+          <a href="projects.html#nextleap" style="font-size: 15px; padding-top: 4px; border-bottom: 1px solid #dad5c8; align-self: flex-start; padding-bottom: 3px;" style-hover="border-color: #17140f;">See the fellowship project →</a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section id="cta" style="background: #262421; color: #ffffff;">
+    <div style="max-width: 1152px; margin: 0 auto; padding: 88px 48px;">
+      <h2 style="margin: 0 0 24px; font-size: clamp(30px, 4.6vw, 60px); font-weight: 800; line-height: 1.02; letter-spacing: -0.035em; max-width: 24ch; text-wrap: pretty;">Let's build something worth remembering.</h2>
+      <div style="display: flex; align-items: center; gap: 14px; flex-wrap: wrap;">
+        <a href="mailto:shubhasingh1907@gmail.com" style="display: inline-flex; align-items: center; gap: 10px; padding: 15px 28px; border-radius: 999px; background: #ffffff; color: #17140f; font-size: 15px;" style-hover="background: #c9c4b6;">Get in touch <span style="font-size: 14px;">→</span></a>
+        <a href="resume.html" style="display: inline-flex; align-items: center; padding: 15px 28px; border-radius: 999px; border: 1px solid #4a463c; font-size: 15px; color: #ffffff;" style-hover="border-color: #ffffff;">Read my resume</a>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background: #262421; color: #c9c4b6; border-top: 1px solid #4a463c;">
+    <div style="max-width: 1152px; margin: 0 auto; padding: 24px 48px; display: flex; align-items: center; justify-content: space-between; gap: 24px; font-size: 13px;">
+      <span>© 2026 Shubha Singh</span>
+      <a href="#intro" style="color: #c9c4b6;" style-hover="color: #ffffff;">Back to top ↑</a>
+    </div>
+  </footer>
+
+</div>
+
+</x-dc>
+</body>
+</html>

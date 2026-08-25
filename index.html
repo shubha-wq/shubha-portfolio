@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: #ffffff; color: #17140f; -webkit-font-smoothing: antialiased; }
+  * { box-sizing: border-box; }
+  a { color: #17140f; text-decoration: none; }
+  a:hover { color: #5b564a; }
+  ::selection { background: #17140f; color: #ffffff; }
+  @media (max-width: 1000px) {
+    header { padding: 14px 22px !important; }
+    header nav { gap: 18px !important; }
+    #top > div { padding: 52px 22px 44px !important; grid-template-columns: 1fr !important; gap: 36px !important; }
+    #top > div > div:last-child { flex-direction: row !important; align-items: center !important; gap: 20px !important; }
+    #about > div { padding: 64px 22px !important; grid-template-columns: 1fr !important; gap: 28px !important; }
+    #work > div { padding: 64px 22px !important; }
+    #work article { grid-template-columns: 152px 1fr !important; gap: 24px !important; }
+    #work article > a:last-child, #work article > div:last-child.sc-img { order: -1 !important; }
+    #contact > div { padding: 76px 22px !important; }
+    footer > div { padding: 22px !important; }
+  }
+  @media (max-width: 620px) {
+    header { flex-wrap: wrap !important; gap: 12px !important; }
+    header nav { width: 100% !important; justify-content: space-between !important; gap: 10px !important; }
+    header nav a { font-size: 11px !important; }
+    #work article { grid-template-columns: 1fr !important; }
+    #work article img, #work article .sc-img { max-width: 220px !important; }
+  }
+</style>
+</helmet>
+
+<div style="font-family: Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif; background: #ffffff; color: #17140f;">
+
+  <header style="position: sticky; top: 0; z-index: 60; display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 15px 48px; background: rgba(255,255,255,0.93); backdrop-filter: blur(12px); border-bottom: 1px solid #dad5c8;">
+    <a href="#top" style="font-size: 16px; font-weight: 700; letter-spacing: -0.01em;">Shubha Singh</a>
+    <nav style="display: flex; align-items: center; gap: 28px;">
+      <a href="projects.html" style="font-size: 14px; color: #5b564a;" style-hover="color: #17140f;">Projects</a>
+      <a href="certifications.html" style="font-size: 14px; color: #5b564a;" style-hover="color: #17140f;">Certifications</a>
+      <a href="services.html" style="font-size: 14px; color: #5b564a;" style-hover="color: #17140f;">Services</a>
+      <a href="resume.html" style="font-size: 14px; color: #5b564a;" style-hover="color: #17140f;">Resume</a>
+      <a href="mailto:shubhasingh1907@gmail.com" style="font-size: 14px; padding: 10px 20px; border: 1px solid #17140f; border-radius: 999px;" style-hover="background: #17140f; color: #ffffff;">Get in touch</a>
+    </nav>
+  </header>
+
+  <section id="top">
+    <div style="max-width: 1152px; margin: 0 auto; padding: 88px 48px 72px; display: grid; grid-template-columns: 1.5fr 1fr; gap: 64px; align-items: center;">
+      <div style="display: flex; flex-direction: column; gap: 26px;">
+        <h1 style="margin: 0; max-width: 26ch; font-size: clamp(34px, 4.6vw, 62px); font-weight: 800; line-height: 1.06; letter-spacing: -0.035em; text-wrap: pretty;">
+          Hi, I'm a Marketing and Branding strategist blending creative instinct and systems thinking.
+        </h1>
+        <p style="margin: 0; max-width: 54ch; font-size: 19px; line-height: 1.6; color: #5b564a; text-wrap: pretty;">
+          With experience spanning Marketing and Product, I bring a multifaceted perspective to the table and help businesses be noticed and remembered across every touchpoint.
+        </p>
+        <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap; padding-top: 4px;">
+          <a href="#work" style="display: inline-flex; align-items: center; gap: 10px; padding: 14px 26px; border-radius: 999px; background: #17140f; color: #ffffff; font-size: 15px;" style-hover="background: #5b564a;">See the work <span style="font-size: 14px;">→</span></a>
+          <a href="resume.html" style="display: inline-flex; align-items: center; padding: 14px 26px; border-radius: 999px; border: 1px solid #dad5c8; font-size: 15px;" style-hover="border-color: #17140f;">Read my resume</a>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 22px;">
+        <img src="assets/hero-photo.jpg" alt="Shubha Singh" style="width: 232px; height: 232px; border-radius: 999px; object-fit: cover; display: block;" />
+        <a href="https://www.linkedin.com/in/shubha1907/" target="_blank" rel="noopener" title="LinkedIn" style="display: inline-flex; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 999px; border: 1px solid #dad5c8; font-size: 14px; font-weight: 600;" style-hover="background: #17140f; color: #ffffff; border-color: #17140f;">in</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" style="background: #f1efea; border-top: 1px solid #dad5c8; border-bottom: 1px solid #dad5c8;">
+    <div style="max-width: 1152px; margin: 0 auto; padding: 88px 48px; display: grid; grid-template-columns: 300px 1fr; gap: 64px; align-items: start;">
+      <h2 style="margin: 0; font-size: clamp(28px, 3.2vw, 40px); font-weight: 700; line-height: 1.05; letter-spacing: -0.03em;">My Journey</h2>
+      <div style="display: flex; flex-direction: column; gap: 22px; max-width: 64ch;">
+        <p style="margin: 0; font-size: 22px; line-height: 1.5; font-weight: 500; color: #17140f; text-wrap: pretty;">
+          Learning is my default. I don't stay anywhere I'm not evolving.
+        </p>
+        <p style="margin: 0; font-size: 17px; line-height: 1.7; color: #5b564a; text-wrap: pretty;">
+          I've always been drawn to extraordinary stories, unconventional approaches and tasteful visuals. My education is rooted in media &amp; communications and my early career in PR — but somewhere along the way I got curious about the core of a business: the product.
+        </p>
+        <p style="margin: 0; font-size: 17px; line-height: 1.7; color: #5b564a; text-wrap: pretty;">
+          Figuring out how product decisions tie to business outcomes gave my creativity a structure. Now I catch myself applying that systems thinking and user empathy every time I build a marketing narrative — which is, I think, the useful part.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="work">
+    <div style="max-width: 1152px; margin: 0 auto; padding: 88px 48px;">
+      <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 32px; padding-bottom: 22px; border-bottom: 1px solid #dad5c8;">
+        <h2 style="margin: 0; font-size: clamp(28px, 3.2vw, 40px); font-weight: 700; line-height: 1.05; letter-spacing: -0.03em;">Selected Case Studies</h2>
+        <span style="font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #5b564a;">Three</span>
+      </div>
+
+      <article style="display: grid; grid-template-columns: 232px 1fr; gap: 40px; align-items: center; padding: 32px 0; border-bottom: 1px solid #dad5c8;">
+        <a href="#work" style="display: block;">
+          <img src="assets/case-studies/sisters-in-sweat-logo.jpg" alt="Sisters in Sweat" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; display: block; border-radius: 10px; border: 1px solid #dad5c8;" />
+        </a>
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+          <div style="font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #5b564a;">Marketing Executive · Fitness &amp; Wellness</div>
+          <h3 style="margin: 0; font-size: 26px; font-weight: 700; line-height: 1.15; letter-spacing: -0.025em;">Sisters in Sweat</h3>
+          <p style="margin: 0; max-width: 56ch; font-size: 16px; line-height: 1.6; color: #5b564a; text-wrap: pretty;">
+            No marketing team, no brand guidelines, and a visual language drifting across every channel. I built the strategy and identity in-house — end to end.
+          </p>
+          <sc-if value="{{ showFacts }}" hint-placeholder-val="{{ true }}">
+            <div style="font-size: 15px; color: #17140f;">Full brand guideline deck delivered in-house, no agency.</div>
+          </sc-if>
+          <div style="display: flex; gap: 8px; flex-wrap: wrap; padding-top: 2px;">
+            <span style="font-size: 12.5px; padding: 7px 14px; border: 1px solid #dad5c8; border-radius: 999px; color: #5b564a;">Brand Strategy</span>
+            <span style="font-size: 12.5px; padding: 7px 14px; border: 1px solid #dad5c8; border-radius: 999px; color: #5b564a;">Visual Identity Design</span>
+            <span style="font-size: 12.5px; padding: 7px 14px; border: 1px solid #dad5c8; border-radius: 999px; color: #5b564a;">Marketing Systems</span>
+          </div>
+          <a href="#work" style="font-size: 15px; color: {{ accent }}; padding-top: 6px;" style-hover="color: #5b564a;">View case study →</a>
+        </div>
+      </article>
+
+      <article style="display: grid; grid-template-columns: 1fr 232px; gap: 40px; align-items: center; padding: 32px 0; border-bottom: 1px solid #dad5c8;">
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+          <div style="font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #5b564a;">Product Intern · HR &amp; Talent Tech</div>
+          <h3 style="margin: 0; font-size: 26px; font-weight: 700; line-height: 1.15; letter-spacing: -0.025em;">Talview — Voucher Management System</h3>
+          <p style="margin: 0; max-width: 56ch; font-size: 16px; line-height: 1.6; color: #5b564a; text-wrap: pretty;">
+            Owned a client-facing product at Talview from concept to release — the work that taught me how product decisions turn into business outcomes.
+          </p>
+          <sc-if value="{{ showFacts }}" hint-placeholder-val="{{ true }}">
+            <div style="font-size: 15px; color: #17140f;">Contributed to a 5% improvement in retention.</div>
+          </sc-if>
+          <div style="display: flex; gap: 8px; flex-wrap: wrap; padding-top: 2px;">
+            <span style="font-size: 12.5px; padding: 7px 14px; border: 1px solid #dad5c8; border-radius: 999px; color: #5b564a;">Product Strategy</span>
+            <span style="font-size: 12.5px; padding: 7px 14px; border: 1px solid #dad5c8; border-radius: 999px; color: #5b564a;">Competitive Analysis</span>
+            <span style="font-size: 12.5px; padding: 7px 14px; border: 1px solid #dad5c8; border-radius: 999px; color: #5b564a;">Technical Documentation</span>
+          </div>
+          <a href="#work" style="font-size: 15px; color: {{ accent }}; padding-top: 6px;" style-hover="color: #5b564a;">View case study →</a>
+        </div>
+        <div class="sc-img" style="width: 100%; aspect-ratio: 1 / 1; border: 1px solid #dad5c8; border-radius: 10px; background: repeating-linear-gradient(135deg, rgba(23,20,15,0.05) 0 9px, transparent 9px 18px); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; text-align: center; padding: 20px;">
+          <div style="font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #5b564a;">[ no image yet ]</div>
+          <div style="font-size: 13px; line-height: 1.5; color: #5b564a; max-width: 22ch;">A product screen or flow diagram would go here</div>
+        </div>
+      </article>
+
+      <article style="display: grid; grid-template-columns: 232px 1fr; gap: 40px; align-items: center; padding: 32px 0;">
+        <a href="#work" style="display: block;">
+          <img src="assets/case-studies/mohmani.jpg" alt="Mohmani Instagram grid" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; display: block; border-radius: 10px; border: 1px solid #dad5c8;" />
+        </a>
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+          <div style="font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #5b564a;">Creative Strategist · Jewellery &amp; Lifestyle</div>
+          <h3 style="margin: 0; font-size: 26px; font-weight: 700; line-height: 1.15; letter-spacing: -0.025em;">Mohmani</h3>
+          <p style="margin: 0; max-width: 56ch; font-size: 16px; line-height: 1.6; color: #5b564a; text-wrap: pretty;">
+            Creative direction and content strategy for a homegrown jewellery label — holding onto whimsy while the numbers had to grow.
+          </p>
+          <sc-if value="{{ showFacts }}" hint-placeholder-val="{{ true }}">
+            <div style="font-size: 15px; color: #17140f;">A niche following of ~3.3k, built on content, pop-ups and word of mouth.</div>
+          </sc-if>
+          <div style="display: flex; gap: 8px; flex-wrap: wrap; padding-top: 2px;">
+            <span style="font-size: 12.5px; padding: 7px 14px; border: 1px solid #dad5c8; border-radius: 999px; color: #5b564a;">Creative Direction</span>
+            <span style="font-size: 12.5px; padding: 7px 14px; border: 1px solid #dad5c8; border-radius: 999px; color: #5b564a;">Content Strategy</span>
+            <span style="font-size: 12.5px; padding: 7px 14px; border: 1px solid #dad5c8; border-radius: 999px; color: #5b564a;">Brand Storytelling</span>
+          </div>
+          <a href="#work" style="font-size: 15px; color: {{ accent }}; padding-top: 6px;" style-hover="color: #5b564a;">View case study →</a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section id="contact" style="background: #262421; color: #ffffff;">
+    <div style="max-width: 1152px; margin: 0 auto; padding: 100px 48px;">
+      <h2 style="margin: 0 0 24px; font-size: clamp(34px, 5.4vw, 72px); font-weight: 800; line-height: 1.02; letter-spacing: -0.035em; max-width: 24ch; text-wrap: pretty;">
+        Let's build something worth remembering.
+      </h2>
+      <p style="margin: 0 0 40px; max-width: 46ch; font-size: 18px; line-height: 1.6; color: #c9c4b6;">
+        Brand strategy roles, freelance projects, collaborations — or anything brand and fashion.
+      </p>
+      <div style="display: flex; align-items: center; gap: 14px; flex-wrap: wrap;">
+        <a href="mailto:shubhasingh1907@gmail.com" style="display: inline-flex; align-items: center; gap: 10px; padding: 15px 28px; border-radius: 999px; background: #ffffff; color: #17140f; font-size: 15px;" style-hover="background: #c9c4b6;">Get in touch <span style="font-size: 14px;">→</span></a>
+        <a href="https://www.linkedin.com/in/shubha1907/" target="_blank" rel="noopener" title="LinkedIn" style="display: inline-flex; align-items: center; justify-content: center; width: 46px; height: 46px; border-radius: 999px; border: 1px solid #4a463c; font-size: 15px; font-weight: 600; color: #ffffff;" style-hover="background: #ffffff; color: #17140f; border-color: #ffffff;">in</a>
+      </div>
+      <div style="margin-top: 56px; padding-top: 26px; border-top: 1px solid #4a463c; display: flex; gap: 32px; flex-wrap: wrap;">
+        <a href="projects.html" style="font-size: 14px; color: #c9c4b6;" style-hover="color: #ffffff;">Projects</a>
+        <a href="certifications.html" style="font-size: 14px; color: #c9c4b6;" style-hover="color: #ffffff;">Certifications</a>
+        <a href="services.html" style="font-size: 14px; color: #c9c4b6;" style-hover="color: #ffffff;">Services</a>
+        <a href="resume.html" style="font-size: 14px; color: #c9c4b6;" style-hover="color: #ffffff;">Resume</a>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background: #262421; color: #c9c4b6; border-top: 1px solid #4a463c;">
+    <div style="max-width: 1152px; margin: 0 auto; padding: 24px 48px; display: flex; align-items: center; justify-content: space-between; gap: 24px; font-size: 13px;">
+      <span>© 2026 Shubha Singh</span>
+      <a href="#top" style="color: #c9c4b6;" style-hover="color: #ffffff;">Back to top ↑</a>
+    </div>
+  </footer>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;useAccent&quot;: {
+    &quot;editor&quot;: &quot;boolean&quot;,
+    &quot;default&quot;: false,
+    &quot;tsType&quot;: &quot;boolean&quot;,
+    &quot;section&quot;: &quot;Look&quot;
+  },
+  &quot;accentColor&quot;: {
+    &quot;editor&quot;: &quot;color&quot;,
+    &quot;default&quot;: &quot;#d25f38&quot;,
+    &quot;tsType&quot;: &quot;string&quot;,
+    &quot;options&quot;: [&quot;#d25f38&quot;, &quot;#17140f&quot;, &quot;#4a5d3a&quot;, &quot;#2b3a56&quot;],
+    &quot;section&quot;: &quot;Look&quot;
+  },
+  &quot;showFacts&quot;: {
+    &quot;editor&quot;: &quot;boolean&quot;,
+    &quot;default&quot;: true,
+    &quot;tsType&quot;: &quot;boolean&quot;,
+    &quot;section&quot;: &quot;Sections&quot;
+  }
+}">
+class Component extends DCLogic {
+  renderVals() {
+    const useAccent = this.props.useAccent ?? false;
+    return {
+      accent: useAccent ? (this.props.accentColor ?? '#d25f38') : '#17140f',
+      showFacts: this.props.showFacts ?? true
+    };
+  }
+}
+</script>
+</body>
+</html>
