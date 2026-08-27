@@ -1,13 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="./support.js"></script>
-</head>
-<body>
-<x-dc>
-<helmet>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Media admin — Shubha Singh</title>
 <meta name="robots" content="noindex, nofollow" />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23121110'/%3E%3Ctext x='16' y='22' font-family='Helvetica,Arial,sans-serif' font-size='16' font-weight='bold' fill='%23fff' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E" />
@@ -31,16 +26,21 @@
     header { flex-wrap: wrap !important; gap: 12px !important; }
     header nav { width: 100% !important; justify-content: space-between !important; gap: 8px !important; }
   }
-</style>
-</helmet>
 
+.h0:hover{background: #6e6b65 !important}
+.h1:hover{background: #6e6b65 !important}
+.h2:hover{color: #121110 !important}
+</style>
+
+</head>
+<body>
 <div style="font-family: 'Instrument Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; background: #f1f0ed; color: #121110; min-height: 100vh;">
 
   <header style="position: sticky; top: 0; z-index: 60; display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 16px 40px; background: rgba(241,240,237,0.86); backdrop-filter: blur(14px); border-bottom: 1px solid #e3e1dc;">
     <a href="index.html" style="font-size: 14px; font-weight: 600; letter-spacing: -0.01em;">Shubha Singh</a>
     <nav style="display: flex; align-items: center; gap: 26px;">
       <span style="font-size: 13px; font-weight: 500;">Media admin</span>
-      <a href="index.html" style="font-size: 13px; padding: 10px 18px; border-radius: 999px; background: #121110; color: #f1f0ed; transition: background .25s ease;" style-hover="background: #6e6b65;">View site</a>
+      <a class="h0" href="index.html" style="font-size: 13px; padding: 10px 18px; border-radius: 999px; background: #121110; color: #f1f0ed; transition: background .25s ease;">View site</a>
     </nav>
   </header>
 
@@ -51,7 +51,7 @@
         Switch any image or video off and it disappears from the live pages. Nothing is deleted — flip it back on any time. Changes save in this browser and apply the moment you open a page.
       </p>
       <div style="display: flex; gap: 10px; flex-wrap: wrap; align-items: center;">
-        <button type="button" id="adm-all-on" style="padding: 12px 22px; border-radius: 999px; border: 0; background: #121110; color: #f1f0ed; font-size: 14px; font-family: inherit; cursor: pointer; transition: background .25s ease;" style-hover="background: #6e6b65;">Show everything</button>
+        <button class="h1" type="button" id="adm-all-on" style="padding: 12px 22px; border-radius: 999px; border: 0; background: #121110; color: #f1f0ed; font-size: 14px; font-family: inherit; cursor: pointer; transition: background .25s ease;">Show everything</button>
         <span id="adm-count" style="font-size: 14px; color: #6e6b65;"></span>
       </div>
     </div>
@@ -66,101 +66,82 @@
   <footer style="border-top: 1px solid #e3e1dc;">
     <div style="max-width: 1000px; margin: 0 auto; padding: 26px 40px; display: flex; align-items: center; justify-content: space-between; gap: 24px; font-size: 13px; color: #6e6b65;">
       <span>© 2026 Shubha Singh</span>
-      <a href="index.html" style="color: #6e6b65;" style-hover="color: #121110;">Back to site →</a>
+      <a class="h2" href="index.html" style="color: #6e6b65;">Back to site →</a>
     </div>
   </footer>
 
 </div>
-
-</x-dc>
-<script type="text/x-dc" data-dc-script>
-class Component extends DCLogic {
-  componentDidMount() { this.build(); }
-
-  build() {
-    const root = document.getElementById('adm-groups');
-    if (!root || !window.SSMedia) { setTimeout(() => this.build(), 120); return; }
-
-    const groups = {};
-    window.SSMedia.list.forEach((m) => {
-      (groups[m.page] = groups[m.page] || []).push(m);
-    });
-
+<script>
+(function () {
+  function build() {
+    var root = document.getElementById('adm-groups');
+    if (!root || !window.SSMedia) { setTimeout(build, 120); return; }
+    var groups = {};
+    window.SSMedia.list.forEach(function (m) { (groups[m.page] = groups[m.page] || []).push(m); });
     root.innerHTML = '';
-    Object.keys(groups).forEach((page) => {
-      const wrap = document.createElement('div');
-
-      const head = document.createElement('div');
+    Object.keys(groups).forEach(function (page) {
+      var wrap = document.createElement('div');
+      var head = document.createElement('div');
       head.setAttribute('style', 'display:flex;align-items:baseline;justify-content:space-between;gap:20px;padding-bottom:16px;border-bottom:1px solid #121110;margin-bottom:4px;');
-      const title = document.createElement('h2');
+      var title = document.createElement('h2');
       title.setAttribute('style', 'margin:0;font-size:clamp(20px,2.2vw,28px);font-weight:500;letter-spacing:-0.03em;');
       title.textContent = page;
-      const count = document.createElement('span');
+      var count = document.createElement('span');
       count.setAttribute('style', 'font-size:13px;color:#6e6b65;');
       count.textContent = groups[page].length + ' items';
-      head.appendChild(title); head.appendChild(count);
-      wrap.appendChild(head);
+      head.appendChild(title); head.appendChild(count); wrap.appendChild(head);
 
-      groups[page].forEach((m) => {
-        const visible = !window.SSMedia.isHidden(m.id);
-
-        const row = document.createElement('div');
+      groups[page].forEach(function (m) {
+        var visible = !window.SSMedia.isHidden(m.id);
+        var row = document.createElement('div');
         row.setAttribute('style', 'display:flex;align-items:center;justify-content:space-between;gap:24px;padding:18px 0;border-bottom:1px solid #e3e1dc;');
-
-        const left = document.createElement('div');
+        var left = document.createElement('div');
         left.setAttribute('style', 'display:flex;flex-direction:column;gap:5px;');
-        const label = document.createElement('div');
+        var label = document.createElement('div');
         label.setAttribute('style', 'font-size:16px;');
         label.textContent = m.label;
-        const state = document.createElement('div');
+        var state = document.createElement('div');
         state.setAttribute('style', 'font-size:13px;color:#6e6b65;');
-        state.textContent = visible ? 'Visible on the site' : 'Hidden';
         left.appendChild(label); left.appendChild(state);
 
-        const btn = document.createElement('button');
+        var btn = document.createElement('button');
         btn.type = 'button';
         btn.setAttribute('role', 'switch');
-        btn.setAttribute('aria-checked', visible ? 'true' : 'false');
-        btn.setAttribute('aria-label', (visible ? 'Hide ' : 'Show ') + m.label);
-        const paint = (on) => {
+        function paint(on) {
           btn.setAttribute('style', 'position:relative;width:56px;height:32px;flex:0 0 auto;border-radius:999px;border:1px solid ' + (on ? '#121110' : '#d5d2cb') + ';background:' + (on ? '#121110' : 'transparent') + ';cursor:pointer;padding:0;transition:background .25s ease,border-color .25s ease;');
           btn.innerHTML = '<span style="position:absolute;top:3px;left:' + (on ? '27px' : '3px') + ';width:24px;height:24px;border-radius:999px;background:' + (on ? '#f1f0ed' : '#6e6b65') + ';transition:left .25s cubic-bezier(.22,.61,.36,1),background .25s ease;"></span>';
           btn.setAttribute('aria-checked', on ? 'true' : 'false');
           btn.setAttribute('aria-label', (on ? 'Hide ' : 'Show ') + m.label);
           state.textContent = on ? 'Visible on the site' : 'Hidden';
-        };
+        }
         paint(visible);
-        btn.addEventListener('click', () => {
-          const next = btn.getAttribute('aria-checked') !== 'true';
+        btn.addEventListener('click', function () {
+          var next = btn.getAttribute('aria-checked') !== 'true';
           window.SSMedia.set(m.id, next);
           paint(next);
-          this.updateCount();
+          updateCount();
         });
-
-        row.appendChild(left); row.appendChild(btn);
-        wrap.appendChild(row);
+        row.appendChild(left); row.appendChild(btn); wrap.appendChild(row);
       });
-
       root.appendChild(wrap);
     });
 
-    const allOn = document.getElementById('adm-all-on');
+    var allOn = document.getElementById('adm-all-on');
     if (allOn && !allOn.dataset.bound) {
       allOn.dataset.bound = '1';
-      allOn.addEventListener('click', () => { window.SSMedia.showAll(); this.build(); });
+      allOn.addEventListener('click', function () { window.SSMedia.showAll(); build(); });
     }
-    this.updateCount();
+    updateCount();
   }
-
-  updateCount() {
-    const el = document.getElementById('adm-count');
+  function updateCount() {
+    var el = document.getElementById('adm-count');
     if (!el || !window.SSMedia) return;
-    const n = window.SSMedia.hidden().length;
+    var n = window.SSMedia.hidden().length;
     el.textContent = n === 0 ? 'Everything is visible.' : n + (n === 1 ? ' item hidden.' : ' items hidden.');
   }
-
-  renderVals() { return {}; }
-}
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', build);
+  else build();
+})();
 </script>
 </body>
 </html>
