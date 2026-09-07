@@ -33,9 +33,9 @@
     header { padding: 14px 20px !important; }
     header nav { gap: 16px !important; }
     #intro > div { padding: 44px 20px 28px !important; }
-    #nextleap > div, #guideline > div, #design > div { padding: 56px 20px !important; }
+    #nextleap > div, #video > div, #design > div { padding: 56px 20px !important; }
     #nextleap .row { grid-template-columns: 1fr !important; gap: 22px !important; }
-    #guideline .grid { grid-template-columns: 1fr 1fr !important; }
+    #video .grid { grid-template-columns: 1fr 1fr !important; }
     #cta > div { padding: 72px 20px !important; }
     footer > div { padding: 28px 20px !important; }
     [data-car-track] figure img { height: 380px !important; }
@@ -44,7 +44,7 @@
     header { flex-wrap: wrap !important; gap: 12px !important; }
     header nav { width: 100% !important; justify-content: space-between !important; gap: 8px !important; }
     header nav a { font-size: 11px !important; }
-    #guideline .grid { grid-template-columns: 1fr !important; }
+    #video .grid { grid-template-columns: 1fr !important; }
     [data-car-track] figure img { height: 300px !important; }
   }
 
@@ -54,20 +54,18 @@
 .h3:hover{background: #6e6b65 !important}
 .h4:hover{color: #121110 !important}
 .h5:hover{transform: scale(1.04) !important}
-.h6:hover{border-color: #121110 !important}
+.h6:hover{background: #121110; color: #f1f0ed; border-color: #121110 !important}
 .h7:hover{background: #121110; color: #f1f0ed; border-color: #121110 !important}
-.h8:hover{background: #121110; color: #f1f0ed; border-color: #121110 !important}
-.h9:hover{background: #9b968e !important}
-.h10:hover{border-color: #f1f0ed !important}
-.h11:hover{color: #121110 !important}
+.h8:hover{background: #9b968e !important}
+.h9:hover{border-color: #f1f0ed !important}
+.h10:hover{color: #121110 !important}
 </style>
-
 </head>
 <body>
 <div style="font-family: 'Instrument Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; background: #f1f0ed; color: #121110;">
 
   <header style="position: sticky; top: 0; z-index: 60; display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 16px 40px; background: rgba(241,240,237,0.86); backdrop-filter: blur(14px); border-bottom: 1px solid #e3e1dc;">
-    <a href="index.html" style="font-size: 14px; font-weight: 600; letter-spacing: -0.01em;">Shubha Singh</a>
+    <a href="index.html" style="font-size: 14px; font-weight: 600; letter-spacing: -0.01em;">Home</a>
     <nav style="display: flex; align-items: center; gap: 26px;">
       <a href="projects.html" style="font-size: 13px; font-weight: 500; color: #121110;">Projects</a>
       <a class="h0" href="certifications.html" style="font-size: 13px; color: #6e6b65;">Certifications</a>
@@ -81,9 +79,6 @@
     <div style="max-width: 1280px; margin: 0 auto; padding: 56px 40px 36px; display: flex; flex-direction: column; gap: 22px;">
       <a class="h4" href="index.html" data-reveal="0" style="font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #6e6b65; align-self: flex-start;">← Back home</a>
       <h1 data-reveal="40" style="margin: 0; font-size: clamp(44px, 8vw, 120px); font-weight: 500; line-height: 0.92; letter-spacing: -0.05em;">Projects</h1>
-      <p data-reveal="100" style="margin: 0; max-width: 52ch; font-size: 18px; line-height: 1.55; color: #6e6b65; text-wrap: pretty;">
-Product work, the Sisters in Sweat brand guideline and campaign design — the things I made with my own hands, not just the strategy behind them.
-      </p>
     </div>
   </section>
 
@@ -92,9 +87,8 @@ Product work, the Sisters in Sweat brand guideline and campaign design — the t
       <div data-reveal="0" style="display: flex; align-items: baseline; gap: 14px; margin-bottom: 40px;">
         <span style="font-size: 12px; color: #6e6b65;">01</span>
         <h2 style="margin: 0; font-size: clamp(28px, 3.6vw, 48px); font-weight: 500; line-height: 1; letter-spacing: -0.04em;">Product</h2>
-        <span style="font-size: 14px; color: #6e6b65;">NextLeap fellowship</span>
       </div>
-      <a href="#nextleap" class="row" data-reveal="60" style="display: grid; grid-template-columns: 520px 1fr; gap: 52px; align-items: center; padding-top: 32px; border-top: 1px solid #e3e1dc;">
+      <a href="https://nextleap.app/portfolio/shubha-singh" target="_blank" rel="noopener" class="row" data-reveal="60" style="display: grid; grid-template-columns: 520px 1fr; gap: 52px; align-items: center; padding-top: 32px; border-top: 1px solid #e3e1dc;">
         <span style="display: block; border-radius: 16px; overflow: hidden; background: #ffffff;">
           <img class="h5" data-media="pr-nextleap" src="assets/case-studies/nextleap-pm-fellowship.jpg" alt="NextLeap product management fellowship project" style="width: 100%; aspect-ratio: 16 / 10; object-fit: cover; display: block; transition: transform .8s cubic-bezier(.22,.61,.36,1);" />
         </span>
@@ -104,62 +98,46 @@ Product work, the Sisters in Sweat brand guideline and campaign design — the t
           <span style="max-width: 54ch; font-size: 16px; line-height: 1.6; color: #6e6b65; text-wrap: pretty;">
             The capstone that turned my instinct for stories into structured product thinking — user research, prioritisation and a case for what to build.
           </span>
-          <span style="font-size: 15px; padding-top: 4px; color: #6e6b65;">Send me the project link and this opens in a new tab →</span>
+          <span style="font-size: 15px; padding-top: 4px; color: #121110;">View the fellowship portfolio ↗</span>
         </span>
       </a>
     </div>
   </section>
 
-  <section id="guideline" style="border-top: 1px solid #e3e1dc;">
+  <section id="video" style="border-top: 1px solid #e3e1dc;">
     <div style="max-width: 1280px; margin: 0 auto; padding: 80px 40px;">
-      <div data-reveal="0" style="display: flex; align-items: baseline; gap: 14px; margin-bottom: 20px;">
+      <div data-reveal="0" style="display: flex; align-items: baseline; gap: 14px; margin-bottom: 40px;">
         <span style="font-size: 12px; color: #6e6b65;">02</span>
-        <h2 style="margin: 0; font-size: clamp(28px, 3.6vw, 48px); font-weight: 500; line-height: 1; letter-spacing: -0.04em;">Brand guideline</h2>
-        <span style="font-size: 14px; color: #6e6b65;">Sisters in Sweat</span>
+        <h2 style="margin: 0; font-size: clamp(28px, 3.6vw, 48px); font-weight: 500; line-height: 1; letter-spacing: -0.04em;">Video editing</h2>
       </div>
-      <p data-reveal="60" style="margin: 0 0 40px; max-width: 62ch; font-size: 17px; line-height: 1.65; color: #6e6b65; text-wrap: pretty;">
-        There was no visual identity or guideline deck to work from, so we built one in-house rather than bring in an agency. I owned and executed it end-to-end — the deck below is what the brand now runs on across every partner collaboration.
-      </p>
-      <div class="grid" data-reveal="100" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
-        <figure data-media="gl-logo" style="margin: 0;">
-          <div style="width: 100%; aspect-ratio: 4 / 3; border-radius: 14px; background: #ffffff; border: 1px dashed #d5d2cb; display: flex; align-items: center; justify-content: center; text-align: center; padding: 20px;">
-            <span style="font-size: 13px; line-height: 1.5; color: #6e6b65; max-width: 24ch;">Logo &amp; wordmark page — drop the deck slide here</span>
+      <div class="grid" data-reveal="60" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+        <div data-media="pv-film-nykaa">
+          <div data-video="pNR5YOFEmKM" data-video-title="Sisters in Sweat × Nykaa Wellness" style="position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: 16px; overflow: hidden; background: #121110; cursor: pointer;">
+            <img data-video-cover src="https://img.youtube.com/vi/pNR5YOFEmKM/hqdefault.jpg" alt="Sisters in Sweat × Nykaa Wellness" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; transition: opacity .4s ease;" />
+            <span data-video-cover style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; transition: opacity .4s ease;">
+              <span style="display: flex; align-items: center; justify-content: center; width: 58px; height: 58px; border-radius: 999px; background: rgba(241,240,237,0.94); color: #121110; font-size: 15px; padding-left: 4px;">▶</span>
+            </span>
           </div>
-          <figcaption style="font-size: 13px; color: #6e6b65; padding-top: 12px;">Logo &amp; wordmark</figcaption>
-        </figure>
-        <figure data-media="gl-colour" style="margin: 0;">
-          <div style="width: 100%; aspect-ratio: 4 / 3; border-radius: 14px; background: #ffffff; border: 1px dashed #d5d2cb; display: flex; align-items: center; justify-content: center; text-align: center; padding: 20px;">
-            <span style="font-size: 13px; line-height: 1.5; color: #6e6b65; max-width: 24ch;">Colour palette page — drop the deck slide here</span>
+          <div style="font-size: 15px; padding-top: 14px;">Sisters in Sweat × Nykaa Wellness</div>
+        </div>
+        <div data-media="pv-film-mille">
+          <div data-video="OVSfZnnnmyE" data-video-title="Sisters in Sweat × Mille" style="position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: 16px; overflow: hidden; background: #121110; cursor: pointer;">
+            <img data-video-cover src="https://img.youtube.com/vi/OVSfZnnnmyE/hqdefault.jpg" alt="Sisters in Sweat × Mille" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; transition: opacity .4s ease;" />
+            <span data-video-cover style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; transition: opacity .4s ease;">
+              <span style="display: flex; align-items: center; justify-content: center; width: 58px; height: 58px; border-radius: 999px; background: rgba(241,240,237,0.94); color: #121110; font-size: 15px; padding-left: 4px;">▶</span>
+            </span>
           </div>
-          <figcaption style="font-size: 13px; color: #6e6b65; padding-top: 12px;">Colour palette</figcaption>
-        </figure>
-        <figure data-media="gl-type" style="margin: 0;">
-          <div style="width: 100%; aspect-ratio: 4 / 3; border-radius: 14px; background: #ffffff; border: 1px dashed #d5d2cb; display: flex; align-items: center; justify-content: center; text-align: center; padding: 20px;">
-            <span style="font-size: 13px; line-height: 1.5; color: #6e6b65; max-width: 24ch;">Typography page — drop the deck slide here</span>
+          <div style="font-size: 15px; padding-top: 14px;">Sisters in Sweat × Mille</div>
+        </div>
+        <div data-media="pv-film-dame">
+          <div data-video="YabxEyLkXYw" data-video-title="Sisters in Sweat × Dame Health" style="position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: 16px; overflow: hidden; background: #121110; cursor: pointer;">
+            <img data-video-cover src="https://img.youtube.com/vi/YabxEyLkXYw/hqdefault.jpg" alt="Sisters in Sweat × Dame Health" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; transition: opacity .4s ease;" />
+            <span data-video-cover style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; transition: opacity .4s ease;">
+              <span style="display: flex; align-items: center; justify-content: center; width: 58px; height: 58px; border-radius: 999px; background: rgba(241,240,237,0.94); color: #121110; font-size: 15px; padding-left: 4px;">▶</span>
+            </span>
           </div>
-          <figcaption style="font-size: 13px; color: #6e6b65; padding-top: 12px;">Typography</figcaption>
-        </figure>
-        <figure data-media="gl-tone" style="margin: 0;">
-          <div style="width: 100%; aspect-ratio: 4 / 3; border-radius: 14px; background: #ffffff; border: 1px dashed #d5d2cb; display: flex; align-items: center; justify-content: center; text-align: center; padding: 20px;">
-            <span style="font-size: 13px; line-height: 1.5; color: #6e6b65; max-width: 24ch;">Tone of voice page — drop the deck slide here</span>
-          </div>
-          <figcaption style="font-size: 13px; color: #6e6b65; padding-top: 12px;">Tone of voice</figcaption>
-        </figure>
-        <figure data-media="gl-social" style="margin: 0;">
-          <div style="width: 100%; aspect-ratio: 4 / 3; border-radius: 14px; background: #ffffff; border: 1px dashed #d5d2cb; display: flex; align-items: center; justify-content: center; text-align: center; padding: 20px;">
-            <span style="font-size: 13px; line-height: 1.5; color: #6e6b65; max-width: 24ch;">Social templates page — drop the deck slide here</span>
-          </div>
-          <figcaption style="font-size: 13px; color: #6e6b65; padding-top: 12px;">Social templates</figcaption>
-        </figure>
-        <figure data-media="gl-cobrand" style="margin: 0;">
-          <div style="width: 100%; aspect-ratio: 4 / 3; border-radius: 14px; background: #ffffff; border: 1px dashed #d5d2cb; display: flex; align-items: center; justify-content: center; text-align: center; padding: 20px;">
-            <span style="font-size: 13px; line-height: 1.5; color: #6e6b65; max-width: 24ch;">Co-branding rules page — drop the deck slide here</span>
-          </div>
-          <figcaption style="font-size: 13px; color: #6e6b65; padding-top: 12px;">Co-branding rules</figcaption>
-        </figure>
-      </div>
-      <div data-reveal="140" style="padding-top: 30px;">
-        <a class="h6" href="#work" style="font-size: 15px; border-bottom: 1px solid #d5d2cb; padding-bottom: 3px; transition: border-color .25s ease;">Read the full Sisters in Sweat case study →</a>
+          <div style="font-size: 15px; padding-top: 14px;">Sisters in Sweat × Dame Health</div>
+        </div>
       </div>
     </div>
   </section>
@@ -170,11 +148,10 @@ Product work, the Sisters in Sweat brand guideline and campaign design — the t
         <div style="display: flex; align-items: baseline; gap: 14px;">
           <span style="font-size: 12px; color: #6e6b65;">03</span>
           <h2 style="margin: 0; font-size: clamp(28px, 3.6vw, 48px); font-weight: 500; line-height: 1; letter-spacing: -0.04em;">Graphic design</h2>
-          <span style="font-size: 14px; color: #6e6b65;">Nine pieces</span>
         </div>
         <div style="display: flex; gap: 10px;">
-          <button class="h7" type="button" data-car-prev aria-label="Previous" style="display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 999px; border: 1px solid #d5d2cb; background: transparent; color: #121110; font-size: 15px; cursor: pointer; font-family: inherit; transition: background .25s ease, border-color .25s ease;">←</button>
-          <button class="h8" type="button" data-car-next aria-label="Next" style="display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 999px; border: 1px solid #d5d2cb; background: transparent; color: #121110; font-size: 15px; cursor: pointer; font-family: inherit; transition: background .25s ease, border-color .25s ease;">→</button>
+          <button class="h6" type="button" data-car-prev aria-label="Previous" style="display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 999px; border: 1px solid #d5d2cb; background: transparent; color: #121110; font-size: 15px; cursor: pointer; font-family: inherit; transition: background .25s ease, border-color .25s ease;">←</button>
+          <button class="h7" type="button" data-car-next aria-label="Next" style="display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 999px; border: 1px solid #d5d2cb; background: transparent; color: #121110; font-size: 15px; cursor: pointer; font-family: inherit; transition: background .25s ease, border-color .25s ease;">→</button>
         </div>
       </div>
     </div>
@@ -226,8 +203,8 @@ Product work, the Sisters in Sweat brand guideline and campaign design — the t
         <h2 style="margin: 0 0 22px; font-size: clamp(28px, 4.4vw, 60px); font-weight: 500; line-height: 1.02; letter-spacing: -0.045em; max-width: 24ch; text-wrap: pretty;">Want the thinking behind these?</h2>
         <p style="margin: 0 0 36px; max-width: 46ch; font-size: 17px; line-height: 1.6; color: #9b968e;">The case studies cover the strategy, the identity work and what it moved.</p>
         <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
-          <a class="h9" href="#work" style="display: inline-flex; align-items: center; gap: 10px; padding: 14px 24px; border-radius: 999px; background: #f1f0ed; color: #121110; font-size: 14px; transition: background .25s ease;">Read the case studies <span style="font-size: 13px;">→</span></a>
-          <a class="h10" href="certifications.html" style="display: inline-flex; align-items: center; padding: 14px 24px; border-radius: 999px; border: 1px solid #3a3835; font-size: 14px; color: #f1f0ed; transition: border-color .25s ease;">Certifications</a>
+          <a class="h8" href="#work" style="display: inline-flex; align-items: center; gap: 10px; padding: 14px 24px; border-radius: 999px; background: #f1f0ed; color: #121110; font-size: 14px; transition: background .25s ease;">Read the case studies <span style="font-size: 13px;">→</span></a>
+          <a class="h9" href="certifications.html" style="display: inline-flex; align-items: center; padding: 14px 24px; border-radius: 999px; border: 1px solid #3a3835; font-size: 14px; color: #f1f0ed; transition: border-color .25s ease;">Certifications</a>
         </div>
       </div>
     </div>
@@ -237,7 +214,7 @@ Product work, the Sisters in Sweat brand guideline and campaign design — the t
     <div style="max-width: 1280px; margin: 0 auto; padding: 26px 40px;">
       <div style="display: flex; align-items: center; justify-content: space-between; gap: 24px; font-size: 13px; color: #6e6b65;">
         <span>© 2026 Shubha Singh</span>
-        <a class="h11" href="#intro" style="color: #6e6b65;">Back to top ↑</a>
+        <a class="h10" href="#intro" style="color: #6e6b65;">Back to top ↑</a>
       </div>
     </div>
   </footer>

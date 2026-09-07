@@ -30,16 +30,20 @@
   @media (max-width: 1000px) {
     header { padding: 14px 20px !important; }
     header nav { gap: 16px !important; }
-    #top > div { padding: 40px 20px 28px !important; }
-    #top .split { grid-template-columns: 1fr !important; gap: 28px !important; }
+    #top > div { padding: 36px 20px 28px !important; }
     #journey > div { padding: 56px 20px !important; }
     #journey .split { grid-template-columns: 1fr !important; gap: 24px !important; }
     #work > div { padding: 56px 20px !important; }
     #work .row { grid-template-columns: 1fr !important; gap: 20px !important; }
-    #work [data-acc-body] > div > div { grid-template-columns: 1fr !important; gap: 8px !important; }
-    #work .films, #work .analytics { grid-template-columns: 1fr !important; }
+    #work .step { grid-template-columns: 1fr !important; gap: 8px !important; }
+    #work .films { grid-template-columns: 1fr 1fr !important; }
+    #work .guideline { grid-template-columns: 1fr 1fr !important; }
     #contact > div { padding: 72px 20px !important; }
     footer > div { padding: 28px 20px !important; }
+  }
+  @media (max-width: 760px) {
+    #top .split { grid-template-columns: 1fr !important; gap: 26px !important; }
+    #top img { max-width: 260px !important; justify-self: start !important; }
   }
   @media (max-width: 620px) {
     header { flex-wrap: wrap !important; gap: 12px !important; }
@@ -53,25 +57,23 @@
 .h3:hover{color: #121110 !important}
 .h4:hover{background: #6e6b65 !important}
 .h5:hover{background: #6e6b65 !important}
-.h6:hover{border-color: #121110; background: #ffffff !important}
-.h7:hover{background: #121110; color: #f1f0ed; border-color: #121110 !important}
+.h6:hover{background: #121110; color: #f1f0ed; border-color: #121110 !important}
+.h7:hover{transform: scale(1.04) !important}
 .h8:hover{transform: scale(1.04) !important}
-.h9:hover{transform: scale(1.04) !important}
-.h10:hover{background: #9b968e !important}
-.h11:hover{background: #f1f0ed; color: #121110; border-color: #f1f0ed !important}
+.h9:hover{background: #9b968e !important}
+.h10:hover{background: #f1f0ed; color: #121110; border-color: #f1f0ed !important}
+.h11:hover{color: #f1f0ed !important}
 .h12:hover{color: #f1f0ed !important}
 .h13:hover{color: #f1f0ed !important}
 .h14:hover{color: #f1f0ed !important}
-.h15:hover{color: #f1f0ed !important}
-.h16:hover{color: #121110 !important}
+.h15:hover{color: #121110 !important}
 </style>
-
 </head>
 <body>
 <div style="font-family: 'Instrument Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; background: #f1f0ed; color: #121110;">
 
   <header style="position: sticky; top: 0; z-index: 60; display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 16px 40px; background: rgba(241,240,237,0.86); backdrop-filter: blur(14px); border-bottom: 1px solid #e3e1dc;">
-    <a href="#top" style="font-size: 14px; font-weight: 600; letter-spacing: -0.01em;">Shubha Singh</a>
+    <a href="#top" style="font-size: 14px; font-weight: 600; letter-spacing: -0.01em;">Home</a>
     <nav style="display: flex; align-items: center; gap: 26px;">
       <a class="h0" href="projects.html" style="font-size: 13px; color: #6e6b65;">Projects</a>
       <a class="h1" href="certifications.html" style="font-size: 13px; color: #6e6b65;">Certifications</a>
@@ -82,23 +84,22 @@
   </header>
 
   <section id="top">
-    <div style="max-width: 1280px; margin: 0 auto; padding: 64px 40px 36px;">
-      <h1 data-reveal="0" style="margin: 0; max-width: 22ch; font-size: clamp(38px, 6.4vw, 92px); font-weight: 500; line-height: 0.98; letter-spacing: -0.045em; text-wrap: pretty;">
-        Hi, I'm a Marketing and Branding strategist blending creative instinct and systems thinking.
-      </h1>
-      <div class="split" data-reveal="120" style="display: grid; grid-template-columns: 1.5fr 0.9fr; gap: 56px; align-items: end; margin-top: 48px;">
-        <div style="display: flex; flex-direction: column; gap: 28px;">
-          <p style="margin: 0; max-width: 54ch; font-size: 18px; line-height: 1.55; color: #6e6b65; text-wrap: pretty;">
+    <div style="max-width: 1280px; margin: 0 auto; padding: 60px 40px 44px;">
+      <div class="split" style="display: grid; grid-template-columns: 1.55fr 0.85fr; gap: 56px; align-items: center;">
+        <div data-reveal="0" style="display: flex; flex-direction: column; gap: 20px;">
+          <h1 style="margin: 0; font-size: clamp(34px, 4.6vw, 66px); font-weight: 500; line-height: 1.02; letter-spacing: -0.04em; text-wrap: pretty;">
+            Hi, I'm a Marketing and Branding strategist blending creative instinct and systems thinking.
+          </h1>
+          <p style="margin: 0; max-width: 54ch; font-size: 17px; line-height: 1.55; color: #6e6b65; text-wrap: pretty;">
             With experience spanning Marketing and Product, I bring a multifaceted perspective to the table and help businesses be noticed and remembered across every touchpoint.
           </p>
-          <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
-            <a class="h5" href="#work" style="display: inline-flex; align-items: center; gap: 10px; padding: 14px 24px; border-radius: 999px; background: #121110; color: #f1f0ed; font-size: 14px; transition: background .25s ease;">See the work <span style="font-size: 13px;">→</span></a>
-            <a class="h6" href="resume.html" style="display: inline-flex; align-items: center; padding: 14px 24px; border-radius: 999px; border: 1px solid #d5d2cb; font-size: 14px; transition: border-color .25s ease, background .25s ease;">Read my resume</a>
-            <a class="h7" href="https://www.linkedin.com/in/shubha1907/" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn" style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 999px; border: 1px solid #d5d2cb; font-size: 13px; font-weight: 600; transition: background .25s ease, color .25s ease, border-color .25s ease;">in</a>
-            <span title="Instagram — send me your handle and this goes live" style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 999px; border: 1px solid #d5d2cb; color: #121110; transition: background .25s ease, color .25s ease, border-color .25s ease; opacity: 0.45; cursor: default;"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="3.6"></circle><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"></circle></svg></span>
+          <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap; padding-top: 6px;">
+            <a class="h5" href="resume.html" style="display: inline-flex; align-items: center; gap: 10px; padding: 14px 24px; border-radius: 999px; background: #121110; color: #f1f0ed; font-size: 14px; transition: background .25s ease;">My resume <span style="font-size: 13px;">→</span></a>
+            <a class="h6" href="https://www.linkedin.com/in/shubha1907/" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn" style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 999px; border: 1px solid #d5d2cb; font-size: 13px; font-weight: 600; transition: background .25s ease, color .25s ease, border-color .25s ease;">in</a>
+            <span title="Instagram — send me your handle and this goes live" style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 999px; border: 1px solid #d5d2cb; color: #121110; opacity: 0.45; cursor: default;"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="3.6"></circle><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"></circle></svg></span>
           </div>
         </div>
-        <img src="assets/hero-photo.jpg" alt="Shubha Singh" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; display: block; border-radius: 16px;" />
+        <img data-reveal="80" src="assets/hero-photo.jpg" alt="Shubha Singh" style="width: 100%; max-width: 340px; justify-self: end; aspect-ratio: 1 / 1; object-fit: cover; display: block; border-radius: 16px;" />
       </div>
     </div>
   </section>
@@ -135,13 +136,13 @@
 
       <article class="row" data-reveal="0" style="display: grid; grid-template-columns: 380px 1fr; gap: 44px; align-items: start; padding: 36px 0; border-top: 1px solid #e3e1dc;">
         <a href="#work" style="display: block; border-radius: 16px; overflow: hidden; background: #ffffff;">
-          <img class="h8" data-media="cs-sis-image" src="assets/case-studies/sisters-in-sweat-logo.jpg" alt="Sisters in Sweat" style="width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; transition: transform .8s cubic-bezier(.22,.61,.36,1);" />
+          <img class="h7" data-media="cs-sis-image" src="assets/case-studies/sisters-in-sweat-logo.jpg" alt="Sisters in Sweat" style="width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; transition: transform .8s cubic-bezier(.22,.61,.36,1);" />
         </a>
         <div style="display: flex; flex-direction: column; gap: 14px;">
           <div style="font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #6e6b65;">Marketing Executive · Fitness &amp; Wellness</div>
           <h3 style="margin: 0; font-size: clamp(24px, 2.6vw, 34px); font-weight: 500; line-height: 1.1; letter-spacing: -0.035em;">Sisters in Sweat</h3>
           <p style="margin: 0; max-width: 54ch; font-size: 16px; line-height: 1.6; color: #6e6b65; text-wrap: pretty;">
-            No marketing team, no brand guidelines, and a visual language drifting across every channel. I built the strategy and identity in-house — end to end.
+            Brand strategy, visual identity and marketing systems built in-house for India's largest women-first movement community.
           </p>
           
             <div style="font-size: 15px; color: #121110;">Full brand guideline deck delivered in-house, no agency.</div>
@@ -158,53 +159,53 @@
             </div>
             <div data-acc-body>
               <div style="padding-bottom: 8px;">
-            <div style="display: grid; grid-template-columns: 132px 1fr; gap: 28px; padding: 22px 0; border-top: 1px solid #e3e1dc;">
+            <div class="step" style="display: grid; grid-template-columns: 132px 1fr; gap: 28px; padding: 22px 0; border-top: 1px solid #e3e1dc;">
               <div style="font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #6e6b65;">01 — Context</div>
               <div style="display: flex; flex-direction: column; gap: 16px;">
                 <p style="margin: 0; max-width: 62ch; font-size: 16px; line-height: 1.65; color: #6e6b65; text-wrap: pretty;">Sisters in Sweat is India's largest women-first community for everything movement — sports, fitness, wellness, social and recreational. Started in 2017, SIS went on to receive funding from Rainmatter and get Nike onboard as a multi-year partner.</p>
                 <p style="margin: 0; max-width: 62ch; font-size: 16px; line-height: 1.65; color: #6e6b65; text-wrap: pretty;">I joined as a Marketing Executive. Soon after starting, it was clear there was a lot more ground to cover than the title suggested — the marketing funnel, team co-ordination, visual identity and marketing narrative. So I put on multiple hats.</p>
               </div>
             </div>
-            <div style="display: grid; grid-template-columns: 132px 1fr; gap: 28px; padding: 22px 0; border-top: 1px solid #e3e1dc;">
+            <div class="step" style="display: grid; grid-template-columns: 132px 1fr; gap: 28px; padding: 22px 0; border-top: 1px solid #e3e1dc;">
               <div style="font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #6e6b65;">02 — Problem</div>
               <div style="display: flex; flex-direction: column; gap: 20px;">
                 <div style="display: flex; gap: 14px;">
                   <span style="font-size: 13px; color: #6e6b65; min-width: 20px; padding-top: 2px;">01</span>
                   <div>
                     <div style="font-size: 16px; font-weight: 500; margin-bottom: 5px;">No brand strategy</div>
-                    <p style="margin: 0; max-width: 62ch; font-size: 16px; line-height: 1.65; color: #6e6b65; text-wrap: pretty;">Without a brand strategy in place, our visual language across social media and every other touchpoint had become incoherent — and beyond strategy, there was no visual identity or brand guideline deck to work from either.</p>
+                    <p style="margin: 0; max-width: 62ch; font-size: 16px; line-height: 1.65; color: #6e6b65; text-wrap: pretty;">With no formal brand strategy in place, the visual language across social media and other touchpoints had developed inconsistently. There was also no documented visual identity or brand guideline deck for the team to work from.</p>
                   </div>
                 </div>
                 <div style="display: flex; gap: 14px;">
                   <span style="font-size: 13px; color: #6e6b65; min-width: 20px; padding-top: 2px;">02</span>
                   <div>
                     <div style="font-size: 16px; font-weight: 500; margin-bottom: 5px;">Partner brand attrition</div>
-                    <p style="margin: 0; max-width: 62ch; font-size: 16px; line-height: 1.65; color: #6e6b65; text-wrap: pretty;">Given the inconsistent visual language and content quality, we were either unable to deliver on our promises to partner brands, convert activations into long-term partnerships, or avoid churn.</p>
+                    <p style="margin: 0; max-width: 62ch; font-size: 16px; line-height: 1.65; color: #6e6b65; text-wrap: pretty;">Inconsistent visual language and content standards made it harder to meet partner expectations reliably, and one-off activations rarely converted into long-term partnerships.</p>
                   </div>
                 </div>
                 <div style="display: flex; gap: 14px;">
                   <span style="font-size: 13px; color: #6e6b65; min-width: 20px; padding-top: 2px;">03</span>
                   <div>
                     <div style="font-size: 16px; font-weight: 500; margin-bottom: 5px;">Broken marketing funnel</div>
-                    <p style="margin: 0; max-width: 62ch; font-size: 16px; line-height: 1.65; color: #6e6b65; text-wrap: pretty;">Owing to an outdated, make-shift website, we were unable to convert traffic into members or participants. This left our Instagram doing the heavy lifting when it came to getting registrations.</p>
+                    <p style="margin: 0; max-width: 62ch; font-size: 16px; line-height: 1.65; color: #6e6b65; text-wrap: pretty;">The website predated the community's growth and was not built for conversion, so traffic rarely translated into members or event registrations. That left Instagram carrying most of the acquisition load.</p>
                   </div>
                 </div>
                 <div style="display: flex; gap: 14px;">
                   <span style="font-size: 13px; color: #6e6b65; min-width: 20px; padding-top: 2px;">04</span>
                   <div>
                     <div style="font-size: 16px; font-weight: 500; margin-bottom: 5px;">Communication gaps</div>
-                    <p style="margin: 0; max-width: 62ch; font-size: 16px; line-height: 1.65; color: #6e6b65; text-wrap: pretty;">Without SOPs and a formalised workflow, the team missed critical deadlines and spent most of their time in redundant meetings and fixing errors.</p>
+                    <p style="margin: 0; max-width: 62ch; font-size: 16px; line-height: 1.65; color: #6e6b65; text-wrap: pretty;">Without documented SOPs or a formalised workflow, deadlines were difficult to hold and a significant share of the team's time went into alignment meetings and rework.</p>
                   </div>
                 </div>
               </div>
             </div>
-            <div style="display: grid; grid-template-columns: 132px 1fr; gap: 28px; padding: 22px 0; border-top: 1px solid #e3e1dc;">
+            <div class="step" style="display: grid; grid-template-columns: 132px 1fr; gap: 28px; padding: 22px 0; border-top: 1px solid #e3e1dc;">
               <div style="font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #6e6b65;">03 — Process</div>
-              <p style="margin: 0; max-width: 62ch; font-size: 16px; line-height: 1.65; color: #6e6b65; text-wrap: pretty;">I built trackers and systems that improved day-to-day efficiency and cut down the time spent in meetings. When I raised the gap in brand strategy and visual identity, we decided to build it in-house rather than bring in an agency — I owned and executed that project end-to-end, delivering a full brand guideline deck. I also led the brand marketing charter, handling collaborated brand campaigns across partners including Cava, Nike, Mille, Nykaa Wellness and In Her Interest by Zerodha.</p>
+              <p style="margin: 0; max-width: 62ch; font-size: 16px; line-height: 1.65; color: #6e6b65; text-wrap: pretty;">I introduced trackers, content calendars and reusable templates that improved day-to-day efficiency and reduced time spent in alignment meetings. After raising the gap in brand strategy and visual identity, we chose to build it in-house rather than engage an agency — I owned and executed that project end-to-end, delivering a full brand guideline deck. I also led the brand marketing charter, running collaborative campaigns with partners including Cava, Nike, Mille, Nykaa Wellness and In Her Interest by Zerodha.</p>
             </div>
-            <div style="display: grid; grid-template-columns: 132px 1fr; gap: 28px; padding: 22px 0; border-top: 1px solid #e3e1dc;">
+            <div class="step" style="display: grid; grid-template-columns: 132px 1fr; gap: 28px; padding: 22px 0; border-top: 1px solid #e3e1dc;">
               <div style="font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #6e6b65;">04 — Outcome</div>
-              <p style="margin: 0; max-width: 62ch; font-size: 16px; line-height: 1.65; color: #6e6b65; text-wrap: pretty;">Sisters in Sweat now runs on a brand system built entirely in-house — one consistent visual identity across every partner collaboration, and systems that keep the team's time focused on the work itself rather than admin. The content strategy work also helped solidify the Nykaa Wellness partnership and brought another protein brand on board.</p>
+              <p style="margin: 0; max-width: 62ch; font-size: 16px; line-height: 1.65; color: #6e6b65; text-wrap: pretty;">Sisters in Sweat now operates on a brand system built entirely in-house: a consistent visual identity across every partner collaboration, and workflows that keep the team focused on execution rather than admin. The content strategy work also helped secure the Nykaa Wellness partnership and bring an additional protein brand on board.</p>
             </div>
             <div style="padding: 26px 0 8px; border-top: 1px solid #e3e1dc;">
               <div style="font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #6e6b65; margin-bottom: 8px;">Brands I worked with</div>
@@ -247,26 +248,69 @@
             </div>
               </div>
               <div style="padding-top: 30px; margin-top: 30px; border-top: 1px solid #e3e1dc;">
+                <div style="font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #6e6b65; margin-bottom: 12px;">Brand strategy and visual identity</div>
+                <p style="margin: 0 0 20px; max-width: 62ch; font-size: 16px; line-height: 1.65; color: #6e6b65; text-wrap: pretty;">
+                  There was no documented visual identity to work from, so we built one in-house rather than engage an agency. I owned and executed the project end-to-end — positioning and brand voice through to the full guideline deck the brand now runs on across every partner collaboration.
+                </p>
+                <div class="guideline" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+                  <figure data-media="gl-logo" style="margin: 0;">
+                    <div style="width: 100%; aspect-ratio: 4 / 3; border-radius: 12px; background: #ffffff; border: 1px dashed #d5d2cb; display: flex; align-items: center; justify-content: center; text-align: center; padding: 18px;">
+                      <span style="font-size: 13px; line-height: 1.5; color: #6e6b65; max-width: 22ch;">Drop the deck slide here</span>
+                    </div>
+                    <figcaption style="font-size: 13px; color: #6e6b65; padding-top: 10px;">Logo &amp; wordmark</figcaption>
+                  </figure>
+                  <figure data-media="gl-colour" style="margin: 0;">
+                    <div style="width: 100%; aspect-ratio: 4 / 3; border-radius: 12px; background: #ffffff; border: 1px dashed #d5d2cb; display: flex; align-items: center; justify-content: center; text-align: center; padding: 18px;">
+                      <span style="font-size: 13px; line-height: 1.5; color: #6e6b65; max-width: 22ch;">Drop the deck slide here</span>
+                    </div>
+                    <figcaption style="font-size: 13px; color: #6e6b65; padding-top: 10px;">Colour palette</figcaption>
+                  </figure>
+                  <figure data-media="gl-type" style="margin: 0;">
+                    <div style="width: 100%; aspect-ratio: 4 / 3; border-radius: 12px; background: #ffffff; border: 1px dashed #d5d2cb; display: flex; align-items: center; justify-content: center; text-align: center; padding: 18px;">
+                      <span style="font-size: 13px; line-height: 1.5; color: #6e6b65; max-width: 22ch;">Drop the deck slide here</span>
+                    </div>
+                    <figcaption style="font-size: 13px; color: #6e6b65; padding-top: 10px;">Typography</figcaption>
+                  </figure>
+                  <figure data-media="gl-tone" style="margin: 0;">
+                    <div style="width: 100%; aspect-ratio: 4 / 3; border-radius: 12px; background: #ffffff; border: 1px dashed #d5d2cb; display: flex; align-items: center; justify-content: center; text-align: center; padding: 18px;">
+                      <span style="font-size: 13px; line-height: 1.5; color: #6e6b65; max-width: 22ch;">Drop the deck slide here</span>
+                    </div>
+                    <figcaption style="font-size: 13px; color: #6e6b65; padding-top: 10px;">Brand voice</figcaption>
+                  </figure>
+                  <figure data-media="gl-social" style="margin: 0;">
+                    <div style="width: 100%; aspect-ratio: 4 / 3; border-radius: 12px; background: #ffffff; border: 1px dashed #d5d2cb; display: flex; align-items: center; justify-content: center; text-align: center; padding: 18px;">
+                      <span style="font-size: 13px; line-height: 1.5; color: #6e6b65; max-width: 22ch;">Drop the deck slide here</span>
+                    </div>
+                    <figcaption style="font-size: 13px; color: #6e6b65; padding-top: 10px;">Social templates</figcaption>
+                  </figure>
+                  <figure data-media="gl-cobrand" style="margin: 0;">
+                    <div style="width: 100%; aspect-ratio: 4 / 3; border-radius: 12px; background: #ffffff; border: 1px dashed #d5d2cb; display: flex; align-items: center; justify-content: center; text-align: center; padding: 18px;">
+                      <span style="font-size: 13px; line-height: 1.5; color: #6e6b65; max-width: 22ch;">Drop the deck slide here</span>
+                    </div>
+                    <figcaption style="font-size: 13px; color: #6e6b65; padding-top: 10px;">Co-branding rules</figcaption>
+                  </figure>
+                </div>
+              </div>
+
+              <div style="padding-top: 30px; margin-top: 30px; border-top: 1px solid #e3e1dc;">
                 <div style="font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #6e6b65; margin-bottom: 16px;">Analytics</div>
-                <div class="analytics" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
-                <figure data-media="sis-analytics-1" style="margin: 0;">
-                  <div style="width: 100%; aspect-ratio: 16 / 10; border-radius: 14px; background: #ffffff; border: 1px dashed #d5d2cb; display: flex; align-items: center; justify-content: center; text-align: center; padding: 18px;">
-                    <span style="font-size: 13px; line-height: 1.5; color: #6e6b65; max-width: 24ch;">Drop an analytics screenshot here</span>
-                  </div>
-                  <figcaption style="font-size: 13px; color: #6e6b65; padding-top: 12px;">Instagram reach &amp; growth</figcaption>
-                </figure>
-                <figure data-media="sis-analytics-2" style="margin: 0;">
-                  <div style="width: 100%; aspect-ratio: 16 / 10; border-radius: 14px; background: #ffffff; border: 1px dashed #d5d2cb; display: flex; align-items: center; justify-content: center; text-align: center; padding: 18px;">
-                    <span style="font-size: 13px; line-height: 1.5; color: #6e6b65; max-width: 24ch;">Drop an analytics screenshot here</span>
-                  </div>
-                  <figcaption style="font-size: 13px; color: #6e6b65; padding-top: 12px;">Campaign performance</figcaption>
-                </figure>
-                <figure data-media="sis-analytics-3" style="margin: 0;">
-                  <div style="width: 100%; aspect-ratio: 16 / 10; border-radius: 14px; background: #ffffff; border: 1px dashed #d5d2cb; display: flex; align-items: center; justify-content: center; text-align: center; padding: 18px;">
-                    <span style="font-size: 13px; line-height: 1.5; color: #6e6b65; max-width: 24ch;">Drop an analytics screenshot here</span>
-                  </div>
-                  <figcaption style="font-size: 13px; color: #6e6b65; padding-top: 12px;">Registrations &amp; conversion</figcaption>
-                </figure>
+                <div class="analytics" style="display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start;">
+                  <figure data-media="sis-analytics-1" style="margin: 0; flex: 1 1 300px; max-width: 585px;">
+                    <img src="assets/analytics/actions-2.jpg" alt="Instagram actions after viewing: 3K profile visits, 908 follows, 488 bio link clicks" style="width: 100%; max-width: 585px; height: auto; display: block; border-radius: 12px; background: #0d0d0f;" />
+                    <figcaption style="font-size: 13px; color: #6e6b65; padding-top: 10px;">Actions after viewing — 3K profile visits, 908 follows</figcaption>
+                  </figure>
+                  <figure data-media="sis-analytics-2" style="margin: 0; flex: 1 1 300px; max-width: 585px;">
+                    <img src="assets/analytics/actions-1.jpg" alt="Instagram actions after viewing: 873 profile visits, 242 follows, 211 bio link clicks" style="width: 100%; max-width: 585px; height: auto; display: block; border-radius: 12px; background: #0d0d0f;" />
+                    <figcaption style="font-size: 13px; color: #6e6b65; padding-top: 10px;">Actions after viewing — 873 profile visits, 242 follows</figcaption>
+                  </figure>
+                  <figure data-media="sis-analytics-3" style="margin: 0; flex: 1 1 300px; max-width: 516px;">
+                    <img src="assets/analytics/reel-engagement.jpg" alt="Reel engagement: 963 likes, 53 comments, 10 reposts, 1.4K shares, 389 saves" style="width: 100%; max-width: 516px; height: auto; display: block; border-radius: 12px; background: #0d0d0f;" />
+                    <figcaption style="font-size: 13px; color: #6e6b65; padding-top: 10px;">Reel engagement — 1.4K shares, 963 likes</figcaption>
+                  </figure>
+                  <figure data-media="sis-analytics-4" style="margin: 0; flex: 1 1 300px; max-width: 456px;">
+                    <img src="assets/analytics/reel-saves.jpg" alt="Reel engagement: 327 shares, 113 saves" style="width: 100%; max-width: 456px; height: auto; display: block; border-radius: 12px; background: #0d0d0f;" />
+                    <figcaption style="font-size: 13px; color: #6e6b65; padding-top: 10px;">Reel engagement — 327 shares, 113 saves</figcaption>
+                  </figure>
                 </div>
               </div>
             </div>
@@ -300,19 +344,19 @@
             </div>
             <div data-acc-body>
               <div style="padding-bottom: 8px;">
-            <div style="display: grid; grid-template-columns: 132px 1fr; gap: 28px; padding: 22px 0; border-top: 1px solid #e3e1dc;">
+            <div class="step" style="display: grid; grid-template-columns: 132px 1fr; gap: 28px; padding: 22px 0; border-top: 1px solid #e3e1dc;">
               <div style="font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #6e6b65;">01 — Context</div>
-              <p style="margin: 0; max-width: 62ch; font-size: 16px; line-height: 1.65; color: #6e6b65; text-wrap: pretty;">At Talview, a client-facing voucher system needed a clear owner to take it from concept to shipped feature.</p>
+              <p style="margin: 0; max-width: 62ch; font-size: 16px; line-height: 1.65; color: #6e6b65; text-wrap: pretty;">At Talview, a client-facing voucher management system needed a dedicated owner to take it from concept to a shipped feature.</p>
             </div>
-            <div style="display: grid; grid-template-columns: 132px 1fr; gap: 28px; padding: 22px 0; border-top: 1px solid #e3e1dc;">
+            <div class="step" style="display: grid; grid-template-columns: 132px 1fr; gap: 28px; padding: 22px 0; border-top: 1px solid #e3e1dc;">
               <div style="font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #6e6b65;">02 — Problem</div>
-              <p style="margin: 0; max-width: 62ch; font-size: 16px; line-height: 1.65; color: #6e6b65; text-wrap: pretty;">Vouchers were being handled ad hoc, with no consistent framework for issuing, tracking or documenting them for clients or internal teams.</p>
+              <p style="margin: 0; max-width: 62ch; font-size: 16px; line-height: 1.65; color: #6e6b65; text-wrap: pretty;">Voucher handling had no consistent framework for issuing, tracking or documenting, which created overhead for both clients and internal teams.</p>
             </div>
-            <div style="display: grid; grid-template-columns: 132px 1fr; gap: 28px; padding: 22px 0; border-top: 1px solid #e3e1dc;">
+            <div class="step" style="display: grid; grid-template-columns: 132px 1fr; gap: 28px; padding: 22px 0; border-top: 1px solid #e3e1dc;">
               <div style="font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #6e6b65;">03 — Process</div>
               <p style="margin: 0; max-width: 62ch; font-size: 16px; line-height: 1.65; color: #6e6b65; text-wrap: pretty;">I led end-to-end development of the voucher management system, from concept through to release. I wrote the release documentation and user-facing guides, and ran a competitive analysis of industry tools to build a framework for positioning and storytelling that supported the product marketing team.</p>
             </div>
-            <div style="display: grid; grid-template-columns: 132px 1fr; gap: 28px; padding: 22px 0; border-top: 1px solid #e3e1dc;">
+            <div class="step" style="display: grid; grid-template-columns: 132px 1fr; gap: 28px; padding: 22px 0; border-top: 1px solid #e3e1dc;">
               <div style="font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #6e6b65;">04 — Outcome</div>
               <p style="margin: 0; max-width: 62ch; font-size: 16px; line-height: 1.65; color: #6e6b65; text-wrap: pretty;">The system contributed to a 5% improvement in retention, and demonstrated end-to-end ownership from concept through to release documentation.</p>
             </div>
@@ -324,7 +368,7 @@
 
       <article class="row" data-reveal="0" style="display: grid; grid-template-columns: 380px 1fr; gap: 44px; align-items: start; padding: 36px 0; border-top: 1px solid #e3e1dc; border-bottom: 1px solid #e3e1dc;">
         <a href="#work" style="display: block; border-radius: 16px; overflow: hidden; background: #ffffff;">
-          <img class="h9" data-media="cs-mohmani-image" src="assets/case-studies/mohmani.jpg" alt="Mohmani Instagram grid" style="width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; transition: transform .8s cubic-bezier(.22,.61,.36,1);" />
+          <img class="h8" data-media="cs-mohmani-image" src="assets/case-studies/mohmani.jpg" alt="Mohmani Instagram grid" style="width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; transition: transform .8s cubic-bezier(.22,.61,.36,1);" />
         </a>
         <div style="display: flex; flex-direction: column; gap: 14px;">
           <div style="font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #6e6b65;">Creative Strategist · Jewellery &amp; Lifestyle</div>
@@ -347,19 +391,19 @@
             </div>
             <div data-acc-body>
               <div style="padding-bottom: 8px;">
-            <div style="display: grid; grid-template-columns: 132px 1fr; gap: 28px; padding: 22px 0; border-top: 1px solid #e3e1dc;">
+            <div class="step" style="display: grid; grid-template-columns: 132px 1fr; gap: 28px; padding: 22px 0; border-top: 1px solid #e3e1dc;">
               <div style="font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #6e6b65;">01 — Context</div>
               <p style="margin: 0; max-width: 62ch; font-size: 16px; line-height: 1.65; color: #6e6b65; text-wrap: pretty;">Mohmani is a small, homegrown jewellery label specialising in one-of-one pieces and custom orders. Over time it has grown into a content and culture-heavy brand, shaped as much by the founder's personal voice as by the jewellery itself. Through viral content, events and word-of-mouth discovery, it has built a niche following of around 3.3k people who connect with its whimsical world.</p>
             </div>
-            <div style="display: grid; grid-template-columns: 132px 1fr; gap: 28px; padding: 22px 0; border-top: 1px solid #e3e1dc;">
+            <div class="step" style="display: grid; grid-template-columns: 132px 1fr; gap: 28px; padding: 22px 0; border-top: 1px solid #e3e1dc;">
               <div style="font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #6e6b65;">02 — Problem</div>
-              <p style="margin: 0; max-width: 62ch; font-size: 16px; line-height: 1.65; color: #6e6b65; text-wrap: pretty;">As Mohmani became more visible, the challenge wasn't reach — it was coherence. With the brand evolving across content, pop-ups and personal brand at once, there was a real risk of it feeling scattered or performative. What it needed was creative direction clear enough to hold all of that together, without forcing the brand into a conventional lifestyle or commercial mould.</p>
+              <p style="margin: 0; max-width: 62ch; font-size: 16px; line-height: 1.65; color: #6e6b65; text-wrap: pretty;">As Mohmani became more visible, the challenge was coherence rather than reach. With the brand developing across content, pop-ups and the founder's personal presence simultaneously, it needed creative direction clear enough to hold all three together — without forcing it into a conventional lifestyle or commercial mould.</p>
             </div>
-            <div style="display: grid; grid-template-columns: 132px 1fr; gap: 28px; padding: 22px 0; border-top: 1px solid #e3e1dc;">
+            <div class="step" style="display: grid; grid-template-columns: 132px 1fr; gap: 28px; padding: 22px 0; border-top: 1px solid #e3e1dc;">
               <div style="font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #6e6b65;">03 — Process</div>
               <p style="margin: 0; max-width: 62ch; font-size: 16px; line-height: 1.65; color: #6e6b65; text-wrap: pretty;">I put structure in place so creative decisions didn't feel random. Early on, the brand's core cues — whimsy, quirk and subcultural reference — were defined and used to guide everything. I set direction for visuals and tone, and built a content calendar so posting stayed consistent and intentional. Each collection started from a clear inspiration, shared with the audience through creative concepts rather than long explanations. Content pillars were built around the jewellery, the making process, everyday moments and the founder's voice, so the brand felt expressive rather than over-produced. Engagement, pop-ups and viral moments then told us what resonated, and the direction was refined against that while staying true to the niche.</p>
             </div>
-            <div style="display: grid; grid-template-columns: 132px 1fr; gap: 28px; padding: 22px 0; border-top: 1px solid #e3e1dc;">
+            <div class="step" style="display: grid; grid-template-columns: 132px 1fr; gap: 28px; padding: 22px 0; border-top: 1px solid #e3e1dc;">
               <div style="font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #6e6b65;">04 — Outcome</div>
               <p style="margin: 0; max-width: 62ch; font-size: 16px; line-height: 1.65; color: #6e6b65; text-wrap: pretty;">Mohmani now feels settled in its identity — less a brand chasing growth, more one that has found its place. The creative strategy brought clarity and continuity across content, community moments and product storytelling while keeping the brand's quirks intact. It also gave the founder a flexible framework to keep experimenting and showing up authentically without losing what makes the brand resonate.</p>
             </div>
@@ -385,15 +429,15 @@
           Brand strategy roles, freelance projects and collaborations.
         </p>
         <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
-          <a class="h10" href="mailto:shubhasingh1907@gmail.com" style="display: inline-flex; align-items: center; gap: 10px; padding: 14px 24px; border-radius: 999px; background: #f1f0ed; color: #121110; font-size: 14px; transition: background .25s ease;">Get in touch <span style="font-size: 13px;">→</span></a>
-          <a class="h11" href="https://www.linkedin.com/in/shubha1907/" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn" style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 999px; border: 1px solid #3a3835; font-size: 13px; font-weight: 600; color: #f1f0ed; transition: background .25s ease, color .25s ease, border-color .25s ease;">in</a>
+          <a class="h9" href="mailto:shubhasingh1907@gmail.com" style="display: inline-flex; align-items: center; gap: 10px; padding: 14px 24px; border-radius: 999px; background: #f1f0ed; color: #121110; font-size: 14px; transition: background .25s ease;">Get in touch <span style="font-size: 13px;">→</span></a>
+          <a class="h10" href="https://www.linkedin.com/in/shubha1907/" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn" style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 999px; border: 1px solid #3a3835; font-size: 13px; font-weight: 600; color: #f1f0ed; transition: background .25s ease, color .25s ease, border-color .25s ease;">in</a>
           <span title="Instagram — send me your handle and this goes live" style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 999px; border: 1px solid #3a3835; color: #f1f0ed; transition: background .25s ease, color .25s ease, border-color .25s ease; opacity: 0.45; cursor: default;"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="3.6"></circle><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"></circle></svg></span>
         </div>
         <div style="margin-top: 52px; padding-top: 26px; border-top: 1px solid #2c2a27; display: flex; gap: 30px; flex-wrap: wrap;">
-          <a class="h12" href="projects.html" style="font-size: 14px; color: #9b968e;">Projects</a>
-          <a class="h13" href="certifications.html" style="font-size: 14px; color: #9b968e;">Certifications</a>
-          <a class="h14" href="services.html" style="font-size: 14px; color: #9b968e;">Services</a>
-          <a class="h15" href="resume.html" style="font-size: 14px; color: #9b968e;">Resume</a>
+          <a class="h11" href="projects.html" style="font-size: 14px; color: #9b968e;">Projects</a>
+          <a class="h12" href="certifications.html" style="font-size: 14px; color: #9b968e;">Certifications</a>
+          <a class="h13" href="services.html" style="font-size: 14px; color: #9b968e;">Services</a>
+          <a class="h14" href="resume.html" style="font-size: 14px; color: #9b968e;">Resume</a>
         </div>
       </div>
     </div>
@@ -403,7 +447,7 @@
     <div style="max-width: 1280px; margin: 0 auto; padding: 26px 40px;">
       <div style="display: flex; align-items: center; justify-content: space-between; gap: 24px; font-size: 13px; color: #6e6b65;">
         <span>© 2026 Shubha Singh</span>
-        <a class="h16" href="#top" style="color: #6e6b65;">Back to top ↑</a>
+        <a class="h15" href="#top" style="color: #6e6b65;">Back to top ↑</a>
       </div>
     </div>
   </footer>

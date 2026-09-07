@@ -48,7 +48,40 @@
     document.querySelectorAll(REVEAL + ':not([data-revealed])').forEach(show);
   }
 
+  // Auto-tag block content so every section reveals on scroll, not just hand-marked nodes.
+  const NO_AUTO_ANCESTOR = 'nav, header, footer, [data-car-track]';
+  const AUTO_SCOPES = [
+    'section > div',
+    'section > div > div',
+    'section > div > div > div',
+    '[data-acc-body] > div',
+    '[data-acc-body] > div > div'
+  ].join(', ');
+  function autoTag(root) {
+    root.querySelectorAll(AUTO_SCOPES).forEach((scope) => {
+      if (scope.closest(NO_AUTO_ANCESTOR)) return;
+      let i = 0;
+      Array.prototype.forEach.call(scope.children, (el) => {
+        if (el.hasAttribute('data-reveal') || el.hasAttribute('data-reveal-init')) return;
+        if (el.closest('[data-reveal]') || el.closest(NO_AUTO_ANCESTOR)) return;
+        const tag = el.tagName;
+        if (tag === 'SCRIPT' || tag === 'STYLE' || tag === 'BR' || tag === 'SPAN') return;
+        // A wrapper whose own descendant is already marked stays untouched; the marked child animates.
+        if (el.querySelector('[data-reveal], [data-reveal-init]')) return;
+        el.setAttribute('data-reveal', String(Math.min(i * 60, 180)));
+        i++;
+      });
+    });
+    // Media rows the scope walk can't reach (films, guideline slots, analytics, carousel-free grids).
+    root.querySelectorAll('.films > *, .guideline > *, .analytics > *, .step').forEach((el, n) => {
+      if (el.hasAttribute('data-reveal') || el.hasAttribute('data-reveal-init')) return;
+      if (el.closest(NO_AUTO_ANCESTOR)) return;
+      el.setAttribute('data-reveal', String((n % 4) * 60));
+    });
+  }
+
   function reveal(root) {
+    autoTag(root);
     const io = getRevealIO();
     root.querySelectorAll(REVEAL + ':not([data-reveal-init])').forEach((el) => {
       el.dataset.revealInit = '1';
@@ -223,19 +256,23 @@
     { id: 'sis-film-nykaa', label: 'Film — Sisters in Sweat × Nykaa Wellness', page: 'Home · Sisters in Sweat' },
     { id: 'sis-film-mille', label: 'Film — Sisters in Sweat × Mille', page: 'Home · Sisters in Sweat' },
     { id: 'sis-film-dame', label: 'Film — Sisters in Sweat × Dame Health', page: 'Home · Sisters in Sweat' },
-    { id: 'sis-analytics-1', label: 'Analytics screenshot 1', page: 'Home · Sisters in Sweat' },
-    { id: 'sis-analytics-2', label: 'Analytics screenshot 2', page: 'Home · Sisters in Sweat' },
-    { id: 'sis-analytics-3', label: 'Analytics screenshot 3', page: 'Home · Sisters in Sweat' },
+    { id: 'gl-logo', label: 'Brand identity — logo & wordmark', page: 'Home · Sisters in Sweat' },
+    { id: 'gl-colour', label: 'Brand identity — colour palette', page: 'Home · Sisters in Sweat' },
+    { id: 'gl-type', label: 'Brand identity — typography', page: 'Home · Sisters in Sweat' },
+    { id: 'gl-tone', label: 'Brand identity — brand voice', page: 'Home · Sisters in Sweat' },
+    { id: 'gl-social', label: 'Brand identity — social templates', page: 'Home · Sisters in Sweat' },
+    { id: 'gl-cobrand', label: 'Brand identity — co-branding rules', page: 'Home · Sisters in Sweat' },
+    { id: 'sis-analytics-1', label: 'Analytics — 3K profile visits', page: 'Home · Sisters in Sweat' },
+    { id: 'sis-analytics-2', label: 'Analytics — 873 profile visits', page: 'Home · Sisters in Sweat' },
+    { id: 'sis-analytics-3', label: 'Analytics — reel engagement (1.4K shares)', page: 'Home · Sisters in Sweat' },
+    { id: 'sis-analytics-4', label: 'Analytics — reel engagement (327 shares)', page: 'Home · Sisters in Sweat' },
     { id: 'cs-sis-image', label: 'Case study image — Sisters in Sweat', page: 'Home · Case studies' },
     { id: 'cs-talview-image', label: 'Case study image — Talview', page: 'Home · Case studies' },
     { id: 'cs-mohmani-image', label: 'Case study image — Mohmani', page: 'Home · Case studies' },
-    { id: 'pr-nextleap', label: 'NextLeap fellowship image', page: 'Projects' },
-    { id: 'gl-logo', label: 'Guideline — logo & wordmark', page: 'Projects · Brand guideline' },
-    { id: 'gl-colour', label: 'Guideline — colour palette', page: 'Projects · Brand guideline' },
-    { id: 'gl-type', label: 'Guideline — typography', page: 'Projects · Brand guideline' },
-    { id: 'gl-tone', label: 'Guideline — tone of voice', page: 'Projects · Brand guideline' },
-    { id: 'gl-social', label: 'Guideline — social templates', page: 'Projects · Brand guideline' },
-    { id: 'gl-cobrand', label: 'Guideline — co-branding rules', page: 'Projects · Brand guideline' },
+    { id: 'pr-nextleap', label: 'NextLeap fellowship image', page: 'Projects · Product' },
+    { id: 'pv-film-nykaa', label: 'Video — Sisters in Sweat × Nykaa Wellness', page: 'Projects · Video editing' },
+    { id: 'pv-film-mille', label: 'Video — Sisters in Sweat × Mille', page: 'Projects · Video editing' },
+    { id: 'pv-film-dame', label: 'Video — Sisters in Sweat × Dame Health', page: 'Projects · Video editing' },
     { id: 'gd-yoga-multi', label: 'Poster — World Yoga Day multi-city', page: 'Projects · Graphic design' },
     { id: 'gd-yoga-mumbai', label: 'Poster — World Yoga Day Mumbai', page: 'Projects · Graphic design' },
     { id: 'gd-matcha', label: 'Poster — Glow Glossary matcha', page: 'Projects · Graphic design' },
@@ -245,7 +282,7 @@
     { id: 'gd-frisbee', label: 'Poster — Ultimate frisbee workshop', page: 'Projects · Graphic design' },
     { id: 'gd-coldbrew', label: 'Poster — Cold brew workshop', page: 'Projects · Graphic design' },
     { id: 'gd-sound', label: 'Poster — Sound healing workshop', page: 'Projects · Graphic design' },
-    { id: 'cert-lvmh', label: 'Certificate — LVMH', page: 'Certifications' },
+    { id: 'cert-lvmh', label: 'Certificate — Inside LVMH', page: 'Certifications' },
     { id: 'cert-aaft', label: 'Certificate — AAFT', page: 'Certifications' },
     { id: 'cert-nextleap', label: 'Badge — NextLeap Top Fellow', page: 'Certifications' },
     { id: 'sv-film-nykaa', label: 'Services film — Nykaa Wellness', page: 'Services' },
