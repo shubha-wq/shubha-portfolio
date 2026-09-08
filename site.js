@@ -88,8 +88,8 @@
       if (REDUCE) { show(el); return; }
       const d = parseInt(el.dataset.reveal || '0', 10);
       el.style.opacity = '0';
-      el.style.transform = 'translateY(18px)';
-      el.style.transition = `opacity .7s cubic-bezier(.22,.61,.36,1) ${d}ms, transform .7s cubic-bezier(.22,.61,.36,1) ${d}ms`;
+      el.style.transform = 'translateY(20px)';
+      el.style.transition = `opacity .6s ease-out ${d}ms, transform .6s ease-out ${d}ms`;
       if (io) io.observe(el); else { show(el); return; }
       // Per-element guarantee: nothing stays invisible, whenever it streamed in.
       setTimeout(() => { if (!el.dataset.revealed) { show(el); if (revealIO) revealIO.unobserve(el); } }, 1200 + d);
