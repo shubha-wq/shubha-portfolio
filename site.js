@@ -220,25 +220,76 @@
       el.setAttribute('aria-label', 'Play ' + label);
       const play = () => {
         const id = el.dataset.video;
-        if (!id || el.dataset.playing) return;
-        el.dataset.playing = '1';
-        const f = document.createElement('iframe');
-        f.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0&modestbranding=1&playsinline=1`;
-        f.title = el.dataset.videoTitle || 'Video';
-        f.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
-        f.allowFullscreen = true;
-        f.setAttribute('style', 'position:absolute;inset:0;width:100%;height:100%;border:0;border-radius:inherit;');
-        el.appendChild(f);
-        el.querySelectorAll('[data-video-cover]').forEach((c) => { c.style.opacity = '0'; c.style.pointerEvents = 'none'; });
-        el.removeAttribute('role');
-        el.removeAttribute('tabindex');
-        el.removeAttribute('aria-label');
+        if (!id) return;
+        openVideoModal(id, el.dataset.videoTitle || 'Video');
       };
       el.addEventListener('click', play);
       el.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar') { e.preventDefault(); play(); }
       });
     });
+  }
+
+  // ---- shared vertical video modal ----
+  let videoOverlay = null;
+  function buildVideoModal() {
+    videoOverlay = document.createElement('div');
+    videoOverlay.id = 'video-overlay';
+    videoOverlay.setAttribute(
+      'style',
+      'position: fixed; inset: 0; z-index: 210; display: none; align-items: center; justify-content: center; background: rgba(10,10,10,0.9); padding: 24px;'
+    );
+
+    const frame = document.createElement('div');
+    frame.id = 'video-overlay-frame';
+    frame.setAttribute(
+      'style',
+      'position: relative; width: 100%; max-width: 420px; aspect-ratio: 9 / 16; background: #000; border-radius: 16px; overflow: hidden;'
+    );
+
+    const closeBtn = document.createElement('button');
+    closeBtn.type = 'button';
+    closeBtn.setAttribute('aria-label', 'Close');
+    closeBtn.textContent = '✕';
+    closeBtn.setAttribute(
+      'style',
+      'position: absolute; top: -44px; right: 0; border: 0; background: none; font-size: 20px; color: #f1f0ed; cursor: pointer; z-index: 2;'
+    );
+    closeBtn.addEventListener('click', closeVideoModal);
+
+    frame.appendChild(closeBtn);
+    videoOverlay.appendChild(frame);
+    document.body.appendChild(videoOverlay);
+
+    videoOverlay.addEventListener('click', (e) => {
+      if (e.target === videoOverlay) closeVideoModal();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeVideoModal();
+    });
+  }
+
+  function openVideoModal(id, title) {
+    if (!videoOverlay) buildVideoModal();
+    const frame = document.getElementById('video-overlay-frame');
+    const old = frame.querySelector('iframe');
+    if (old) old.remove();
+    const f = document.createElement('iframe');
+    f.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0&modestbranding=1&playsinline=1`;
+    f.title = title;
+    f.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+    f.allowFullscreen = true;
+    f.setAttribute('style', 'position:absolute;inset:0;width:100%;height:100%;border:0;');
+    frame.appendChild(f);
+    videoOverlay.style.display = 'flex';
+  }
+
+  function closeVideoModal() {
+    if (!videoOverlay) return;
+    videoOverlay.style.display = 'none';
+    const frame = document.getElementById('video-overlay-frame');
+    const old = frame && frame.querySelector('iframe');
+    if (old) old.remove();
   }
 
   function marquees(root) {
@@ -448,10 +499,8 @@
     sub.setAttribute('style', 'margin: 0 0 18px; font-size: 14px; color: #6e6b65;');
 
     const list = document.createElement('div');
-    list.appendChild(rowLink(LINKEDIN, 'LinkedIn', 'shubha1907'));
     list.appendChild(rowLink('mailto:' + EMAIL, 'Email', EMAIL));
-    list.appendChild(rowLink('https://wa.me/' + PHONE_WA, 'WhatsApp', PHONE_DISPLAY));
-    const callRow = rowLink('tel:' + PHONE_TEL, 'Call', PHONE_DISPLAY);
+    const callRow = rowLink('tel:' + PHONE_TEL, 'Phone', PHONE_DISPLAY);
     callRow.style.borderBottom = 'none';
     list.appendChild(callRow);
 
