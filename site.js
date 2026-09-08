@@ -386,3 +386,115 @@
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
   window.addEventListener('load', boot);
 })();
+
+// ---- contact popup ----
+(function () {
+  const LINKEDIN = 'https://www.linkedin.com/in/shubha1907/';
+  const EMAIL = 'shubhasingh1907@gmail.com';
+  const PHONE_DISPLAY = '+91 70075 88317';
+  const PHONE_WA = '917007588317';
+  const PHONE_TEL = '+917007588317';
+
+  let overlay = null;
+
+  function rowLink(href, label, sub) {
+    const a = document.createElement('a');
+    a.href = href;
+    a.target = '_blank';
+    a.rel = 'noopener';
+    a.setAttribute(
+      'style',
+      'display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 16px 0; border-bottom: 1px solid #e3e1dc; text-decoration: none; color: #121110;'
+    );
+    a.innerHTML =
+      '<span style="font-size: 16px; font-weight: 500;">' + label + '</span>' +
+      '<span style="font-size: 14px; color: #6e6b65;">' + sub + ' →</span>';
+    return a;
+  }
+
+  function build() {
+    overlay = document.createElement('div');
+    overlay.id = 'contact-overlay';
+    overlay.setAttribute(
+      'style',
+      'position: fixed; inset: 0; z-index: 200; display: none; align-items: center; justify-content: center; background: rgba(18,17,16,0.55); padding: 24px;'
+    );
+
+    const modal = document.createElement('div');
+    modal.setAttribute(
+      'style',
+      'width: 100%; max-width: 420px; background: #f1f0ed; border-radius: 20px; padding: 32px; position: relative; font-family: "Instrument Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;'
+    );
+
+    const closeBtn = document.createElement('button');
+    closeBtn.type = 'button';
+    closeBtn.setAttribute('aria-label', 'Close');
+    closeBtn.textContent = '✕';
+    closeBtn.setAttribute(
+      'style',
+      'position: absolute; top: 20px; right: 20px; border: 0; background: none; font-size: 16px; color: #6e6b65; cursor: pointer;'
+    );
+    closeBtn.addEventListener('click', close);
+
+    const heading = document.createElement('h2');
+    heading.textContent = "Let's talk";
+    heading.setAttribute(
+      'style',
+      'margin: 0 0 6px; font-size: 26px; font-weight: 500; letter-spacing: -0.03em; color: #121110;'
+    );
+
+    const sub = document.createElement('p');
+    sub.textContent = 'Pick whichever works best for you.';
+    sub.setAttribute('style', 'margin: 0 0 18px; font-size: 14px; color: #6e6b65;');
+
+    const list = document.createElement('div');
+    list.appendChild(rowLink(LINKEDIN, 'LinkedIn', 'shubha1907'));
+    list.appendChild(rowLink('mailto:' + EMAIL, 'Email', EMAIL));
+    list.appendChild(rowLink('https://wa.me/' + PHONE_WA, 'WhatsApp', PHONE_DISPLAY));
+    const callRow = rowLink('tel:' + PHONE_TEL, 'Call', PHONE_DISPLAY);
+    callRow.style.borderBottom = 'none';
+    list.appendChild(callRow);
+
+    modal.appendChild(closeBtn);
+    modal.appendChild(heading);
+    modal.appendChild(sub);
+    modal.appendChild(list);
+    overlay.appendChild(modal);
+    document.body.appendChild(overlay);
+
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay) close();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') close();
+    });
+  }
+
+  function open() {
+    if (!overlay) build();
+    overlay.style.display = 'flex';
+  }
+  function close() {
+    if (overlay) overlay.style.display = 'none';
+  }
+
+  function wire(root) {
+    (root || document).querySelectorAll('[data-contact-trigger]').forEach((el) => {
+      if (el.dataset.contactWired) return;
+      el.dataset.contactWired = '1';
+      el.addEventListener('click', (e) => {
+        e.preventDefault();
+        open();
+      });
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => wire(document));
+  } else {
+    wire(document);
+  }
+  window.addEventListener('load', () => wire(document));
+
+  window.SSContact = { open, close };
+})();
