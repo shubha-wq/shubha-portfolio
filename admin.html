@@ -59,7 +59,8 @@
   <section id="photo" style="border-top: 1px solid #e3e1dc;">
     <div style="max-width: 1000px; margin: 0 auto; padding: 40px 40px 8px;">
       <h2 style="margin: 0 0 6px; font-size: clamp(20px, 2.2vw, 28px); font-weight: 500; letter-spacing: -0.03em;">Profile photo</h2>
-      <p style="margin: 0 0 28px; font-size: 14px; color: #6e6b65; max-width: 60ch;">Pick which photo shows in the hero. This previews instantly on your own device; tell your developer which one you picked so it's made permanent for everyone else.</p>
+      <p style="margin: 0 0 28px; font-size: 14px; color: #6e6b65; max-width: 60ch;">The hero photo is currently removed from the live site. Use the switch below to preview it back on in your own browser, pick which photo, or upload a new one, whenever you're ready to bring it back for real.</p>
+      <div id="adm-photo-visible-row" style="display: flex; align-items: center; gap: 14px; margin-bottom: 24px;"></div>
       <div id="adm-photo-options" style="display: flex; gap: 24px; flex-wrap: wrap;"></div>
 
       <div style="margin-top: 32px; padding-top: 28px; border-top: 1px solid #e3e1dc;">
@@ -369,7 +370,27 @@
 (function () {
   function buildPhotoPicker() {
     var root = document.getElementById('adm-photo-options');
+    var visRow = document.getElementById('adm-photo-visible-row');
     if (!root || !window.SSHeroPhoto) { setTimeout(buildPhotoPicker, 120); return; }
+
+    function renderVisToggle() {
+      var on = window.SSHeroPhoto.getVisible();
+      visRow.innerHTML = '';
+      var toggle = document.createElement('button');
+      toggle.type = 'button';
+      toggle.setAttribute('style', 'position:relative;width:48px;height:28px;flex:0 0 auto;border-radius:999px;border:1px solid ' + (on ? '#121110' : '#d5d2cb') + ';background:' + (on ? '#121110' : 'transparent') + ';cursor:pointer;padding:0;transition:background .25s ease,border-color .25s ease;');
+      toggle.innerHTML = '<span style="position:absolute;top:3px;left:' + (on ? '23px' : '3px') + ';width:20px;height:20px;border-radius:999px;background:' + (on ? '#f1f0ed' : '#6e6b65') + ';transition:left .25s ease;"></span>';
+      toggle.addEventListener('click', function () {
+        window.SSHeroPhoto.setVisible(!on);
+        renderVisToggle();
+      });
+      var label = document.createElement('span');
+      label.setAttribute('style', 'font-size: 14px;');
+      label.textContent = on ? 'Photo is showing on the site' : 'Photo is currently removed from the site';
+      visRow.appendChild(toggle);
+      visRow.appendChild(label);
+    }
+    renderVisToggle();
     function render() {
       var current = window.SSHeroPhoto.get();
       var customData = null;

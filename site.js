@@ -384,8 +384,16 @@
   // ---- hero photo selection ----
   const HERO_KEY = 'ss.heroPhoto';
   const HERO_CUSTOM_KEY = 'ss.heroPhotoCustomData';
+  const HERO_VISIBLE_KEY = 'ss.heroPhotoVisible';
   function readHeroChoice() {
     try { return localStorage.getItem(HERO_KEY) || 'a'; } catch (e) { return 'a'; }
+  }
+  function readHeroVisible() {
+    try { return localStorage.getItem(HERO_VISIBLE_KEY) === '1'; } catch (e) { return false; }
+  }
+  function writeHeroVisible(visible) {
+    try { localStorage.setItem(HERO_VISIBLE_KEY, visible ? '1' : '0'); } catch (e) {}
+    applyHeroPhoto(document);
   }
   function writeHeroChoice(choice) {
     try { localStorage.setItem(HERO_KEY, choice); } catch (e) {}
@@ -400,18 +408,24 @@
   }
   function applyHeroPhoto(root) {
     const choice = readHeroChoice();
+    const visible = readHeroVisible();
     let src;
     if (choice === 'custom') {
       try { src = localStorage.getItem(HERO_CUSTOM_KEY) || 'assets/hero-photo-a.jpg'; } catch (e) { src = 'assets/hero-photo-a.jpg'; }
     } else {
       src = `assets/hero-photo-${choice}.jpg`;
     }
-    (root || document).querySelectorAll('#hero-photo-img').forEach((img) => { img.src = src; });
+    (root || document).querySelectorAll('#hero-photo-img').forEach((img) => {
+      img.src = src;
+      img.style.display = visible ? '' : 'none';
+    });
   }
   window.SSHeroPhoto = {
     get: readHeroChoice,
     set: writeHeroChoice,
     setCustom: writeCustomHeroPhoto,
+    getVisible: readHeroVisible,
+    setVisible: writeHeroVisible,
     apply: applyHeroPhoto
   };
   window.addEventListener('storage', (e) => { if (e.key === HERO_KEY) applyHeroPhoto(document); });
