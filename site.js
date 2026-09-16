@@ -270,6 +270,7 @@
   }
 
   function openVideoModal(id, title) {
+    trackEvent('video_play', { video_title: title, video_id: id, page: location.pathname });
     if (!videoOverlay) buildVideoModal();
     const frame = document.getElementById('video-overlay-frame');
     const old = frame.querySelector('iframe');
@@ -304,9 +305,9 @@
   // ---- media visibility (admin-controlled) ----
   const MEDIA_KEY = 'ss.media.hidden';
   const MEDIA_LIST = [
-    { id: 'sis-film-nykaa', label: 'Film — Sisters in Sweat × Nykaa Wellness', page: 'Home · Sisters in Sweat' },
-    { id: 'sis-film-mille', label: 'Film — Sisters in Sweat × Mille', page: 'Home · Sisters in Sweat' },
-    { id: 'sis-film-dame', label: 'Film — Sisters in Sweat × Dame Health', page: 'Home · Sisters in Sweat' },
+    { id: 'sis-film-nykaa', label: 'Film — Sisters in Sweat × Nykaa Wellness', page: 'Home · Sisters in Sweat' , videoId: 'pNR5YOFEmKM' },
+    { id: 'sis-film-mille', label: 'Film — Sisters in Sweat × Mille', page: 'Home · Sisters in Sweat' , videoId: 'OVSfZnnnmyE' },
+    { id: 'sis-film-dame', label: 'Film — Sisters in Sweat × Dame Health', page: 'Home · Sisters in Sweat' , videoId: 'YabxEyLkXYw' },
     { id: 'gl-logo', label: 'Brand identity — logo & wordmark', page: 'Home · Sisters in Sweat' },
     { id: 'gl-colour', label: 'Brand identity — colour palette', page: 'Home · Sisters in Sweat' },
     { id: 'gl-type', label: 'Brand identity — typography', page: 'Home · Sisters in Sweat' },
@@ -321,16 +322,16 @@
     { id: 'cs-talview-image', label: 'Case study image — Talview', page: 'Home · Case studies' },
     { id: 'cs-mohmani-image', label: 'Case study image — Mohmani', page: 'Home · Case studies' },
     { id: 'pr-nextleap', label: 'NextLeap fellowship image', page: 'Projects · Product' },
-    { id: 'pv-film-nykaa', label: 'Video — Sisters in Sweat × Nykaa Wellness', page: 'Projects · Video editing' },
-    { id: 'pv-film-mille', label: 'Video — Sisters in Sweat × Mille', page: 'Projects · Video editing' },
-    { id: 'pv-film-dame', label: 'Video — Sisters in Sweat × Dame Health', page: 'Projects · Video editing' },
-    { id: 'pv-film-paradyes', label: 'Video — Collab With Paradyes', page: 'Projects · Video editing' },
-    { id: 'pv-film-wellness-co', label: 'Video — Sisters in Sweat × Wellness Co.', page: 'Projects · Video editing' },
-    { id: 'pv-film-new-1', label: 'Video — Reel Edit 01 (needs a real title)', page: 'Projects · Video editing' },
-    { id: 'pv-film-new-2', label: 'Video — Reel Edit 02 (needs a real title)', page: 'Projects · Video editing' },
-    { id: 'pv-film-new-3', label: 'Video — Reel Edit 03 (needs a real title)', page: 'Projects · Video editing' },
-    { id: 'pv-film-new-4', label: 'Video — Reel Edit 04 (needs a real title)', page: 'Projects · Video editing' },
-    { id: 'pv-film-new-5', label: 'Video — Reel Edit 05 (needs a real title)', page: 'Projects · Video editing' },
+    { id: 'pv-film-nykaa', label: 'Video — Sisters in Sweat × Nykaa Wellness', page: 'Projects · Video editing' , videoId: 'pNR5YOFEmKM' },
+    { id: 'pv-film-mille', label: 'Video — Sisters in Sweat × Mille', page: 'Projects · Video editing' , videoId: 'OVSfZnnnmyE' },
+    { id: 'pv-film-dame', label: 'Video — Sisters in Sweat × Dame Health', page: 'Projects · Video editing' , videoId: 'YabxEyLkXYw' },
+    { id: 'pv-film-paradyes', label: 'Video — Collab With Paradyes', page: 'Projects · Video editing' , videoId: 'FnCDs8kQ644' },
+    { id: 'pv-film-wellness-co', label: 'Video — Sisters in Sweat × Wellness Co.', page: 'Projects · Video editing' , videoId: 'YBvU5vp9Agc' },
+    { id: 'pv-film-new-1', label: 'Video — Reel Edit 01 (needs a real title)', page: 'Projects · Video editing' , videoId: 'OXtzqxshcHw' },
+    { id: 'pv-film-new-2', label: 'Video — Reel Edit 02 (needs a real title)', page: 'Projects · Video editing' , videoId: 'HPVEMO7OcJs' },
+    { id: 'pv-film-new-3', label: 'Video — Reel Edit 03 (needs a real title)', page: 'Projects · Video editing' , videoId: 'fCBZWFNuRkA' },
+    { id: 'pv-film-new-4', label: 'Video — Reel Edit 04 (needs a real title)', page: 'Projects · Video editing' , videoId: '-9ZTgHc6mss' },
+    { id: 'pv-film-new-5', label: 'Video — Reel Edit 05 (needs a real title)', page: 'Projects · Video editing' , videoId: 'HzDxlAuRGjY' },
     { id: 'gd-yoga-multi', label: 'Poster — World Yoga Day multi-city', page: 'Projects · Graphic design' },
     { id: 'gd-yoga-mumbai', label: 'Poster — World Yoga Day Mumbai', page: 'Projects · Graphic design' },
     { id: 'gd-matcha', label: 'Poster — Glow Glossary matcha', page: 'Projects · Graphic design' },
@@ -343,9 +344,9 @@
     { id: 'cert-lvmh', label: 'Certificate — Inside LVMH', page: 'Certifications' },
     { id: 'cert-aaft', label: 'Certificate — AAFT', page: 'Certifications' },
     { id: 'cert-nextleap', label: 'Badge — NextLeap Top Fellow', page: 'Certifications' },
-    { id: 'sv-film-nykaa', label: 'Services film — Nykaa Wellness', page: 'Services' },
-    { id: 'sv-film-mille', label: 'Services film — Mille', page: 'Services' },
-    { id: 'sv-film-dame', label: 'Services film — Dame Health', page: 'Services' }
+    { id: 'sv-film-nykaa', label: 'Services film — Nykaa Wellness', page: 'Services' , videoId: 'pNR5YOFEmKM' },
+    { id: 'sv-film-mille', label: 'Services film — Mille', page: 'Services' , videoId: 'OVSfZnnnmyE' },
+    { id: 'sv-film-dame', label: 'Services film — Dame Health', page: 'Services', videoId: 'YabxEyLkXYw' },
   ];
 
   function readHidden() {
@@ -382,6 +383,7 @@
 
   // ---- hero photo selection ----
   const HERO_KEY = 'ss.heroPhoto';
+  const HERO_CUSTOM_KEY = 'ss.heroPhotoCustomData';
   function readHeroChoice() {
     try { return localStorage.getItem(HERO_KEY) || 'a'; } catch (e) { return 'a'; }
   }
@@ -389,18 +391,112 @@
     try { localStorage.setItem(HERO_KEY, choice); } catch (e) {}
     applyHeroPhoto(document);
   }
+  function writeCustomHeroPhoto(dataUrl) {
+    try {
+      localStorage.setItem(HERO_CUSTOM_KEY, dataUrl);
+      localStorage.setItem(HERO_KEY, 'custom');
+    } catch (e) {}
+    applyHeroPhoto(document);
+  }
   function applyHeroPhoto(root) {
     const choice = readHeroChoice();
-    (root || document).querySelectorAll('#hero-photo-img').forEach((img) => {
-      img.src = `assets/hero-photo-${choice}.jpg`;
-    });
+    let src;
+    if (choice === 'custom') {
+      try { src = localStorage.getItem(HERO_CUSTOM_KEY) || 'assets/hero-photo-a.jpg'; } catch (e) { src = 'assets/hero-photo-a.jpg'; }
+    } else {
+      src = `assets/hero-photo-${choice}.jpg`;
+    }
+    (root || document).querySelectorAll('#hero-photo-img').forEach((img) => { img.src = src; });
   }
   window.SSHeroPhoto = {
     get: readHeroChoice,
     set: writeHeroChoice,
+    setCustom: writeCustomHeroPhoto,
     apply: applyHeroPhoto
   };
   window.addEventListener('storage', (e) => { if (e.key === HERO_KEY) applyHeroPhoto(document); });
+
+  // ---- analytics (Google Analytics 4) ----
+  function trackEvent(name, params) {
+    try {
+      if (typeof window.gtag === 'function') window.gtag('event', name, params || {});
+    } catch (e) {}
+  }
+  function wireTracking(root) {
+    (root || document).querySelectorAll('[data-track]').forEach((el) => {
+      if (el.dataset.trackWired) return;
+      el.dataset.trackWired = '1';
+      el.addEventListener('click', () => {
+        trackEvent('cta_click', { label: el.getAttribute('data-track'), page: location.pathname });
+      });
+    });
+  }
+  window.SSTrack = trackEvent;
+
+  // ---- video title overrides (existing videos) ----
+  const TITLE_KEY = 'ss.videoTitles';
+  function readTitleOverrides() {
+    try { return JSON.parse(localStorage.getItem(TITLE_KEY) || '{}'); } catch (e) { return {}; }
+  }
+  function writeTitleOverride(mediaId, title) {
+    const all = readTitleOverrides();
+    if (title) all[mediaId] = title; else delete all[mediaId];
+    try { localStorage.setItem(TITLE_KEY, JSON.stringify(all)); } catch (e) {}
+    applyTitleOverrides(document);
+  }
+  function applyTitleOverrides(root) {
+    const all = readTitleOverrides();
+    (root || document).querySelectorAll('[data-media]').forEach((wrap) => {
+      const id = wrap.getAttribute('data-media');
+      if (!all[id]) return;
+      const caption = wrap.querySelector('[data-video-caption]');
+      const tile = wrap.querySelector('[data-video]');
+      if (caption) caption.textContent = all[id];
+      if (tile) tile.setAttribute('data-video-title', all[id]);
+    });
+  }
+  window.SSVideoTitles = { get: readTitleOverrides, set: writeTitleOverride, apply: applyTitleOverrides };
+
+  // ---- custom videos (new videos added via admin) ----
+  const CUSTOM_KEY = 'ss.customVideos';
+  function readCustomVideos() {
+    try { return JSON.parse(localStorage.getItem(CUSTOM_KEY) || '[]'); } catch (e) { return []; }
+  }
+  function writeCustomVideos(list) {
+    try { localStorage.setItem(CUSTOM_KEY, JSON.stringify(list)); } catch (e) {}
+    renderCustomVideos(document);
+  }
+  function videoTileHTML(v) {
+    return `<div data-video="${v.videoId}" data-video-title="${v.title}" style="position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: 14px; overflow: hidden; background: #121110; cursor: pointer;">
+      <img data-video-cover src="https://img.youtube.com/vi/${v.videoId}/hqdefault.jpg" alt="${v.title}" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; transition: opacity .4s ease;" />
+      <span data-video-cover style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; transition: opacity .4s ease;">
+        <span style="display: flex; align-items: center; justify-content: center; width: 52px; height: 52px; border-radius: 999px; background: rgba(241,240,237,0.94); color: #121110; font-size: 14px; padding-left: 3px;">▶</span>
+      </span>
+    </div>
+    <div data-video-caption style="font-size: 14px; padding-top: 12px;">${v.title}</div>`;
+  }
+  function renderCustomVideos(root) {
+    const list = readCustomVideos();
+    (root || document).querySelectorAll('[data-custom-video-slot]').forEach((slot) => {
+      const place = slot.getAttribute('data-custom-video-slot');
+      slot.innerHTML = '';
+      list.filter((v) => v.places && v.places.indexOf(place) !== -1).forEach((v) => {
+        const item = document.createElement('div');
+        item.setAttribute('data-media', v.mediaId);
+        if (place === 'services') item.setAttribute('style', 'flex: 0 0 auto; width: 280px;');
+        item.innerHTML = videoTileHTML(v);
+        slot.appendChild(item);
+      });
+      videos(slot);
+      applyMedia(slot);
+    });
+  }
+  window.SSCustomVideos = {
+    list: readCustomVideos,
+    add(v) { const l = readCustomVideos(); l.push(v); writeCustomVideos(l); },
+    remove(mediaId) { writeCustomVideos(readCustomVideos().filter((v) => v.mediaId !== mediaId)); },
+    render: renderCustomVideos
+  };
 
   function focusStyles() {
     if (document.getElementById('__om-focus')) return;
@@ -413,7 +509,7 @@
   function init(root) {
     focusStyles();
     const r = root || document;
-    applyMedia(r); applyHeroPhoto(r); reveal(r); accordions(r); carousels(r); videos(r); marquees(r);
+    applyMedia(r); applyHeroPhoto(r); applyTitleOverrides(r); renderCustomVideos(r); reveal(r); accordions(r); carousels(r); videos(r); marquees(r); wireTracking(r);
   }
 
   let scanQueued = false;
@@ -542,6 +638,7 @@
   }
 
   function open() {
+    if (window.SSTrack) window.SSTrack('cta_click', { label: 'get_in_touch_popup', page: location.pathname });
     if (!overlay) build();
     overlay.style.display = 'flex';
   }

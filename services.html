@@ -60,6 +60,14 @@
 
 .car-arrow:hover{background: #121110 !important; color: #f1f0ed !important; border-color: #121110 !important}
 </style>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
 </head>
 <body>
 <div style="font-family: 'Instrument Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; background: #f1f0ed; color: #121110;">
@@ -121,7 +129,7 @@
             </div>
           </div>
           <div>
-            <a class="h5" href="mailto:shubhasingh1907@gmail.com" data-contact-trigger="1" style="display: inline-flex; align-items: center; gap: 10px; padding: 14px 24px; border-radius: 999px; background: #121110; color: #f1f0ed; font-size: 14px; transition: background .25s ease;">Enquire about a project <span style="font-size: 13px;">→</span></a>
+            <a class="h5" href="mailto:shubhasingh1907@gmail.com" data-contact-trigger="1" data-track="enquire_video_project" style="display: inline-flex; align-items: center; gap: 10px; padding: 14px 24px; border-radius: 999px; background: #121110; color: #f1f0ed; font-size: 14px; transition: background .25s ease;">Enquire about a project <span style="font-size: 13px;">→</span></a>
           </div>
         </div>
       </div>
@@ -156,20 +164,17 @@
   </section>
 
   <section id="proof" data-carousel style="border-top: 1px solid #e3e1dc;">
-    <div style="max-width: 1280px; margin: 0 auto; padding: 80px 40px;">
-      <div data-reveal="0" style="display: flex; align-items: baseline; justify-content: space-between; gap: 24px; flex-wrap: wrap; margin-bottom: 40px;">
-        <div style="display: flex; align-items: baseline; gap: 14px;">
-          <span style="font-size: 12px; color: #6e6b65;">02</span>
-          <h2 style="margin: 0; font-size: clamp(28px, 3.6vw, 48px); font-weight: 500; line-height: 1; letter-spacing: -0.04em;">Recent edits</h2>
-        </div>
-        <div style="display: flex; gap: 10px;">
-          <button class="car-arrow" type="button" data-car-prev aria-label="Previous" style="display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 999px; border: 1px solid #d5d2cb; background: transparent; color: #121110; font-size: 15px; cursor: pointer; font-family: inherit; transition: background .25s ease, border-color .25s ease;">←</button>
-          <button class="car-arrow" type="button" data-car-next aria-label="Next" style="display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 999px; border: 1px solid #d5d2cb; background: transparent; color: #121110; font-size: 15px; cursor: pointer; font-family: inherit; transition: background .25s ease, border-color .25s ease;">→</button>
-        </div>
+    <div style="max-width: 1280px; margin: 0 auto; padding: 80px 40px 16px;">
+      <div data-reveal="0" style="display: flex; align-items: baseline; gap: 14px;">
+        <span style="font-size: 12px; color: #6e6b65;">02</span>
+        <h2 style="margin: 0; font-size: clamp(28px, 3.6vw, 48px); font-weight: 500; line-height: 1; letter-spacing: -0.04em;">Recent edits</h2>
       </div>
     </div>
-    <div data-reveal="60" style="padding-bottom: 8px;">
+    <div data-reveal="60" style="position: relative; padding-bottom: 8px;">
+      <button class="car-arrow" type="button" data-car-prev aria-label="Previous" style="display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 999px; border: 1px solid #d5d2cb; background: #f4f2ee; color: #121110; font-size: 15px; cursor: pointer; font-family: inherit; transition: background .25s ease, border-color .25s ease; position: absolute; left: 12px; top: 50%; transform: translateY(-50%); z-index: 2;">←</button>
+      <button class="car-arrow" type="button" data-car-next aria-label="Next" style="display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 999px; border: 1px solid #d5d2cb; background: #f4f2ee; color: #121110; font-size: 15px; cursor: pointer; font-family: inherit; transition: background .25s ease, border-color .25s ease; position: absolute; right: 12px; top: 50%; transform: translateY(-50%); z-index: 2;">→</button>
       <div data-car-track style="display: flex; gap: 20px; overflow-x: auto; overflow-y: hidden; scroll-behavior: auto; padding: 0 40px 8px;">
+        <div data-custom-video-slot="services" style="display: contents;"></div>
         <div style="flex: 0 0 auto; width: 280px;">
           <div data-media="sv-film-nykaa" data-video="pNR5YOFEmKM" data-video-title="Sisters in Sweat × Nykaa Wellness" style="position: relative; width: 280px; aspect-ratio: 16 / 9; border-radius: 16px; overflow: hidden; background: #121110; cursor: pointer;">
             <img data-video-cover src="https://img.youtube.com/vi/pNR5YOFEmKM/hqdefault.jpg" alt="Sisters in Sweat × Nykaa Wellness" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; transition: opacity .4s ease;" />
@@ -177,7 +182,7 @@
               <span style="display: flex; align-items: center; justify-content: center; width: 52px; height: 52px; border-radius: 999px; background: rgba(241,240,237,0.94); color: #121110; font-size: 14px; padding-left: 3px;">▶</span>
             </span>
           </div>
-          <div style="font-size: 14px; padding-top: 12px;">Sisters in Sweat × Nykaa Wellness</div>
+          <div data-video-caption style="font-size: 14px; padding-top: 12px;">Sisters in Sweat × Nykaa Wellness</div>
         </div>
         <div style="flex: 0 0 auto; width: 280px;">
           <div data-media="sv-film-mille" data-video="OVSfZnnnmyE" data-video-title="Sisters in Sweat × Mille" style="position: relative; width: 280px; aspect-ratio: 16 / 9; border-radius: 16px; overflow: hidden; background: #121110; cursor: pointer;">
@@ -186,7 +191,7 @@
               <span style="display: flex; align-items: center; justify-content: center; width: 52px; height: 52px; border-radius: 999px; background: rgba(241,240,237,0.94); color: #121110; font-size: 14px; padding-left: 3px;">▶</span>
             </span>
           </div>
-          <div style="font-size: 14px; padding-top: 12px;">Sisters in Sweat × Mille</div>
+          <div data-video-caption style="font-size: 14px; padding-top: 12px;">Sisters in Sweat × Mille</div>
         </div>
         <div style="flex: 0 0 auto; width: 280px;">
           <div data-media="sv-film-dame" data-video="YabxEyLkXYw" data-video-title="Sisters in Sweat × Dame Health" style="position: relative; width: 280px; aspect-ratio: 16 / 9; border-radius: 16px; overflow: hidden; background: #121110; cursor: pointer;">
@@ -195,7 +200,7 @@
               <span style="display: flex; align-items: center; justify-content: center; width: 52px; height: 52px; border-radius: 999px; background: rgba(241,240,237,0.94); color: #121110; font-size: 14px; padding-left: 3px;">▶</span>
             </span>
           </div>
-          <div style="font-size: 14px; padding-top: 12px;">Sisters in Sweat × Dame Health</div>
+          <div data-video-caption style="font-size: 14px; padding-top: 12px;">Sisters in Sweat × Dame Health</div>
         </div>
         <div style="flex: 0 0 auto; width: 280px;">
           <div data-media="sv-film-paradyes" data-video="FnCDs8kQ644" data-video-title="Collab With Paradyes" style="position: relative; width: 280px; aspect-ratio: 16 / 9; border-radius: 16px; overflow: hidden; background: #121110; cursor: pointer;">
@@ -204,7 +209,7 @@
               <span style="display: flex; align-items: center; justify-content: center; width: 52px; height: 52px; border-radius: 999px; background: rgba(241,240,237,0.94); color: #121110; font-size: 14px; padding-left: 3px;">▶</span>
             </span>
           </div>
-          <div style="font-size: 14px; padding-top: 12px;">Collab With Paradyes</div>
+          <div data-video-caption style="font-size: 14px; padding-top: 12px;">Collab With Paradyes</div>
         </div>
         <div style="flex: 0 0 auto; width: 280px;">
           <div data-media="sv-film-wellness-co" data-video="YBvU5vp9Agc" data-video-title="Sisters in Sweat × Wellness Co." style="position: relative; width: 280px; aspect-ratio: 16 / 9; border-radius: 16px; overflow: hidden; background: #121110; cursor: pointer;">
@@ -213,7 +218,7 @@
               <span style="display: flex; align-items: center; justify-content: center; width: 52px; height: 52px; border-radius: 999px; background: rgba(241,240,237,0.94); color: #121110; font-size: 14px; padding-left: 3px;">▶</span>
             </span>
           </div>
-          <div style="font-size: 14px; padding-top: 12px;">Sisters in Sweat × Wellness Co.</div>
+          <div data-video-caption style="font-size: 14px; padding-top: 12px;">Sisters in Sweat × Wellness Co.</div>
         </div>
         <div style="flex: 0 0 auto; width: 280px;">
           <div data-media="sv-film-new-1" data-video="OXtzqxshcHw" data-video-title="Reel Edit 01" style="position: relative; width: 280px; aspect-ratio: 16 / 9; border-radius: 16px; overflow: hidden; background: #121110; cursor: pointer;">
@@ -222,7 +227,7 @@
               <span style="display: flex; align-items: center; justify-content: center; width: 52px; height: 52px; border-radius: 999px; background: rgba(241,240,237,0.94); color: #121110; font-size: 14px; padding-left: 3px;">▶</span>
             </span>
           </div>
-          <div style="font-size: 14px; padding-top: 12px;">Reel Edit 01</div>
+          <div data-video-caption style="font-size: 14px; padding-top: 12px;">Reel Edit 01</div>
         </div>
         <div style="flex: 0 0 auto; width: 280px;">
           <div data-media="sv-film-new-2" data-video="HPVEMO7OcJs" data-video-title="Reel Edit 02" style="position: relative; width: 280px; aspect-ratio: 16 / 9; border-radius: 16px; overflow: hidden; background: #121110; cursor: pointer;">
@@ -231,7 +236,7 @@
               <span style="display: flex; align-items: center; justify-content: center; width: 52px; height: 52px; border-radius: 999px; background: rgba(241,240,237,0.94); color: #121110; font-size: 14px; padding-left: 3px;">▶</span>
             </span>
           </div>
-          <div style="font-size: 14px; padding-top: 12px;">Reel Edit 02</div>
+          <div data-video-caption style="font-size: 14px; padding-top: 12px;">Reel Edit 02</div>
         </div>
         <div style="flex: 0 0 auto; width: 280px;">
           <div data-media="sv-film-new-3" data-video="fCBZWFNuRkA" data-video-title="Reel Edit 03" style="position: relative; width: 280px; aspect-ratio: 16 / 9; border-radius: 16px; overflow: hidden; background: #121110; cursor: pointer;">
@@ -240,7 +245,7 @@
               <span style="display: flex; align-items: center; justify-content: center; width: 52px; height: 52px; border-radius: 999px; background: rgba(241,240,237,0.94); color: #121110; font-size: 14px; padding-left: 3px;">▶</span>
             </span>
           </div>
-          <div style="font-size: 14px; padding-top: 12px;">Reel Edit 03</div>
+          <div data-video-caption style="font-size: 14px; padding-top: 12px;">Reel Edit 03</div>
         </div>
         <div style="flex: 0 0 auto; width: 280px;">
           <div data-media="sv-film-new-4" data-video="-9ZTgHc6mss" data-video-title="Reel Edit 04" style="position: relative; width: 280px; aspect-ratio: 16 / 9; border-radius: 16px; overflow: hidden; background: #121110; cursor: pointer;">
@@ -249,7 +254,7 @@
               <span style="display: flex; align-items: center; justify-content: center; width: 52px; height: 52px; border-radius: 999px; background: rgba(241,240,237,0.94); color: #121110; font-size: 14px; padding-left: 3px;">▶</span>
             </span>
           </div>
-          <div style="font-size: 14px; padding-top: 12px;">Reel Edit 04</div>
+          <div data-video-caption style="font-size: 14px; padding-top: 12px;">Reel Edit 04</div>
         </div>
         <div style="flex: 0 0 auto; width: 280px;">
           <div data-media="sv-film-new-5" data-video="HzDxlAuRGjY" data-video-title="Reel Edit 05" style="position: relative; width: 280px; aspect-ratio: 16 / 9; border-radius: 16px; overflow: hidden; background: #121110; cursor: pointer;">
@@ -258,7 +263,7 @@
               <span style="display: flex; align-items: center; justify-content: center; width: 52px; height: 52px; border-radius: 999px; background: rgba(241,240,237,0.94); color: #121110; font-size: 14px; padding-left: 3px;">▶</span>
             </span>
           </div>
-          <div style="font-size: 14px; padding-top: 12px;">Reel Edit 05</div>
+          <div data-video-caption style="font-size: 14px; padding-top: 12px;">Reel Edit 05</div>
         </div>
       </div>
     </div>
@@ -271,12 +276,12 @@
           Let's build something worth remembering.
         </h2>
         <p style="margin: 0 0 36px; max-width: 46ch; font-size: 17px; line-height: 1.6; color: #9b968e;">
-          Brand strategy roles, freelance projects and collaborations.
+          Marketing, brand strategy, freelance projects
         </p>
         <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
           <a class="foot-cta" href="mailto:shubhasingh1907@gmail.com" data-contact-trigger="1" style="display: inline-flex; align-items: center; gap: 10px; padding: 14px 24px; border-radius: 999px; background: #f1f0ed; color: #121110; font-size: 14px; transition: background .25s ease;">Get in touch <span style="font-size: 13px;">→</span></a>
-          <a class="foot-social" href="https://www.linkedin.com/in/shubha1907/" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn" style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 999px; border: 1px solid #3a3835; font-size: 13px; font-weight: 600; color: #f1f0ed; transition: background .25s ease, color .25s ease, border-color .25s ease;">in</a>
-          <a class="foot-social" href="https://www.instagram.com/shubhicore/" target="_blank" rel="noopener" title="Instagram" aria-label="Instagram" style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 999px; border: 1px solid #3a3835; color: #f1f0ed; transition: background .25s ease, color .25s ease, border-color .25s ease;"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="3.6"></circle><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"></circle></svg></a>
+          <a class="foot-social" href="https://www.linkedin.com/in/shubha1907/" data-track="social_linkedin" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn" style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 999px; border: 1px solid #3a3835; font-size: 13px; font-weight: 600; color: #f1f0ed; transition: background .25s ease, color .25s ease, border-color .25s ease;">in</a>
+          <a class="foot-social" href="https://www.instagram.com/shubhicore/" data-track="social_instagram" target="_blank" rel="noopener" title="Instagram" aria-label="Instagram" style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 999px; border: 1px solid #3a3835; color: #f1f0ed; transition: background .25s ease, color .25s ease, border-color .25s ease;"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="3.6"></circle><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"></circle></svg></a>
         </div>
         <div style="margin-top: 52px; padding-top: 26px; border-top: 1px solid #2c2a27; display: flex; gap: 30px; flex-wrap: wrap;">
           <a class="foot-nav" href="index.html" style="font-size: 14px; color: #9b968e;">Home</a>

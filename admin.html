@@ -61,6 +61,34 @@
       <h2 style="margin: 0 0 6px; font-size: clamp(20px, 2.2vw, 28px); font-weight: 500; letter-spacing: -0.03em;">Profile photo</h2>
       <p style="margin: 0 0 28px; font-size: 14px; color: #6e6b65; max-width: 60ch;">Pick which photo shows in the hero. This previews instantly on your own device; tell your developer which one you picked so it's made permanent for everyone else.</p>
       <div id="adm-photo-options" style="display: flex; gap: 24px; flex-wrap: wrap;"></div>
+
+      <div style="margin-top: 32px; padding-top: 28px; border-top: 1px solid #e3e1dc;">
+        <h3 style="margin: 0 0 6px; font-size: 15px; font-weight: 500;">Or upload a new photo</h3>
+        <p style="margin: 0 0 18px; font-size: 13px; color: #6e6b65; max-width: 60ch;">Drag to reposition, use the slider to zoom, then crop it to fit the frame.</p>
+        <input type="file" id="adm-photo-upload" accept="image/*" style="font-size: 13px; margin-bottom: 18px;" />
+        <div id="adm-crop-wrap" style="display: none; flex-direction: column; gap: 16px; align-items: flex-start;">
+          <div id="adm-crop-box" style="width: 280px; height: 280px; border-radius: 50%; overflow: hidden; position: relative; background: #e3e1dc; cursor: grab; touch-action: none;">
+            <img id="adm-crop-img" style="position: absolute; max-width: none; user-select: none; -webkit-user-drag: none;" draggable="false" />
+          </div>
+          <div style="display: flex; align-items: center; gap: 10px; width: 280px;">
+            <span style="font-size: 12px; color: #6e6b65;">Zoom</span>
+            <input type="range" id="adm-crop-zoom" min="1" max="3" step="0.01" value="1" style="flex: 1;" />
+          </div>
+          <div style="display: flex; gap: 10px;">
+            <button type="button" id="adm-crop-use" style="font-size: 13px; padding: 10px 18px; border-radius: 999px; border: 0; background: #121110; color: #f1f0ed; cursor: pointer; font-family: inherit;">Use this photo</button>
+            <button type="button" id="adm-crop-download" style="font-size: 13px; padding: 10px 18px; border-radius: 999px; border: 1px solid #d5d2cb; background: transparent; color: #121110; cursor: pointer; font-family: inherit;">Download cropped photo</button>
+          </div>
+          <p id="adm-crop-status" style="margin: 0; font-size: 13px; color: #6e6b65;"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="videos" style="border-top: 1px solid #e3e1dc;">
+    <div style="max-width: 1000px; margin: 0 auto; padding: 40px 40px 8px;">
+      <h2 style="margin: 0 0 6px; font-size: clamp(20px, 2.2vw, 28px); font-weight: 500; letter-spacing: -0.03em;">Videos</h2>
+      <p style="margin: 0 0 28px; font-size: 14px; color: #6e6b65; max-width: 60ch;">Organized by the page each video appears on. Edit a title, hide/show an existing video, or add a brand-new one, all previewed live in this browser.</p>
+      <div id="adm-video-groups" style="display: flex; flex-direction: column; gap: 40px;"></div>
     </div>
   </section>
 
@@ -80,15 +108,277 @@
 </div>
 <script>
 (function () {
+  var GROUPS = [
+    { place: 'sis', prefix: 'sis-film-', label: 'Home — Sisters in Sweat case study' },
+    { place: 'projects', prefix: 'pv-film-', label: 'Projects page' },
+    { place: 'services', prefix: 'sv-film-', label: 'Services page' }
+  ];
+
+  function ytThumb(id) { return 'https://img.youtube.com/vi/' + id + '/hqdefault.jpg'; }
+
+  function buildVideos() {
+    var root = document.getElementById('adm-video-groups');
+    if (!root || !window.SSMedia || !window.SSVideoTitles || !window.SSCustomVideos) { setTimeout(buildVideos, 120); return; }
+
+    function render() {
+      root.innerHTML = '';
+      var overrides = window.SSVideoTitles.get();
+      var custom = window.SSCustomVideos.list();
+
+      GROUPS.forEach(function (g) {
+        var existing = window.SSMedia.list.filter(function (m) { return m.id.indexOf(g.prefix) === 0; });
+        var wrap = document.createElement('div');
+
+        var head = document.createElement('div');
+        head.setAttribute('style', 'display:flex;align-items:baseline;justify-content:space-between;gap:20px;padding-bottom:16px;border-bottom:1px solid #121110;margin-bottom:4px;');
+        head.innerHTML = '<h3 style="margin:0;font-size:18px;font-weight:500;">' + g.label + '</h3><span style="font-size:13px;color:#6e6b65;">' + (existing.length + custom.filter(function(v){return v.places.indexOf(g.place)!==-1;}).length) + ' videos</span>';
+        wrap.appendChild(head);
+
+        // Existing videos
+        existing.forEach(function (m) {
+          var mediaId = m.id;
+          var idMatch = m.label.match(/^(?:Film|Video|Services film) . (.+)$/) || m.label.match(/— (.+)$/);
+          var defaultTitle = idMatch ? idMatch[1].replace(' (needs a real title)', '') : m.label;
+          var currentTitle = overrides[mediaId] || defaultTitle;
+          var visible = !window.SSMedia.isHidden(mediaId);
+
+          var row = document.createElement('div');
+          row.setAttribute('style', 'display:flex;align-items:center;gap:16px;padding:16px 0;border-bottom:1px solid #e3e1dc;');
+
+          var thumb = document.createElement('img');
+          thumb.src = m.videoId ? ytThumb(m.videoId) : '';
+          thumb.setAttribute('style', 'width:72px;height:48px;flex-shrink:0;border-radius:8px;object-fit:cover;background:#121110;');
+          row.appendChild(thumb);
+
+          var titleInput = document.createElement('input');
+          titleInput.type = 'text';
+          titleInput.value = currentTitle;
+          titleInput.setAttribute('style', 'flex:1;min-width:0;font-size:14px;font-family:inherit;padding:9px 12px;border-radius:8px;border:1px solid #d5d2cb;background:#fff;color:#121110;');
+          titleInput.addEventListener('change', function () {
+            window.SSVideoTitles.set(mediaId, titleInput.value.trim());
+          });
+          row.appendChild(titleInput);
+
+          var toggle = document.createElement('button');
+          toggle.type = 'button';
+          function paint(on) {
+            toggle.dataset.on = on ? '1' : '0';
+            toggle.setAttribute('style', 'position:relative;width:48px;height:28px;flex:0 0 auto;border-radius:999px;border:1px solid ' + (on ? '#121110' : '#d5d2cb') + ';background:' + (on ? '#121110' : 'transparent') + ';cursor:pointer;padding:0;transition:background .25s ease,border-color .25s ease;');
+            toggle.innerHTML = '<span style="position:absolute;top:3px;left:' + (on ? '23px' : '3px') + ';width:20px;height:20px;border-radius:999px;background:' + (on ? '#f1f0ed' : '#6e6b65') + ';transition:left .25s ease;"></span>';
+            toggle.setAttribute('aria-label', (on ? 'Hide ' : 'Show ') + currentTitle);
+          }
+          paint(visible);
+          toggle.addEventListener('click', function () {
+            var next = toggle.dataset.on !== '1';
+            window.SSMedia.set(mediaId, next);
+            paint(next);
+          });
+          row.appendChild(toggle);
+
+          wrap.appendChild(row);
+        });
+
+        // Custom (admin-added) videos for this place
+        custom.filter(function (v) { return v.places.indexOf(g.place) !== -1; }).forEach(function (v) {
+          var row = document.createElement('div');
+          row.setAttribute('style', 'display:flex;align-items:center;gap:16px;padding:16px 0;border-bottom:1px solid #e3e1dc;background:#fff7ea;border-radius:8px;padding-left:10px;padding-right:10px;');
+
+          var thumb = document.createElement('img');
+          thumb.src = ytThumb(v.videoId);
+          thumb.setAttribute('style', 'width:72px;height:48px;flex-shrink:0;border-radius:8px;object-fit:cover;');
+          row.appendChild(thumb);
+
+          var label = document.createElement('div');
+          label.setAttribute('style', 'flex:1;min-width:0;font-size:14px;');
+          label.textContent = v.title + ' (newly added)';
+          row.appendChild(label);
+
+          var del = document.createElement('button');
+          del.type = 'button';
+          del.textContent = 'Remove';
+          del.setAttribute('style', 'font-size:13px;padding:8px 14px;border-radius:999px;border:1px solid #d5d2cb;background:transparent;color:#121110;cursor:pointer;font-family:inherit;');
+          del.addEventListener('click', function () {
+            window.SSCustomVideos.remove(v.mediaId);
+            render();
+          });
+          row.appendChild(del);
+
+          wrap.appendChild(row);
+        });
+
+        // Add-new-video mini form
+        var form = document.createElement('div');
+        form.setAttribute('style', 'display:flex;gap:10px;flex-wrap:wrap;align-items:center;padding-top:16px;');
+        var titleField = document.createElement('input');
+        titleField.type = 'text';
+        titleField.placeholder = 'Title';
+        titleField.setAttribute('style', 'flex:1;min-width:140px;font-size:14px;font-family:inherit;padding:10px 12px;border-radius:8px;border:1px solid #d5d2cb;');
+        var idField = document.createElement('input');
+        idField.type = 'text';
+        idField.placeholder = 'YouTube video ID or link';
+        idField.setAttribute('style', 'flex:1;min-width:180px;font-size:14px;font-family:inherit;padding:10px 12px;border-radius:8px;border:1px solid #d5d2cb;');
+        var addBtn = document.createElement('button');
+        addBtn.type = 'button';
+        addBtn.textContent = '+ Add video';
+        addBtn.setAttribute('style', 'font-size:13px;padding:10px 18px;border-radius:999px;border:0;background:#121110;color:#f1f0ed;cursor:pointer;font-family:inherit;');
+        addBtn.addEventListener('click', function () {
+          var title = titleField.value.trim();
+          var raw = idField.value.trim();
+          if (!title || !raw) return;
+          var idMatch = raw.match(/(?:shorts\/|v=|youtu\.be\/)([a-zA-Z0-9_-]{6,})/);
+          var videoId = idMatch ? idMatch[1] : raw;
+          window.SSCustomVideos.add({
+            mediaId: g.place + '-custom-' + Date.now(),
+            title: title,
+            videoId: videoId,
+            vertical: true,
+            places: [g.place]
+          });
+          titleField.value = '';
+          idField.value = '';
+          render();
+        });
+        form.appendChild(titleField);
+        form.appendChild(idField);
+        form.appendChild(addBtn);
+        wrap.appendChild(form);
+
+        root.appendChild(wrap);
+      });
+    }
+    render();
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', buildVideos);
+  else buildVideos();
+})();
+
+(function () {
+  var wrap, box, img, zoomSlider, useBtn, downloadBtn, status, fileInput;
+  var natW = 0, natH = 0, baseScale = 1, scale = 1, offX = 0, offY = 0;
+  var dragging = false, startX = 0, startY = 0, startOffX = 0, startOffY = 0;
+  var BOX = 280;
+
+  function clamp() {
+    var w = natW * scale, h = natH * scale;
+    var minX = BOX - w, minY = BOX - h;
+    if (offX > 0) offX = 0;
+    if (offY > 0) offY = 0;
+    if (offX < minX) offX = minX;
+    if (offY < minY) offY = minY;
+  }
+  function render() {
+    clamp();
+    img.style.width = (natW * scale) + 'px';
+    img.style.height = (natH * scale) + 'px';
+    img.style.left = offX + 'px';
+    img.style.top = offY + 'px';
+  }
+  function loadFile(file) {
+    var reader = new FileReader();
+    reader.onload = function (e) {
+      img.onload = function () {
+        natW = img.naturalWidth;
+        natH = img.naturalHeight;
+        baseScale = BOX / Math.min(natW, natH);
+        scale = baseScale;
+        offX = (BOX - natW * scale) / 2;
+        offY = (BOX - natH * scale) / 2;
+        zoomSlider.value = '1';
+        wrap.style.display = 'flex';
+        status.textContent = '';
+        render();
+      };
+      img.src = e.target.result;
+    };
+    reader.readAsDataURL(file);
+  }
+  function pointerDown(e) {
+    dragging = true;
+    box.style.cursor = 'grabbing';
+    var p = e.touches ? e.touches[0] : e;
+    startX = p.clientX; startY = p.clientY;
+    startOffX = offX; startOffY = offY;
+  }
+  function pointerMove(e) {
+    if (!dragging) return;
+    var p = e.touches ? e.touches[0] : e;
+    offX = startOffX + (p.clientX - startX);
+    offY = startOffY + (p.clientY - startY);
+    render();
+    e.preventDefault();
+  }
+  function pointerUp() { dragging = false; box.style.cursor = 'grab'; }
+
+  function exportCrop(quality) {
+    var canvas = document.createElement('canvas');
+    canvas.width = 600; canvas.height = 600;
+    var ctx = canvas.getContext('2d');
+    var srcX = -offX / scale, srcY = -offY / scale;
+    var srcSize = BOX / scale;
+    ctx.drawImage(img, srcX, srcY, srcSize, srcSize, 0, 0, 600, 600);
+    return canvas.toDataURL('image/jpeg', quality || 0.9);
+  }
+
+  function init() {
+    wrap = document.getElementById('adm-crop-wrap');
+    box = document.getElementById('adm-crop-box');
+    img = document.getElementById('adm-crop-img');
+    zoomSlider = document.getElementById('adm-crop-zoom');
+    useBtn = document.getElementById('adm-crop-use');
+    downloadBtn = document.getElementById('adm-crop-download');
+    status = document.getElementById('adm-crop-status');
+    fileInput = document.getElementById('adm-photo-upload');
+    if (!wrap || !window.SSHeroPhoto) { setTimeout(init, 120); return; }
+
+    fileInput.addEventListener('change', function () {
+      if (fileInput.files && fileInput.files[0]) loadFile(fileInput.files[0]);
+    });
+    box.addEventListener('mousedown', pointerDown);
+    box.addEventListener('touchstart', pointerDown, { passive: true });
+    window.addEventListener('mousemove', pointerMove);
+    window.addEventListener('touchmove', pointerMove, { passive: false });
+    window.addEventListener('mouseup', pointerUp);
+    window.addEventListener('touchend', pointerUp);
+    zoomSlider.addEventListener('input', function () {
+      var factor = parseFloat(zoomSlider.value);
+      var cx = offX - BOX / 2, cy = offY - BOX / 2;
+      var oldScale = scale;
+      scale = baseScale * factor;
+      offX = BOX / 2 + cx * (scale / oldScale);
+      offY = BOX / 2 + cy * (scale / oldScale);
+      render();
+    });
+    useBtn.addEventListener('click', function () {
+      var dataUrl = exportCrop(0.9);
+      window.SSHeroPhoto.setCustom(dataUrl);
+      status.textContent = 'Set as your hero photo, previewing now in this browser.';
+      if (window.__ssRefreshPhotoPicker) window.__ssRefreshPhotoPicker();
+    });
+    downloadBtn.addEventListener('click', function () {
+      var dataUrl = exportCrop(0.92);
+      var a = document.createElement('a');
+      a.href = dataUrl;
+      a.download = 'hero-photo-cropped.jpg';
+      a.click();
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+
+(function () {
   function buildPhotoPicker() {
     var root = document.getElementById('adm-photo-options');
     if (!root || !window.SSHeroPhoto) { setTimeout(buildPhotoPicker, 120); return; }
-    var options = [
-      { id: 'a', label: 'Option A', file: 'assets/hero-photo-a.jpg' },
-      { id: 'b', label: 'Option B', file: 'assets/hero-photo-b.jpg' }
-    ];
     function render() {
       var current = window.SSHeroPhoto.get();
+      var customData = null;
+      try { customData = localStorage.getItem('ss.heroPhotoCustomData'); } catch (e) {}
+      var options = [
+        { id: 'a', label: 'Option A', file: 'assets/hero-photo-a.jpg' },
+        { id: 'b', label: 'Option B', file: 'assets/hero-photo-b.jpg' }
+      ];
+      if (customData) options.push({ id: 'custom', label: 'Your upload', file: customData });
       root.innerHTML = '';
       options.forEach(function (opt) {
         var selected = opt.id === current;
@@ -112,6 +402,7 @@
       });
     }
     render();
+    window.__ssRefreshPhotoPicker = render;
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', buildPhotoPicker);
   else buildPhotoPicker();
@@ -122,7 +413,7 @@
     var root = document.getElementById('adm-groups');
     if (!root || !window.SSMedia) { setTimeout(build, 120); return; }
     var groups = {};
-    window.SSMedia.list.forEach(function (m) { (groups[m.page] = groups[m.page] || []).push(m); });
+    window.SSMedia.list.filter(function (m) { return m.id.indexOf('-film-') === -1; }).forEach(function (m) { (groups[m.page] = groups[m.page] || []).push(m); });
     root.innerHTML = '';
     Object.keys(groups).forEach(function (page) {
       var wrap = document.createElement('div');

@@ -65,6 +65,14 @@
 .foot-nav:hover{color: #f1f0ed !important}
 .foot-top:hover{color: #121110 !important}
 </style>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
 </head>
 <body>
 <div style="font-family: 'Instrument Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; background: #f1f0ed; color: #121110;">
@@ -93,7 +101,7 @@
         <span style="font-size: 12px; color: #6e6b65;">01</span>
         <h2 style="margin: 0; font-size: clamp(28px, 3.6vw, 48px); font-weight: 500; line-height: 1; letter-spacing: -0.04em;">Product</h2>
       </div>
-      <a href="https://nextleap.app/portfolio/shubha-singh" target="_blank" rel="noopener" class="row" data-reveal="60" style="display: grid; grid-template-columns: 520px 1fr; gap: 52px; align-items: center; padding-top: 32px; border-top: 1px solid #e3e1dc;">
+      <a href="https://nextleap.app/portfolio/shubha-singh" target="_blank" rel="noopener" data-track="nextleap_external_link" class="row" data-reveal="60" style="display: grid; grid-template-columns: 520px 1fr; gap: 52px; align-items: center; padding-top: 32px; border-top: 1px solid #e3e1dc;">
         <span style="display: block; border-radius: 16px; overflow: hidden; background: #ffffff;">
           <img class="h5" data-media="pr-nextleap" src="assets/case-studies/nextleap-pm-fellowship.jpg" alt="NextLeap product management fellowship project" style="width: 100%; aspect-ratio: 16 / 10; object-fit: cover; display: block; transition: transform .8s cubic-bezier(.22,.61,.36,1);" />
         </span>
@@ -116,6 +124,7 @@
         <h2 style="margin: 0; font-size: clamp(28px, 3.6vw, 48px); font-weight: 500; line-height: 1; letter-spacing: -0.04em;">Video editing</h2>
       </div>
       <div class="grid" data-reveal="60" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+        <div data-custom-video-slot="projects" style="display: contents;"></div>
         <div data-media="pv-film-nykaa">
           <div data-video="pNR5YOFEmKM" data-video-title="Sisters in Sweat × Nykaa Wellness" style="position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: 16px; overflow: hidden; background: #121110; cursor: pointer;">
             <img data-video-cover src="https://img.youtube.com/vi/pNR5YOFEmKM/hqdefault.jpg" alt="Sisters in Sweat × Nykaa Wellness" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; transition: opacity .4s ease;" />
@@ -123,7 +132,7 @@
               <span style="display: flex; align-items: center; justify-content: center; width: 58px; height: 58px; border-radius: 999px; background: rgba(241,240,237,0.94); color: #121110; font-size: 15px; padding-left: 4px;">▶</span>
             </span>
           </div>
-          <div style="font-size: 15px; padding-top: 14px;">Sisters in Sweat × Nykaa Wellness</div>
+          <div data-video-caption style="font-size: 15px; padding-top: 14px;">Sisters in Sweat × Nykaa Wellness</div>
         </div>
         <div data-media="pv-film-mille">
           <div data-video="OVSfZnnnmyE" data-video-title="Sisters in Sweat × Mille" style="position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: 16px; overflow: hidden; background: #121110; cursor: pointer;">
@@ -132,7 +141,7 @@
               <span style="display: flex; align-items: center; justify-content: center; width: 58px; height: 58px; border-radius: 999px; background: rgba(241,240,237,0.94); color: #121110; font-size: 15px; padding-left: 4px;">▶</span>
             </span>
           </div>
-          <div style="font-size: 15px; padding-top: 14px;">Sisters in Sweat × Mille</div>
+          <div data-video-caption style="font-size: 15px; padding-top: 14px;">Sisters in Sweat × Mille</div>
         </div>
         <div data-media="pv-film-dame">
           <div data-video="YabxEyLkXYw" data-video-title="Sisters in Sweat × Dame Health" style="position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: 16px; overflow: hidden; background: #121110; cursor: pointer;">
@@ -141,7 +150,7 @@
               <span style="display: flex; align-items: center; justify-content: center; width: 58px; height: 58px; border-radius: 999px; background: rgba(241,240,237,0.94); color: #121110; font-size: 15px; padding-left: 4px;">▶</span>
             </span>
           </div>
-          <div style="font-size: 15px; padding-top: 14px;">Sisters in Sweat × Dame Health</div>
+          <div data-video-caption style="font-size: 15px; padding-top: 14px;">Sisters in Sweat × Dame Health</div>
         </div>
         <div data-media="pv-film-paradyes">
           <div data-video="FnCDs8kQ644" data-video-title="Collab With Paradyes" style="position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: 16px; overflow: hidden; background: #121110; cursor: pointer;">
@@ -150,7 +159,7 @@
               <span style="display: flex; align-items: center; justify-content: center; width: 58px; height: 58px; border-radius: 999px; background: rgba(241,240,237,0.94); color: #121110; font-size: 15px; padding-left: 4px;">▶</span>
             </span>
           </div>
-          <div style="font-size: 15px; padding-top: 14px;">Collab With Paradyes</div>
+          <div data-video-caption style="font-size: 15px; padding-top: 14px;">Collab With Paradyes</div>
         </div>
         <div data-media="pv-film-wellness-co">
           <div data-video="YBvU5vp9Agc" data-video-title="Sisters in Sweat × Wellness Co." style="position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: 16px; overflow: hidden; background: #121110; cursor: pointer;">
@@ -159,7 +168,7 @@
               <span style="display: flex; align-items: center; justify-content: center; width: 58px; height: 58px; border-radius: 999px; background: rgba(241,240,237,0.94); color: #121110; font-size: 15px; padding-left: 4px;">▶</span>
             </span>
           </div>
-          <div style="font-size: 15px; padding-top: 14px;">Sisters in Sweat × Wellness Co.</div>
+          <div data-video-caption style="font-size: 15px; padding-top: 14px;">Sisters in Sweat × Wellness Co.</div>
         </div>
         <div data-media="pv-film-new-1">
           <div data-video="OXtzqxshcHw" data-video-title="Reel Edit 01" style="position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: 16px; overflow: hidden; background: #121110; cursor: pointer;">
@@ -168,7 +177,7 @@
               <span style="display: flex; align-items: center; justify-content: center; width: 58px; height: 58px; border-radius: 999px; background: rgba(241,240,237,0.94); color: #121110; font-size: 15px; padding-left: 4px;">▶</span>
             </span>
           </div>
-          <div style="font-size: 15px; padding-top: 14px;">Reel Edit 01</div>
+          <div data-video-caption style="font-size: 15px; padding-top: 14px;">Reel Edit 01</div>
         </div>
         <div data-media="pv-film-new-2">
           <div data-video="HPVEMO7OcJs" data-video-title="Reel Edit 02" style="position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: 16px; overflow: hidden; background: #121110; cursor: pointer;">
@@ -177,7 +186,7 @@
               <span style="display: flex; align-items: center; justify-content: center; width: 58px; height: 58px; border-radius: 999px; background: rgba(241,240,237,0.94); color: #121110; font-size: 15px; padding-left: 4px;">▶</span>
             </span>
           </div>
-          <div style="font-size: 15px; padding-top: 14px;">Reel Edit 02</div>
+          <div data-video-caption style="font-size: 15px; padding-top: 14px;">Reel Edit 02</div>
         </div>
         <div data-media="pv-film-new-3">
           <div data-video="fCBZWFNuRkA" data-video-title="Reel Edit 03" style="position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: 16px; overflow: hidden; background: #121110; cursor: pointer;">
@@ -186,7 +195,7 @@
               <span style="display: flex; align-items: center; justify-content: center; width: 58px; height: 58px; border-radius: 999px; background: rgba(241,240,237,0.94); color: #121110; font-size: 15px; padding-left: 4px;">▶</span>
             </span>
           </div>
-          <div style="font-size: 15px; padding-top: 14px;">Reel Edit 03</div>
+          <div data-video-caption style="font-size: 15px; padding-top: 14px;">Reel Edit 03</div>
         </div>
         <div data-media="pv-film-new-4">
           <div data-video="-9ZTgHc6mss" data-video-title="Reel Edit 04" style="position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: 16px; overflow: hidden; background: #121110; cursor: pointer;">
@@ -195,7 +204,7 @@
               <span style="display: flex; align-items: center; justify-content: center; width: 58px; height: 58px; border-radius: 999px; background: rgba(241,240,237,0.94); color: #121110; font-size: 15px; padding-left: 4px;">▶</span>
             </span>
           </div>
-          <div style="font-size: 15px; padding-top: 14px;">Reel Edit 04</div>
+          <div data-video-caption style="font-size: 15px; padding-top: 14px;">Reel Edit 04</div>
         </div>
         <div data-media="pv-film-new-5">
           <div data-video="HzDxlAuRGjY" data-video-title="Reel Edit 05" style="position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: 16px; overflow: hidden; background: #121110; cursor: pointer;">
@@ -204,7 +213,7 @@
               <span style="display: flex; align-items: center; justify-content: center; width: 58px; height: 58px; border-radius: 999px; background: rgba(241,240,237,0.94); color: #121110; font-size: 15px; padding-left: 4px;">▶</span>
             </span>
           </div>
-          <div style="font-size: 15px; padding-top: 14px;">Reel Edit 05</div>
+          <div data-video-caption style="font-size: 15px; padding-top: 14px;">Reel Edit 05</div>
         </div>
       </div>
     </div>
@@ -272,12 +281,12 @@
           Let's build something worth remembering.
         </h2>
         <p style="margin: 0 0 36px; max-width: 46ch; font-size: 17px; line-height: 1.6; color: #9b968e;">
-          Brand strategy roles, freelance projects and collaborations.
+          Marketing, brand strategy, freelance projects
         </p>
         <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
           <a class="foot-cta" href="mailto:shubhasingh1907@gmail.com" data-contact-trigger="1" style="display: inline-flex; align-items: center; gap: 10px; padding: 14px 24px; border-radius: 999px; background: #f1f0ed; color: #121110; font-size: 14px; transition: background .25s ease;">Get in touch <span style="font-size: 13px;">→</span></a>
-          <a class="foot-social" href="https://www.linkedin.com/in/shubha1907/" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn" style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 999px; border: 1px solid #3a3835; font-size: 13px; font-weight: 600; color: #f1f0ed; transition: background .25s ease, color .25s ease, border-color .25s ease;">in</a>
-          <a class="foot-social" href="https://www.instagram.com/shubhicore/" target="_blank" rel="noopener" title="Instagram" aria-label="Instagram" style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 999px; border: 1px solid #3a3835; color: #f1f0ed; transition: background .25s ease, color .25s ease, border-color .25s ease;"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="3.6"></circle><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"></circle></svg></a>
+          <a class="foot-social" href="https://www.linkedin.com/in/shubha1907/" data-track="social_linkedin" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn" style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 999px; border: 1px solid #3a3835; font-size: 13px; font-weight: 600; color: #f1f0ed; transition: background .25s ease, color .25s ease, border-color .25s ease;">in</a>
+          <a class="foot-social" href="https://www.instagram.com/shubhicore/" data-track="social_instagram" target="_blank" rel="noopener" title="Instagram" aria-label="Instagram" style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 999px; border: 1px solid #3a3835; color: #f1f0ed; transition: background .25s ease, color .25s ease, border-color .25s ease;"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="3.6"></circle><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"></circle></svg></a>
         </div>
         <div style="margin-top: 52px; padding-top: 26px; border-top: 1px solid #2c2a27; display: flex; gap: 30px; flex-wrap: wrap;">
           <a class="foot-nav" href="index.html" style="font-size: 14px; color: #9b968e;">Home</a>
