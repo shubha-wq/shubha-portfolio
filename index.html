@@ -42,8 +42,15 @@
     footer > div { padding: 28px 20px !important; }
   }
   @media (max-width: 760px) {
-    #top .split { grid-template-columns: 1fr !important; gap: 26px !important; }
-    #top img { max-width: 260px !important; justify-self: start !important; }
+    #top .split { grid-template-columns: 1fr !important; gap: 20px !important; }
+    #top img { max-width: 56px !important; justify-self: start !important; border-radius: 50% !important; order: -1 !important; pointer-events: none !important; }
+    body { display: flex !important; flex-direction: column !important; }
+    header { order: 0; }
+    #top { order: 1; }
+    #work { order: 2; }
+    #journey { order: 3; }
+    #cta { order: 4; }
+    footer { order: 5; }
   }
   @media (max-width: 620px) {
     header { flex-wrap: wrap !important; gap: 12px !important; }
@@ -104,29 +111,27 @@
             <a class="h6" href="https://www.instagram.com/shubhicore/" target="_blank" rel="noopener" title="Instagram" aria-label="Instagram" style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 999px; border: 1px solid #d5d2cb; color: #121110; transition: background .25s ease, color .25s ease, border-color .25s ease;"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="3.6"></circle><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"></circle></svg></a>
           </div>
         </div>
-        <img data-reveal="80" src="assets/hero-photo.jpg" alt="Shubha Singh" style="width: 100%; max-width: 340px; justify-self: end; aspect-ratio: 1 / 1; object-fit: cover; display: block; border-radius: 16px;" />
+        <img id="hero-photo-img" data-reveal="80" src="assets/hero-photo.jpg" alt="Shubha Singh" style="width: 100%; max-width: 180px; justify-self: end; aspect-ratio: 1 / 1; object-fit: cover; display: block; border-radius: 50%; pointer-events: none;" />
       </div>
     </div>
   </section>
 
   <section id="journey" style="border-top: 1px solid #e3e1dc;">
     <div style="max-width: 1280px; margin: 0 auto; padding: 88px 40px;">
-      <div class="split" style="display: grid; grid-template-columns: 300px 1fr; gap: 64px; align-items: start;">
-        <div data-reveal="0" style="display: flex; align-items: baseline; gap: 14px;">
-          <span style="font-size: 12px; color: #6e6b65;">01</span>
-          <h2 style="margin: 0; font-size: 13px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #6e6b65;">My journey</h2>
-        </div>
-        <div style="display: flex; flex-direction: column; gap: 24px; max-width: 64ch;">
-          <p data-reveal="60" style="margin: 0; font-size: clamp(22px, 2.6vw, 34px); font-weight: 500; line-height: 1.22; letter-spacing: -0.03em; text-wrap: pretty;">
-            Learning is my default. I believe good work begins with curiosity.
-          </p>
-          <p data-reveal="120" style="margin: 0; font-size: 17px; line-height: 1.7; color: #6e6b65; text-wrap: pretty;">
-            I've always been drawn to extraordinary stories, unconventional approaches and tasteful visuals. My education is rooted in media &amp; communications and my early career in PR, but somewhere along the way I got curious about the core of a business: the product.
-          </p>
-          <p data-reveal="180" style="margin: 0; font-size: 17px; line-height: 1.7; color: #6e6b65; text-wrap: pretty;">
-            Figuring out how product decisions tie to business outcomes gave my creativity a structure. Now I catch myself applying that systems thinking and user empathy every time I build a marketing narrative, so that the stories I tell help achieve business objectives.
-          </p>
-        </div>
+      <div data-reveal="0" style="display: flex; align-items: baseline; gap: 14px; margin-bottom: 32px;">
+        <span style="font-size: 12px; color: #6e6b65;">01</span>
+        <h2 style="margin: 0; font-size: 13px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #6e6b65;">My journey</h2>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 24px; max-width: 64ch;">
+        <p data-reveal="60" style="margin: 0; font-size: clamp(22px, 2.6vw, 34px); font-weight: 500; line-height: 1.22; letter-spacing: -0.03em; text-wrap: pretty;">
+          Learning is my default. I believe good work begins with curiosity.
+        </p>
+        <p data-reveal="120" style="margin: 0; font-size: 17px; line-height: 1.7; color: #6e6b65; text-wrap: pretty;">
+          I've always been drawn to extraordinary stories, unconventional approaches and tasteful visuals. My education is rooted in media &amp; communications and my early career in PR, but somewhere along the way I got curious about the core of a business: the product.
+        </p>
+        <p data-reveal="180" style="margin: 0; font-size: 17px; line-height: 1.7; color: #6e6b65; text-wrap: pretty;">
+          Figuring out how product decisions tie to business outcomes gave my creativity a structure. Now I catch myself applying that systems thinking and user empathy every time I build a marketing narrative, so that the stories I tell help achieve business objectives.
+        </p>
       </div>
     </div>
   </section>
@@ -379,7 +384,7 @@
           Let's build something worth remembering.
         </h2>
         <p style="margin: 0 0 36px; max-width: 46ch; font-size: 17px; line-height: 1.6; color: #9b968e;">
-          Brand strategy roles, freelance projects and collaborations.
+          Marketing, brand strategy, freelance projects
         </p>
         <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
           <a class="foot-cta" href="mailto:shubhasingh1907@gmail.com" data-contact-trigger="1" style="display: inline-flex; align-items: center; gap: 10px; padding: 14px 24px; border-radius: 999px; background: #f1f0ed; color: #121110; font-size: 14px; transition: background .25s ease;">Get in touch <span style="font-size: 13px;">→</span></a>

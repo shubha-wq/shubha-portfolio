@@ -380,6 +380,28 @@
 
   window.addEventListener('storage', (e) => { if (e.key === MEDIA_KEY) applyMedia(document); });
 
+  // ---- hero photo selection ----
+  const HERO_KEY = 'ss.heroPhoto';
+  function readHeroChoice() {
+    try { return localStorage.getItem(HERO_KEY) || 'a'; } catch (e) { return 'a'; }
+  }
+  function writeHeroChoice(choice) {
+    try { localStorage.setItem(HERO_KEY, choice); } catch (e) {}
+    applyHeroPhoto(document);
+  }
+  function applyHeroPhoto(root) {
+    const choice = readHeroChoice();
+    (root || document).querySelectorAll('#hero-photo-img').forEach((img) => {
+      img.src = `assets/hero-photo-${choice}.jpg`;
+    });
+  }
+  window.SSHeroPhoto = {
+    get: readHeroChoice,
+    set: writeHeroChoice,
+    apply: applyHeroPhoto
+  };
+  window.addEventListener('storage', (e) => { if (e.key === HERO_KEY) applyHeroPhoto(document); });
+
   function focusStyles() {
     if (document.getElementById('__om-focus')) return;
     const st = document.createElement('style');
@@ -391,7 +413,7 @@
   function init(root) {
     focusStyles();
     const r = root || document;
-    applyMedia(r); reveal(r); accordions(r); carousels(r); videos(r); marquees(r);
+    applyMedia(r); applyHeroPhoto(r); reveal(r); accordions(r); carousels(r); videos(r); marquees(r);
   }
 
   let scanQueued = false;

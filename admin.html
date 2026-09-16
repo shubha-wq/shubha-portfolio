@@ -56,6 +56,14 @@
     </div>
   </section>
 
+  <section id="photo" style="border-top: 1px solid #e3e1dc;">
+    <div style="max-width: 1000px; margin: 0 auto; padding: 40px 40px 8px;">
+      <h2 style="margin: 0 0 6px; font-size: clamp(20px, 2.2vw, 28px); font-weight: 500; letter-spacing: -0.03em;">Profile photo</h2>
+      <p style="margin: 0 0 28px; font-size: 14px; color: #6e6b65; max-width: 60ch;">Pick which photo shows in the hero. This previews instantly on your own device; tell your developer which one you picked so it's made permanent for everyone else.</p>
+      <div id="adm-photo-options" style="display: flex; gap: 24px; flex-wrap: wrap;"></div>
+    </div>
+  </section>
+
   <section id="panel" style="border-top: 1px solid #e3e1dc;">
     <div style="max-width: 1000px; margin: 0 auto; padding: 40px 40px 88px;">
       <div id="adm-groups" style="display: flex; flex-direction: column; gap: 44px;"></div>
@@ -71,6 +79,44 @@
 
 </div>
 <script>
+(function () {
+  function buildPhotoPicker() {
+    var root = document.getElementById('adm-photo-options');
+    if (!root || !window.SSHeroPhoto) { setTimeout(buildPhotoPicker, 120); return; }
+    var options = [
+      { id: 'a', label: 'Option A', file: 'assets/hero-photo-a.jpg' },
+      { id: 'b', label: 'Option B', file: 'assets/hero-photo-b.jpg' }
+    ];
+    function render() {
+      var current = window.SSHeroPhoto.get();
+      root.innerHTML = '';
+      options.forEach(function (opt) {
+        var selected = opt.id === current;
+        var card = document.createElement('button');
+        card.type = 'button';
+        card.setAttribute('style', 'display:flex;flex-direction:column;align-items:center;gap:12px;padding:20px;border-radius:16px;border:1.5px solid ' + (selected ? '#121110' : '#e3e1dc') + ';background:' + (selected ? '#ffffff' : 'transparent') + ';cursor:pointer;font-family:inherit;transition:border-color .2s ease,background .2s ease;');
+        var img = document.createElement('img');
+        img.src = opt.file;
+        img.alt = opt.label;
+        img.setAttribute('style', 'width:120px;height:120px;border-radius:50%;object-fit:cover;display:block;');
+        var labelRow = document.createElement('div');
+        labelRow.setAttribute('style', 'display:flex;align-items:center;gap:8px;font-size:14px;');
+        labelRow.innerHTML = (selected ? '<span style="width:8px;height:8px;border-radius:999px;background:#121110;display:inline-block;"></span>' : '<span style="width:8px;height:8px;border-radius:999px;border:1px solid #d5d2cb;display:inline-block;"></span>') + '<span>' + opt.label + (selected ? ' , selected' : '') + '</span>';
+        card.appendChild(img);
+        card.appendChild(labelRow);
+        card.addEventListener('click', function () {
+          window.SSHeroPhoto.set(opt.id);
+          render();
+        });
+        root.appendChild(card);
+      });
+    }
+    render();
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', buildPhotoPicker);
+  else buildPhotoPicker();
+})();
+
 (function () {
   function build() {
     var root = document.getElementById('adm-groups');
